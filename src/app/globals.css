@@ -71,8 +71,19 @@ body {
   }
 }
 
-.css-1tktgsa-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  top: 288px !important;
-  border-radius: 0 !important;
- box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px !important;
+.dropdownScrollbar.dropdownScrollbar {
+  scrollbar-width: thin; 
+  scrollbar-color: #6094e8ff #f0f0f0; 
 }
+.dropdownScrollbar.dropdownScrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdownScrollbar .dropdownScrollbar::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.dropdownScrollbar .dropdownScrollbar::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 3px;
+}
+
+

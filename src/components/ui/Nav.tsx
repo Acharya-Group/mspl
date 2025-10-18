@@ -1,253 +1,237 @@
 "use client";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Button,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Menu,
-  MenuItem,
-  Box,
-} from "@mui/material";
 import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import ExpandLess from "@mui/icons-material/ExpandLess";
+import { usePathname } from "next/navigation";
 import { navDropdowns } from "@/utils/data";
+import {
+  HiOutlineMenu,
+  HiOutlineX,
+  HiChevronDown,
+  HiChevronUp,
+} from "react-icons/hi";
 
 const Nav = () => {
   const pathname = usePathname();
-  const [desktopAnchor, setDesktopAnchor] = useState<null | HTMLElement>(null);
-  const [currentDropdown, setCurrentDropdown] = useState<number | null>(null);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-  const [openSubAccordion, setOpenSubAccordion] = useState<number | null>(null);
+  const [openSidebar, setOpenSidebar] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState<number | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
 
   const isLinkActive = (href: string) => pathname === href;
 
   return (
-    <div className="bg-white sticky top-0 shadow z-[1100]">
-      <AppBar position="sticky" color="default" sx={{ bgcolor: "#14AEE4", boxShadow: 0 }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-       
+    <>
+      {/* Top Navbar */}
+      <nav className="sticky top-0 bg-[#14AEE4] text-white shadow z-[1100]">
+        <div className="flex justify-between items-center px-4  lg:px-8">
+          {/* Left Side - Desktop Menu */}
+          <ul className="hidden lg:flex items-center gap-6">
+            <li>
+              <Link
+                href="/"
+                className={`pb-1 ${
+                  isLinkActive("/")
+                    ? "border-b-2 border-white text-white"
+                    : "text-white/90"
+                } hover:text-white transition`}
+              >
+                Home
+              </Link>
+            </li>
 
-          {/* Desktop Navigation */}
-          <Box sx={{ display: { xs: "none", lg: "flex" }, gap: 2, alignItems: "center" }}>
-            {/* Home link */}
-            <Button
-              component={Link}
+            {navDropdowns.map((dropdown, index) => (
+              <li
+                key={index}
+                className="relative group py-3"
+                onMouseEnter={() => setActiveDropdown(index)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  className="flex items-center gap-1 text-white font-medium"
+                  onClick={() =>
+                    setActiveDropdown(
+                      activeDropdown === index ? null : index
+                    )
+                  }
+                >
+                  {dropdown.title}
+                  <HiChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      activeDropdown === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown menu */}
+              {activeDropdown === index && (
+  <div className="absolute left-0 top-full w-52 z-[1200] max-h-[220px] overflow-y-auto dropdownScrollbar">
+    <div className="w-full">
+      {dropdown.links.map((link, i) =>
+        link.type === "submenu" ? (
+          <div key={i}>
+            <div className="px-4 pt-2 bg-light font-semibold text-gray-700 cursor-default">
+              {link.name}
+            </div>
+            {link.sublinks?.map((sublink, j) => (
+              <Link
+                key={j}
+                href={sublink.href ?? "#"}
+                className="block px-4 bg-light py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
+              >
+                {sublink.name}
+              </Link>
+            ))}
+          </div>
+        ) : (
+ <Link
+  key={i}
+  href={link.href ?? "#"}
+  className="relative block group bg-blue-300 px-4 py-2 text-sm text-primary border-b border-primary
+    before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:bg-primary
+    before:content-[''] before:transition-all before:z-0 hover:before:w-full"
+>
+  <span className="relative !text-primary z-[10] group-hover:!text-white">{link.name}</span>
+</Link>
+
+        )
+      )}
+    </div>
+  </div>
+)}
+
+              </li>
+            ))}
+          </ul>
+
+          {/* Right side - Toggle (always visible) */}
+          <button
+            onClick={() => setOpenSidebar(true)}
+            className="text-white focus:outline-none"
+          >
+            <HiOutlineMenu size={26} />
+          </button>
+        </div>
+      </nav>
+
+      {/* Sidebar Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-[1200] transition-opacity duration-300 ${
+          openSidebar ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setOpenSidebar(false)}
+      ></div>
+
+      {/* Sidebar Drawer */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[300px] bg-white shadow-lg z-[1300] transform transition-transform duration-300 ${
+          openSidebar ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Sidebar Header */}
+        <div className="flex justify-between items-center px-4 py-3 border-b">
+          <span className="text-gray-800 text-lg font-semibold">Menu</span>
+          <button onClick={() => setOpenSidebar(false)}>
+            <HiOutlineX size={24} className="text-gray-700" />
+          </button>
+        </div>
+
+        {/* Sidebar Content */}
+        <ul className="flex flex-col">
+          <li>
+            <Link
               href="/"
-              sx={{
-                color: isLinkActive("/") ? "var(--tw-text-primary)" : "#261b7d",
-                borderBottom: isLinkActive("/") ? "2px solid var(--tw-text-primary)" : "2px solid transparent",
-                borderRadius: 0,
-                "&:hover": {color:"text-green"},
-              }}
+              className={`block px-5 py-3 text-sm font-medium ${
+                isLinkActive("/")
+                  ? "text-[#14AEE4] bg-gray-100"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
+              }`}
+              onClick={() => setOpenSidebar(false)}
             >
               Home
-            </Button>
+            </Link>
+          </li>
 
-            {/* Dropdowns */}
-            {navDropdowns.map((dropdown, index) => {
-              let closeTimeout: NodeJS.Timeout;
+          {navDropdowns.map((dropdown, index) => (
+            <li key={index}>
+              <button
+                className="w-full flex justify-between items-center px-5 py-3 text-left text-sm font-medium text-gray-700 hover:bg-gray-50"
+                onClick={() =>
+                  setOpenDropdown(openDropdown === index ? null : index)
+                }
+              >
+                {dropdown.title}
+                {openDropdown === index ? (
+                  <HiChevronUp className="w-5 h-5" />
+                ) : (
+                  <HiChevronDown className="w-5 h-5" />
+                )}
+              </button>
 
-              const openMenu = (e: React.MouseEvent<HTMLElement>) => {
-                clearTimeout(closeTimeout);
-                setDesktopAnchor(e.currentTarget);
-                setCurrentDropdown((prev) => (prev === index ? null : index)); 
-              };
-
-              const handleEnter = (e: React.MouseEvent<HTMLElement>) => {
-                clearTimeout(closeTimeout);
-                setDesktopAnchor(e.currentTarget);
-                setCurrentDropdown(index);
-              };
-
-              const handleLeave = () => {
-                closeTimeout = setTimeout(() => {
-                  setCurrentDropdown(null);
-                  setDesktopAnchor(null);
-                }, 200);
-              };
-
-              return (
-                <Box
-                  key={index}
-                  onMouseEnter={handleEnter}
-                  onMouseLeave={handleLeave}
-                  sx={{ position: "relative", display: "inline-block" }}
-                >
-                  <Button
-                    endIcon={<ExpandMore />}
-                    onClick={openMenu}
-                    sx={{
-                      color: "#261b7d",
-                      fontWeight: 500,
-                      fontSize: "14px",
-                      "&:hover": { color: "var(--tw-text-primary)" },
-                    }}
-                  >
-                    {dropdown.title}
-                  </Button>
-
-                  <Menu
-                    anchorEl={desktopAnchor}
-                    open={currentDropdown === index}
-                    onClose={() => setCurrentDropdown(null)}
-                    MenuListProps={{
-                      onMouseEnter: () => clearTimeout(closeTimeout),
-                      onMouseLeave: handleLeave,
-                    }}
-                    PaperProps={{
-                      sx: {
-                        maxHeight: 300,
-                        overflowY: "auto",
-                        mt: 1,
-                        px: 0.5,
-                        "&::-webkit-scrollbar": { width: 6 },
-                        "&::-webkit-scrollbar-thumb": {
-                          backgroundColor: "#ccc",
-                          borderRadius: 3,
-                        },
-                      },
-                    }}
-                  >
-                    {dropdown.links.map((link, i) =>
-                      link.type === "submenu" ? (
-                        <Box key={i}>
-                          <MenuItem disabled sx={{ fontWeight: 600 }}>
-                            {link.name}
-                          </MenuItem>
-                          {link.sublinks?.map((sublink, j) => (
-                            <MenuItem
-                              key={j}
-                              component={sublink.type === "download" ? "a" : Link}
-                              href={sublink.href}
-                              {...(sublink.type === "download" ? { download: true } : {})}
-                              sx={{
-                                pl: 3,
-                                "&:hover": {
-                                  color: "var(--tw-text-primary)",
-                                  bgcolor: "rgba(0,0,0,0.03)",
-                                },
-                              }}
-                            >
-                              {sublink.name}
-                            </MenuItem>
-                          ))}
-                        </Box>
-                      ) : (
-                        <MenuItem
-                          key={i}
-                          component={link.type === "download" ? "a" : Link}
-                          href={link.href}
-                          {...(link.type === "download" ? { download: true } : {})}
-                          sx={{
-                            "&:hover": {
-                              color: "var(--tw-text-primary)",
-                              bgcolor: "rgba(0,0,0,0.03)",
-                            },
-                          }}
+              {/* Dropdown Content */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openDropdown === index ? "max-h-[500px]" : "max-h-0"
+                }`}
+              >
+                <ul className="bg-gray-50">
+                  {dropdown.links.map((link, i) =>
+                    link.type === "submenu" ? (
+                      <li key={i}>
+                        <button
+                          className="w-full flex justify-between items-center px-6 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          onClick={() =>
+                            setOpenSubDropdown(
+                              openSubDropdown === i ? null : i
+                            )
+                          }
                         >
                           {link.name}
-                        </MenuItem>
-                      )
-                    )}
-                  </Menu>
-                </Box>
-              );
-            })}
-          </Box>
-             {/* Left section - toggle icon */}
-          <IconButton
-            sx={{ display: { xs: "flex" } }}
-            onClick={() => setMobileOpen(true)}
-            className="text-primary"
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-
-      {/* Mobile Drawer */}
-      <Drawer anchor="left" open={mobileOpen} onClose={() => setMobileOpen(false)}>
-        <Box sx={{ width: 280, p: 0 }}>
-          <Box className="flex justify-end mb-2">
-            <IconButton onClick={() => setMobileOpen(false)} className="text-primary">
-              <CloseIcon />
-            </IconButton>
-          </Box>
-
-          <List>
-            {navDropdowns.map((dropdown, index) => (
-              <Box key={index}>
-                <ListItem disablePadding>
-                  <ListItemButton
-                    onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
-                    sx={{ justifyContent: "space-between" }}
-                  >
-                    <ListItemText primary={dropdown.title} />
-                    {openAccordion === index ? <ExpandLess /> : <ExpandMore />}
-                  </ListItemButton>
-                </ListItem>
-
-                {openAccordion === index && (
-                  <List sx={{ pl: 2 }}>
-                    {dropdown.links.map((link, i) =>
-                      link.type === "submenu" ? (
-                        <Box key={i}>
-                          <ListItemButton
-                            onClick={() => setOpenSubAccordion(openSubAccordion === i ? null : i)}
-                            sx={{ justifyContent: "space-between" }}
-                          >
-                            <ListItemText primary={link.name} />
-                            {openSubAccordion === i ? <ExpandLess /> : <ExpandMore />}
-                          </ListItemButton>
-
-                          {openSubAccordion === i && (
-                            <List sx={{ pl: 3 }}>
-                              {link.sublinks?.map((sublink, j) => (
-                                <ListItemButton
-                                  key={j}
-                                  component={sublink.type === "download" ? "a" : Link}
-                                  href={sublink.href}
-                                  onClick={() => setMobileOpen(false)}
-                                  {...(sublink.type === "download" ? { download: true } : {})}
-                                  sx={{ pl: 4 }}
-                                >
-                                  <ListItemText primary={sublink.name} />
-                                </ListItemButton>
-                              ))}
-                            </List>
+                          {openSubDropdown === i ? (
+                            <HiChevronUp className="w-4 h-4" />
+                          ) : (
+                            <HiChevronDown className="w-4 h-4" />
                           )}
-                        </Box>
-                      ) : (
-                        <ListItemButton
-                          key={i}
-                          component={link.type === "download" ? "a" : Link}
-                          href={link.href}
-                          onClick={() => setMobileOpen(false)}
-                          {...(link.type === "download" ? { download: true } : {})}
+                        </button>
+
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ${
+                            openSubDropdown === i ? "max-h-[400px]" : "max-h-0"
+                          }`}
                         >
-                          <ListItemText primary={link.name} />
-                        </ListItemButton>
-                      )
-                    )}
-                  </List>
-                )}
-              </Box>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
-    </div>
+                          <ul className="bg-white">
+                            {link.sublinks?.map((sublink, j) => (
+                              <li key={j}>
+                                <Link
+                                  href={sublink.href}
+                                  className="block px-8 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#14AEE4]"
+                                  onClick={() => setOpenSidebar(false)}
+                                >
+                                  {sublink.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                    ) : (
+                      <li key={i}>
+                        <Link
+                          href={link.href ?? "#"}
+                          className="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#14AEE4]"
+                          onClick={() => setOpenSidebar(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

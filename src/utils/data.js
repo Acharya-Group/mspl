@@ -90,4 +90,22 @@ export const navDropdowns = [
       { name: "Impartiality Statement", href: "images/Impartiality_Statement.pdf", type: "download" },
     ],
   },
+   {
+    title: "Candidates",
+    links: [
+      { name: "Indian Candidates", href: "/about", type: "link" },
+      { name: "Foreign Candidates", href: "/mission-vision", type: "link" },
+    ],
+  },
+   {
+    title: "Activities",
+    links: [
+      { name: "Gallery", href: "/about", type: "link" },
+      { name: "Videos", href: "/mission-vision", type: "link" },
+      { name: "News", href: "/mission-vision", type: "link" },
+      { name: "Environment", href: "/mission-vision", type: "link" },
+      { name: "Benefits", href: "/mission-vision", type: "link" },
+      { name: "Faqs", href: "/mission-vision", type: "link" },
+    ],
+  },
 ];
