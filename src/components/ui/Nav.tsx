@@ -24,9 +24,9 @@ const Nav = () => {
     <>
       {/* Top Navbar */}
       <nav className="sticky top-0 bg-[#14AEE4] text-white shadow z-[1100]">
-        <div className="flex justify-between items-center px-4 lg:px-8">
-          <div className="bg-white sm:p-2 p-1 flex items-center gap-2 lg:hidden">
-            <Image height={10} width={50} className="object-contain h-auto sm:w-[70px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
+        <div className="flex justify-between items-center px-2 py-2 lg:py-0 sm:px-4 lg:px-8">
+          <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
+            <Image height={10} width={50} className="object-contain h-auto w-[70px] sm:w-[80px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
             <div>
                <div>
             <h1 className="text-[10px] font-nunito font-semibold text-blue">
@@ -115,15 +115,36 @@ const Nav = () => {
 
               </li>
             ))}
+
+              <li>
+              <Link
+                href="/contact"
+                className={`pb-1 ${
+                  isLinkActive("/contact")
+                    ? "border-b-2 border-white text-white"
+                    : "text-white"
+                } hover:text-white transition`}
+              >
+                Contact Us
+              </Link>
+            </li>
           </ul>
+          
 
           {/* Right side - Toggle (always visible) */}
           <button
             onClick={() => setOpenSidebar(true)}
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none lg:hidden"
           >
             <HiOutlineMenu size={30} />
           </button>
+         <a href="">
+           <button
+            className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none hidden lg:inline"
+          >
+            Pay Fees
+          </button>
+         </a>
         </div>
       </nav>
 
