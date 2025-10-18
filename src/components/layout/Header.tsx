@@ -22,7 +22,7 @@ const Header = () => {
       <HeaderTop />
 
       {/* Logo + Title Section */}
-      <div className="bg-light py-4">
+      <div className="bg-light py-4 hidden lg:block">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
           <Image
             className="max-w-[100px]"

@@ -9,6 +9,7 @@ import {
   HiChevronDown,
   HiChevronUp,
 } from "react-icons/hi";
+import Image from "next/image";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -23,7 +24,20 @@ const Nav = () => {
     <>
       {/* Top Navbar */}
       <nav className="sticky top-0 bg-[#14AEE4] text-white shadow z-[1100]">
-        <div className="flex justify-between items-center px-4  lg:px-8">
+        <div className="flex justify-between items-center px-4 lg:px-8">
+          <div className="bg-white sm:p-2 p-1 flex items-center gap-2 lg:hidden">
+            <Image height={10} width={50} className="object-contain h-auto sm:w-[70px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
+            <div>
+               <div>
+            <h1 className="text-[10px] font-nunito font-semibold text-blue">
+              MSPL - PERSONNEL CERTIFICATION BODY
+            </h1>
+            <h3 className="text-[8px] text-black lg:text-base font-semibold">
+              Approved By:(YCB) , (Ministry Of Ayush, Govt Of India)
+            </h3>
+          </div>
+            </div>
+          </div>
           {/* Left Side - Desktop Menu */}
           <ul className="hidden lg:flex items-center gap-6">
             <li>
@@ -108,7 +122,7 @@ const Nav = () => {
             onClick={() => setOpenSidebar(true)}
             className="text-white focus:outline-none"
           >
-            <HiOutlineMenu size={26} />
+            <HiOutlineMenu size={30} />
           </button>
         </div>
       </nav>

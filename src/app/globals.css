@@ -73,7 +73,7 @@ body {
 
 .dropdownScrollbar.dropdownScrollbar {
   scrollbar-width: thin; 
-  scrollbar-color: #6094e8ff #f0f0f0; 
+  scrollbar-color: #14AEE4 #f0f0f0; 
 }
 .dropdownScrollbar.dropdownScrollbar::-webkit-scrollbar {
   width: 6px;
@@ -82,7 +82,7 @@ body {
   background: #f0f0f0;
 }
 .dropdownScrollbar .dropdownScrollbar::-webkit-scrollbar-thumb {
-  background-color: #3b82f6;
+  background-color: #14AEE4;
   border-radius: 3px;
 }
 
