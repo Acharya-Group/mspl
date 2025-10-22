@@ -33,7 +33,7 @@ const Header = () => {
           <h1 className="text-xl lg:text-4xl font-nunito font-semibold text-blue">
             MSPL - PERSONNEL CERTIFICATION BODY
           </h1>
-          <h3 className="text-sm lg:text-base font-semibold">
+          <h3 className="text-sm lg:text-base font-semibold text-green">
             Approved By: Yoga Certification Board, (Ministry Of Ayush, Govt Of India)
           </h3>
         </div>

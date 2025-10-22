@@ -7,7 +7,7 @@ interface ParaProps {
 }
 
 const Para: React.FC<ParaProps> = ({ content, className }) => {
-  return <p className={`text-[15px] ${className || ""}`}>{content}</p>;
+  return <p className={`text-sm sm:text-[15px] ${className || ""}`}>{content}</p>;
 };
 
 export default Para;

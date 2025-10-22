@@ -20,7 +20,7 @@ const YcbSliderOrWeb = () => {
   const marqueeContent = [];
   for (let i = 0; i < marqueeItems; i++) {
     marqueeContent.push(
-      <span key={`intro-${i}`} className="text-xs ps-1 whitespace-nowrap font-semibold">
+      <span key={`intro-${i}`} className="sm:text-xl text-lg ps-1 whitespace-nowrap font-semibold">
         {introText}
       </span>
     );
@@ -28,7 +28,7 @@ const YcbSliderOrWeb = () => {
     // Add dates immediately after intro text
     examDates.forEach((date, idx) => {
       marqueeContent.push(
-        <span key={`date-${i}-${idx}`} className="ps-1 text-xs font-bold text-primary whitespace-nowrap">
+        <span key={`date-${i}-${idx}`} className="ps-1 sm:text-xl text-lg font-bold text-primary whitespace-nowrap">
           {date}
         </span>
       );
@@ -36,7 +36,7 @@ const YcbSliderOrWeb = () => {
 
     // Add the rest of the text
     marqueeContent.push(
-      <span key={`rest-${i}`} className="text-xs ps-2 whitespace-nowrap">
+      <span key={`rest-${i}`} className="sm:text-xl text-lg ps-2 whitespace-nowrap">
         {restText}
       </span>
     );
@@ -62,7 +62,7 @@ const YcbSliderOrWeb = () => {
 
       {/* Marquee */}
       <div className="w-full bg-gray-600 text-white py-1 overflow-hidden relative">
-        <div className="flex gap-3 whitespace-nowrap animate-[marquee_10s_linear_infinite]">
+        <div className="flex gap-3 whitespace-nowrap animate-[marquee_6s_linear_infinite]">
           {marqueeContent}
           {marqueeContent} 
         </div>

@@ -1,5 +1,7 @@
 import AboutUs from "@/components/ui/AboutUs";
+import Certification from "@/components/ui/Certification";
 import Hero from "@/components/ui/Hero";
+import SuccessRate from "@/components/ui/SuccessRate";
 import YcbSliderOrWeb from "@/components/ui/YcbSliderOrWeb";
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
    <Hero/>
    <YcbSliderOrWeb/>
    <AboutUs/>
+   <Certification/>
+   <SuccessRate/>
    </>
   );
 }
