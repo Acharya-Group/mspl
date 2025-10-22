@@ -35,7 +35,8 @@ body {
 .container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding-left:  1rem;
+  padding-right:  1rem;
 }
 
 @layer utilities {
@@ -86,4 +87,43 @@ body {
   border-radius: 3px;
 }
 
+.commonShadow{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
 
+/* heading animation */
+.gradientText {
+  background: linear-gradient(270deg, #3b82f6, #10b981, #3b82f6); /* blue → green → blue */
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* button animation */
+@keyframes gradientChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animate {
+  background: linear-gradient(90deg, #3b82f6, #8FC740, #3b82f6); 
+  background-size: 200% 200%;
+  animation: gradientChange 4s ease infinite;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.gradient-animate:hover {
+  transform: scale(1.05);
+}

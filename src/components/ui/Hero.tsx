@@ -27,7 +27,7 @@ const sliders =[
 ]
 
   return (
-    <div className="relative w-full max-w-[1920px] mx-auto min-h-[160px] sm:min-h-[300px] lg:min-h-[499px] max-h-[500px]">
+    <div className="relative w-full max-w-[1920px] mx-auto min-h-[160px] sm:min-h-[300px] lg:min-h-[399px] max-h-[400px]">
       {/* Swiper */}
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -42,19 +42,19 @@ const sliders =[
           nextEl: ".hero-next",
           prevEl: ".hero-prev",
         }}
-        className="hero_slider w-full h-[160px] sm:h-[300px] min-[400px]:h-[220px] lg:min-h-[500px]"
+        className="hero_slider w-full h-[160px] sm:h-[300px] min-[400px]:h-[220px] lg:min-h-[400px]"
       >
         {sliders.map((slide, index) => (
           <SwiperSlide key={index}>
             <Link
               href={slide.link}
-              className="block w-full h-[160px] sm:h-[300px] lg:h-[500px] min-[400px]:h-[220px]"
+              className="block w-full h-[160px] sm:h-[300px] lg:h-[400px] min-[400px]:h-[220px]"
             >
               <Image
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
                 width={1600}
-                height={500}
+                height={400}
                 unoptimized
                 priority={index === 0}
                 className="w-full h-full object-cover bg-center"
@@ -73,10 +73,11 @@ const sliders =[
       </button>
       <button
         aria-label="right arrow"
-        className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white d:h-10 md:w-10 sm:h-8 sm:w-8 h-4 w-4 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
+        className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-4 w-4 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
       >
         <FiArrowRight />
       </button>
+
     </div>
   );
 };

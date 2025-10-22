@@ -22,24 +22,30 @@ const Nav = () => {
 
   return (
     <>
-      {/* Top Navbar */}
-      <nav className="sticky top-0 bg-[#14AEE4] text-white shadow z-[1100]">
-        <div className="container !px-0">
-          <div className="flex justify-between items-center px-2 py-2 lg:py-0 sm:px-4 lg:px-8">
+      {/* Sticky Navbar */}
+      <nav className="bg-[#14AEE4] text-white shadow">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center py-2 lg:py-0">
+            {/* Logo for mobile */}
             <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
-              <Image height={10} width={50} className="object-contain h-auto w-[70px] sm:w-[80px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
+              <Image
+                height={10}
+                width={50}
+                className="object-contain h-auto w-[70px] sm:w-[80px] md:w-[80px]"
+                src="/images/group-logo.png"
+                alt="logo"
+              />
               <div>
-                 <div>
-              <h1 className="text-[10px] font-nunito font-semibold text-blue">
-                MSPL - PERSONNEL CERTIFICATION BODY
-              </h1>
-              <h3 className="text-[8px] text-black lg:text-base font-semibold">
-                Approved By:(YCB) , (Ministry Of Ayush, Govt Of India)
-              </h3>
-            </div>
+                <h1 className="text-[10px] font-nunito font-semibold text-blue">
+                  MSPL - PERSONNEL CERTIFICATION BODY
+                </h1>
+                <h3 className="text-[8px] text-black lg:text-base font-semibold">
+                  Approved By: (YCB), (Ministry Of Ayush, Govt Of India)
+                </h3>
               </div>
             </div>
-            {/* Left Side - Desktop Menu */}
+
+            {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-6">
               <li>
                 <Link
@@ -53,6 +59,7 @@ const Nav = () => {
                   Home
                 </Link>
               </li>
+
               {navDropdowns.map((dropdown, index) => (
                 <li
                   key={index}
@@ -75,44 +82,44 @@ const Nav = () => {
                       }`}
                     />
                   </button>
+
                   {/* Dropdown menu */}
-                {activeDropdown === index && (
-            <div className="absolute left-0 top-full w-52 z-[1200] max-h-[220px] overflow-y-auto dropdownScrollbar">
-              <div className="w-full">
-                {dropdown.links.map((link, i) =>
-          link.type === "submenu" ? (
-            <div key={i}>
-              <div className="px-4 pt-2 bg-light font-semibold text-gray-700 cursor-default">
-                {link.name}
-              </div>
-              {link.sublinks?.map((sublink, j) => (
-                <Link
-                  key={j}
-                  href={sublink.href ?? "#"}
-                  className="block px-4 bg-light py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
-                >
-                  {sublink.name}
-                </Link>
-              ))}
-            </div>
-          ) : (
-           <Link
-            key={i}
-            href={link.href ?? "#"}
-            className="relative block group bg-blue-300 px-4 py-2 text-sm text-primary border-b border-primary
-              before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:bg-primary
-              before:content-[''] before:transition-all before:z-0 hover:before:w-full"
-          >
-            <span className="relative !text-primary z-[10] group-hover:!text-white">{link.name}</span>
-          </Link>
-          )
-                )}
-              </div>
-            </div>
-          )}
+                  {activeDropdown === index && (
+                    <div className="absolute left-0 top-full w-52 z-[1200] max-h-[220px] overflow-y-auto dropdownScrollbar bg-white rounded shadow-md">
+                      <div className="w-full">
+                        {dropdown.links.map((link, i) =>
+                          link.type === "submenu" ? (
+                            <div key={i}>
+                              <div className="px-4 pt-2 font-semibold text-gray-700 cursor-default">
+                                {link.name}
+                              </div>
+                              {link.sublinks?.map((sublink, j) => (
+                                <Link
+                                  key={j}
+                                  href={sublink.href ?? "#"}
+                                  className="block px-4 py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
+                                >
+                                  {sublink.name}
+                                </Link>
+                              ))}
+                            </div>
+                          ) : (
+                            <Link
+                              key={i}
+                              href={link.href ?? "#"}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white"
+                            >
+                              {link.name}
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </li>
               ))}
-                <li>
+
+              <li>
                 <Link
                   href="/contact"
                   className={`pb-1 ${
@@ -125,26 +132,26 @@ const Nav = () => {
                 </Link>
               </li>
             </ul>
-          
-            {/* Right side - Toggle (always visible) */}
+
+            {/* Mobile Toggle */}
             <button
               onClick={() => setOpenSidebar(true)}
               className="text-white focus:outline-none lg:hidden"
             >
               <HiOutlineMenu size={30} />
             </button>
-           <Link className="hidden lg:inline" href="/">
-             <button
-              className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none"
-            >
-              Pay Fees
-            </button>
-           </Link>
+
+            {/* Pay Fees Button */}
+            <Link className="hidden lg:inline" href="/">
+              <button className="text-white uppercase bg-green py-3 px-2 focus:outline-none">
+                Pay Fees
+              </button>
+            </Link>
           </div>
         </div>
       </nav>
 
-      {/* Sidebar Overlay */}
+      {/* Sidebar */}
       <div
         className={`fixed inset-0 bg-black/40 z-[1200] transition-opacity duration-300 ${
           openSidebar ? "opacity-100 visible" : "opacity-0 invisible"
@@ -152,13 +159,11 @@ const Nav = () => {
         onClick={() => setOpenSidebar(false)}
       ></div>
 
-      {/* Sidebar Drawer */}
       <div
         className={`fixed top-0 left-0 h-full w-[300px] bg-white shadow-lg z-[1300] transform transition-transform duration-300 ${
           openSidebar ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Sidebar Header */}
         <div className="flex justify-between items-center px-4 py-3 border-b">
           <span className="text-gray-800 text-lg font-semibold">Menu</span>
           <button onClick={() => setOpenSidebar(false)}>
@@ -166,7 +171,6 @@ const Nav = () => {
           </button>
         </div>
 
-        {/* Sidebar Content */}
         <ul className="flex flex-col">
           <li>
             <Link
@@ -198,7 +202,6 @@ const Nav = () => {
                 )}
               </button>
 
-              {/* Dropdown Content */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
                   openDropdown === index ? "max-h-[500px]" : "max-h-0"
