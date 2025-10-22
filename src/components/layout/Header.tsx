@@ -2,7 +2,6 @@
 import React from "react";
 import HeaderTop from "../ui/HeaderTop";
 import Nav from "../ui/Nav";
-import { MdOutlineWarningAmber } from "react-icons/md";
 import Image from "next/image";
 
 const Header = () => {
