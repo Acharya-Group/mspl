@@ -24,127 +24,123 @@ const Nav = () => {
     <>
       {/* Top Navbar */}
       <nav className="sticky top-0 bg-[#14AEE4] text-white shadow z-[1100]">
-        <div className="flex justify-between items-center px-2 py-2 lg:py-0 sm:px-4 lg:px-8">
-          <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
-            <Image height={10} width={50} className="object-contain h-auto w-[70px] sm:w-[80px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
-            <div>
-               <div>
-            <h1 className="text-[10px] font-nunito font-semibold text-blue">
-              MSPL - PERSONNEL CERTIFICATION BODY
-            </h1>
-            <h3 className="text-[8px] text-black lg:text-base font-semibold">
-              Approved By:(YCB) , (Ministry Of Ayush, Govt Of India)
-            </h3>
-          </div>
+        <div className="container !px-0">
+          <div className="flex justify-between items-center px-2 py-2 lg:py-0 sm:px-4 lg:px-8">
+            <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
+              <Image height={10} width={50} className="object-contain h-auto w-[70px] sm:w-[80px] md:w-[80px]" src="/images/group-logo.png" alt="logo"/>
+              <div>
+                 <div>
+              <h1 className="text-[10px] font-nunito font-semibold text-blue">
+                MSPL - PERSONNEL CERTIFICATION BODY
+              </h1>
+              <h3 className="text-[8px] text-black lg:text-base font-semibold">
+                Approved By:(YCB) , (Ministry Of Ayush, Govt Of India)
+              </h3>
             </div>
-          </div>
-          {/* Left Side - Desktop Menu */}
-          <ul className="hidden lg:flex items-center gap-6">
-            <li>
-              <Link
-                href="/"
-                className={`pb-1 ${
-                  isLinkActive("/")
-                    ? "border-b-2 border-white text-white"
-                    : "text-white/90"
-                } hover:text-white transition`}
-              >
-                Home
-              </Link>
-            </li>
-
-            {navDropdowns.map((dropdown, index) => (
-              <li
-                key={index}
-                className="relative group py-3"
-                onMouseEnter={() => setActiveDropdown(index)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  className="flex items-center gap-1 text-white font-medium"
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === index ? null : index
-                    )
-                  }
-                >
-                  {dropdown.title}
-                  <HiChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      activeDropdown === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {/* Dropdown menu */}
-              {activeDropdown === index && (
-  <div className="absolute left-0 top-full w-52 z-[1200] max-h-[220px] overflow-y-auto dropdownScrollbar">
-    <div className="w-full">
-      {dropdown.links.map((link, i) =>
-        link.type === "submenu" ? (
-          <div key={i}>
-            <div className="px-4 pt-2 bg-light font-semibold text-gray-700 cursor-default">
-              {link.name}
+              </div>
             </div>
-            {link.sublinks?.map((sublink, j) => (
-              <Link
-                key={j}
-                href={sublink.href ?? "#"}
-                className="block px-4 bg-light py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
-              >
-                {sublink.name}
-              </Link>
-            ))}
-          </div>
-        ) : (
- <Link
-  key={i}
-  href={link.href ?? "#"}
-  className="relative block group bg-blue-300 px-4 py-2 text-sm text-primary border-b border-primary
-    before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:bg-primary
-    before:content-[''] before:transition-all before:z-0 hover:before:w-full"
->
-  <span className="relative !text-primary z-[10] group-hover:!text-white">{link.name}</span>
-</Link>
-
-        )
-      )}
-    </div>
-  </div>
-)}
-
-              </li>
-            ))}
-
+            {/* Left Side - Desktop Menu */}
+            <ul className="hidden lg:flex items-center gap-6">
               <li>
-              <Link
-                href="/contact"
-                className={`pb-1 ${
-                  isLinkActive("/contact")
-                    ? "border-b-2 border-white text-white"
-                    : "text-white"
-                } hover:text-white transition`}
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+                <Link
+                  href="/"
+                  className={`pb-1 ${
+                    isLinkActive("/")
+                      ? "border-b-2 border-white text-white"
+                      : "text-white/90"
+                  } hover:text-white transition`}
+                >
+                  Home
+                </Link>
+              </li>
+              {navDropdowns.map((dropdown, index) => (
+                <li
+                  key={index}
+                  className="relative group py-3"
+                  onMouseEnter={() => setActiveDropdown(index)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button
+                    className="flex items-center gap-1 text-white font-medium"
+                    onClick={() =>
+                      setActiveDropdown(
+                        activeDropdown === index ? null : index
+                      )
+                    }
+                  >
+                    {dropdown.title}
+                    <HiChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        activeDropdown === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {/* Dropdown menu */}
+                {activeDropdown === index && (
+            <div className="absolute left-0 top-full w-52 z-[1200] max-h-[220px] overflow-y-auto dropdownScrollbar">
+              <div className="w-full">
+                {dropdown.links.map((link, i) =>
+          link.type === "submenu" ? (
+            <div key={i}>
+              <div className="px-4 pt-2 bg-light font-semibold text-gray-700 cursor-default">
+                {link.name}
+              </div>
+              {link.sublinks?.map((sublink, j) => (
+                <Link
+                  key={j}
+                  href={sublink.href ?? "#"}
+                  className="block px-4 bg-light py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
+                >
+                  {sublink.name}
+                </Link>
+              ))}
+            </div>
+          ) : (
+           <Link
+            key={i}
+            href={link.href ?? "#"}
+            className="relative block group bg-blue-300 px-4 py-2 text-sm text-primary border-b border-primary
+              before:absolute before:top-0 before:left-0 before:h-full before:w-[4px] before:bg-primary
+              before:content-[''] before:transition-all before:z-0 hover:before:w-full"
+          >
+            <span className="relative !text-primary z-[10] group-hover:!text-white">{link.name}</span>
+          </Link>
+          )
+                )}
+              </div>
+            </div>
+          )}
+                </li>
+              ))}
+                <li>
+                <Link
+                  href="/contact"
+                  className={`pb-1 ${
+                    isLinkActive("/contact")
+                      ? "border-b-2 border-white text-white"
+                      : "text-white"
+                  } hover:text-white transition`}
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
           
-
-          {/* Right side - Toggle (always visible) */}
-          <button
-            onClick={() => setOpenSidebar(true)}
-            className="text-white focus:outline-none lg:hidden"
-          >
-            <HiOutlineMenu size={30} />
-          </button>
-         <a href="">
-           <button
-            className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none hidden lg:inline"
-          >
-            Pay Fees
-          </button>
-         </a>
+            {/* Right side - Toggle (always visible) */}
+            <button
+              onClick={() => setOpenSidebar(true)}
+              className="text-white focus:outline-none lg:hidden"
+            >
+              <HiOutlineMenu size={30} />
+            </button>
+           <a className="hidden lg:inline" href="/">
+             <button
+              className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none"
+            >
+              Pay Fees
+            </button>
+           </a>
+          </div>
         </div>
       </nav>
 
