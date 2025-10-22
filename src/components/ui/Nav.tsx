@@ -133,13 +133,13 @@ const Nav = () => {
             >
               <HiOutlineMenu size={30} />
             </button>
-           <a className="hidden lg:inline" href="/">
+           <Link className="hidden lg:inline" href="/">
              <button
               className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none"
             >
               Pay Fees
             </button>
-           </a>
+           </Link>
           </div>
         </div>
       </nav>
