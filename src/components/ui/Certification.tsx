@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
-import { FaLeaf, FaHeartbeat, FaHandsHelping, FaChalkboardTeacher, FaYinYang, FaSpa } from "react-icons/fa";
+import { FaHeartbeat, FaHandsHelping, FaChalkboardTeacher, FaYinYang, FaSpa } from "react-icons/fa";
 import Button from "../common/Button";
 import Link from "next/link";
 import SubHeading from "../common/SubHeading";
+import { GiLotusFlower } from "react-icons/gi";
 
 const cards = [
-  {
-    title: "Yoga Volunteer (YV)",
-    desc: "Assist in promoting wellness and conduct Yoga sessions in parks, societies, and workplaces. Help with Yoga-related community programs.",
-    icon: <FaLeaf className="text-green-500 text-5xl mb-4" />,
-  },
+{
+  title: "Yoga Therapist (AYTh)",
+  desc: "Guide individuals to improve physical and mental well-being through personalized yoga sessions, community programs, and wellness initiatives.",
+  icon: <GiLotusFlower className="text-green-500 text-5xl mb-4" />,
+}
+,
   {
     title: "Yoga Protocol Instructor (YPI)",
     desc: "Teach basic Yoga protocols for prevention of diseases and promotion of health. Conduct community sessions and events.",

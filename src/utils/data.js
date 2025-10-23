@@ -1,3 +1,6 @@
+import { FaWhatsapp } from "react-icons/fa";
+import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
+
 export const navDropdowns = [
   {
     title: "About Us",
@@ -158,6 +161,46 @@ export const faqs = [
     answer:
       "You can reach us through our official website’s contact form, email us at info@msplyogacertification.com, or call our support team for registration and training-related queries.",
   },
+];
+
+
+
+export const socialLinks = [
+  { href: "https://www.facebook.com/myAchariya", icon: FiFacebook },
+  { href: "https://x.com/Achariyagroup", icon: FiTwitter },
+  { href: "https://wa.me/918930300615", icon: FaWhatsapp },
+  { href: "https://www.instagram.com/Achariyagroup", icon: FiInstagram },
+];
+
+export const pages = [
+  { title: "Home", url: "/" }, 
+  { title: "Home", url: "/" }, 
+  { title: "Home", url: "/" }, 
+  { title: "Home", url: "/" }, 
+  { title: "Home", url: "/" }, 
+];
+
+export const projectsLink = [
+  { title: "demo", url: "/" },
+  { title: "demo", url: "/" },
+  { title: "demo", url: "/" },
+  { title: "demo", url: "/" },
+  { title: "demo", url: "/" },
+];
+
+export const downloads = [
+  { title: "demo", url: "/downloads/application-form.pdf" },
+  { title: "demo", url: "/downloads/application-form.pdf" },
+  { title: "demo", url: "/downloads/application-form.pdf" },
+  { title: "demo", url: "/downloads/application-form.pdf" },
+  { title: "demo", url: "/downloads/application-form.pdf" },
+  
+];
+
+export const support = [
+  { title: "+91 893-030-0615", url: "tel:+918930300615", type: "tel" },
+  { title: "+91 999-177-7717", url: "tel:+919991777717", type: "tel" },
+  { title: "yogacertificationbody@gmail.com", url: "mailto:yogacertificationbody@gmail.com", type: "email" },
 ];
 
 

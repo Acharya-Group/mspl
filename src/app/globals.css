@@ -39,6 +39,10 @@ body {
   padding-right:  1rem;
 }
 
+.font_medium{
+  font-weight: 500 !important;
+}
+
 @layer utilities {
   /* Background color pulse animation */
   @keyframes bg-pulse {
