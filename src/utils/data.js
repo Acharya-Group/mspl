@@ -109,3 +109,55 @@ export const navDropdowns = [
     ],
   },
 ];
+
+
+
+export const faqs = [
+  {
+    question: "What is MSPL Yoga Certification?",
+    answer:
+      "MSPL Yoga Certification is an authorized platform that conducts Yoga Certification Board (YCB) verified exams for yoga professionals, trainers, and practitioners. We ensure that every candidate receives a nationally recognized yoga certification approved by the Ministry of AYUSH, Government of India.",
+  },
+  {
+    question: "What is YCB and why is it important?",
+    answer:
+      "The Yoga Certification Board (YCB) is established under the Ministry of AYUSH, Government of India, to promote and standardize yoga education and certification. Being YCB-certified ensures credibility, professional recognition, and eligibility for teaching yoga in India and abroad.",
+  },
+  {
+    question: "Who can apply for the MSPL Yoga Certification exam?",
+    answer:
+      "Anyone interested in pursuing yoga professionally or deepening their understanding of yoga can apply. We offer certification exams for different levels — Yoga Volunteer, Yoga Protocol Instructor, Yoga Wellness Instructor, Yoga Teacher, and Yoga Therapist.",
+  },
+  {
+    question: "How do I register for the YCB Yoga exam through MSPL?",
+    answer:
+      "You can register directly through our official website by filling out the online application form. After submission, our team will verify your details and guide you through the payment, training, and exam process. You can also contact our support team for assistance.",
+  },
+  {
+    question: "What documents are required for registration?",
+    answer:
+      "You will need a valid ID proof (Aadhaar, PAN, or Passport), a recent photograph, educational qualification documents, and proof of yoga training (if applicable). Our support team will guide you through the document upload process.",
+  },
+  {
+    question: "What are the levels of YCB certification available?",
+    answer:
+      "MSPL conducts exams for multiple YCB levels, including Yoga Volunteer (Level 1), Yoga Protocol Instructor (Level 2), Yoga Wellness Instructor (Level 3), Yoga Teacher and Evaluator (Level 4), and Yoga Therapist (Level 5).",
+  },
+  {
+    question: "Is the certification recognized nationally and internationally?",
+    answer:
+      "Yes, YCB certifications issued through MSPL are recognized by the Ministry of AYUSH, Government of India, and accepted globally, helping you build a professional yoga career both in India and abroad.",
+  },
+  {
+    question: "Do you provide training before the certification exam?",
+    answer:
+      "Yes, MSPL offers comprehensive training programs by certified yoga instructors to prepare candidates for YCB exams. The training includes theory, practical sessions, and mock tests to ensure you are fully ready for the certification.",
+  },
+  {
+    question: "How can I contact MSPL for more information?",
+    answer:
+      "You can reach us through our official website’s contact form, email us at info@msplyogacertification.com, or call our support team for registration and training-related queries.",
+  },
+];
+
+

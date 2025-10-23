@@ -3,6 +3,7 @@ import React from "react";
 import { FaLeaf, FaHeartbeat, FaHandsHelping, FaChalkboardTeacher, FaYinYang, FaSpa } from "react-icons/fa";
 import Button from "../common/Button";
 import Link from "next/link";
+import SubHeading from "../common/SubHeading";
 
 const cards = [
   {
@@ -41,9 +42,6 @@ const Certification = () => {
   return (
     <section className="bg-blue-50">
         <div className="container py-10 lg:py-12">
-          <h2 className="text-3xl font-bold text-center mb-4 gradientText">
-            Yoga Certification Programs
-          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cards.map((card, index) => (
               <div
