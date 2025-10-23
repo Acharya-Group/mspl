@@ -54,7 +54,7 @@ const Testimonial = () => {
                         {testimonials.map((t, i) => (
                             <SwiperSlide key={i}>
                                 <div
-                                    className={`p-6 my-4 rounded-2xl bg-primary shadow-lg  h-60 flex flex-col justify-between items-center transform transition-transform duration-500
+                                    className={`p-6 my-4 rounded-2xl bg-primary h-60 flex flex-col justify-between items-center transform transition-transform duration-500
     ${activeIndex === i
                                             ? "scale-105 mx-4"
                                             : "scale-90"

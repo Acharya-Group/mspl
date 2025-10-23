@@ -86,7 +86,10 @@ const Blog = () => {
                             speed={1000}
                             loop={true}
                             pagination={{ el: ".projects-pagination", clickable: true }}
-                            navigation={{ nextEl: ".project-next", prevEl: ".project-prev" }}
+                             navigation={{
+          nextEl: ".hero-next",
+          prevEl: ".hero-prev",
+        }}
                             breakpoints={{
                                 0: { slidesPerView: 1 },
                                 540: { slidesPerView: 2 },
@@ -123,18 +126,18 @@ const Blog = () => {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                        <button
-                            aria-label="left arrow"
-                            className="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
-                        >
-                            <FiArrowLeft />
-                        </button>
-                        <button
-                            aria-label="right arrow"
-                            className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
-                        >
-                            <FiArrowRight />
-                        </button>
+                         <button
+                               aria-label="left arrow"
+                               className="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
+                             >
+                               <FiArrowLeft />
+                             </button>
+                             <button
+                               aria-label="right arrow"
+                               className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6   flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
+                             >
+                               <FiArrowRight />
+                             </button>
                     </div>
                     <Link className="flex justify-center pt-4 w-full md:hidden" href={"/blogs"}><Button content="Read More" /></Link>
                 </div>

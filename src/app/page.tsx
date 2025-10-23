@@ -1,6 +1,7 @@
 import AboutUs from "@/components/ui/AboutUs";
 import Blog from "@/components/ui/Blog";
 import Certification from "@/components/ui/Certification";
+import ContactForm from "@/components/ui/ContactForm";
 import Faqs from "@/components/ui/Faqs";
 import Hero from "@/components/ui/Hero";
 import SuccessRate from "@/components/ui/SuccessRate";
@@ -17,6 +18,7 @@ export default function Home() {
    <SuccessRate/>
    <Faqs/>
    <Testimonial/>
+   <ContactForm/>
    <Blog/>
    </>
   );
