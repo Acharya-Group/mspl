@@ -107,9 +107,12 @@ const Nav = () => {
                             <Link
                               key={i}
                               href={link.href ?? "#"}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary hover:text-white"
+                              className="relative group block px-4 py-2 z-0 text-sm text-gray-700 overflow-hidden 
+  before:content-[''] before:absolute before:top-0 before:left-0 before:h-full 
+  before:w-[2%] before:bg-primary before:transition-all before:duration-500 
+  hover:before:w-full hover:text-white"
                             >
-                              {link.name}
+                              <span className="group-hover:!text-black z-10 relative">{link.name}</span>
                             </Link>
                           )
                         )}
