@@ -21,7 +21,7 @@ const Header = () => {
       <HeaderTop />
 
       {/* Logo Section */}
-      <div className="py-4 hidden lg:flex justify-between items-center container mx-auto">
+      <div className="py-4 hidden lg:flex justify-between items-center container mx-auto bg-white">
         <Image
           className="max-w-[100px]"
           height={170}

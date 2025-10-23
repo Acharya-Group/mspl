@@ -1,10 +1,19 @@
 export const ROUTES = {
   HOME: "/",
-  LOGIN: "/auth/login",
-  REGISTER: "/auth/register",
-  DASHBOARD: "/dashboard",
-  PROFILE: "/dashboard/profile",
-  PRODUCTS: "/dashboard/products",
-  SETTINGS: "/dashboard/settings",
+  ABOUT_US: "/about",
+  MISSION_VISION: "/mission-vision",
+  ABOUT_YCB: "/about-ycb",
+  ABOUT_AYUSH: "/about-ayush",
+  REGISTRATION_FORM: "/registration",
+  PRE_MEDICAL_FORM: "/pre-medical",
+  RESULT: "/result",
+  COMPLAINTS_APPEALS: "/complaintsAndAppeals",
+  GALLERY: "/gallery",
+  VIDEOS: "/videos",
+  NEWS: "/news",
+  ENVIRONMENT: "/environment",
+  BENEFITS: "/benefits",
+  FAQS: "/faqs",
+  YT_SYLLABUS: "/demo",
+  CANDIDATES:"/candidate"
 };
-

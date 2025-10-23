@@ -1,7 +1,13 @@
+// 1. Define types
+export type NavLink = {
+  name: string;
+  href?: string;      
+  type: "link" | "download" | "submenu";
+  sublinks?: NavLink[];
+};
 
-
-
-// export interface ParaProps {
-//   content: string;
-//   className?: string; 
-// }
+// 2. Define dropdown structure
+export type NavDropdown = {
+  title: string;
+  links: NavLink[];
+};

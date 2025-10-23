@@ -3,26 +3,16 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import {
-  pages,
-  projectsLink,
-  downloads,
+  footerLinks,
   socialLinks,
-  support,
 } from "@/utils/data";
 
 const Footer = () => {
-  // reusable footer section configuration
-  const footerSections = [
-    { title: "Pages", links: pages },
-    { title: "Projects", links: projectsLink },
-    { title: "Downloads", links: downloads },
-    { title: "Support", links: support },
-  ];
 
   return (
     <footer className="sm:pt-32 sm:mt-32 pt-20 mt-20 relative bg-gray-100">
       {/* Newsletter Section */}
-      <div className="absolute left-1/2 sm:top-[10%] md:top-[12%] lg:top-[18%] -translate-x-1/2 -translate-y-full h-[160px] sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-gradient-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
+      <div className="absolute left-1/2 sm:top-[7%] md:top-[10%] lg:top-[12%] -translate-x-1/2 -translate-y-full h-[160px] sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-gradient-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
         <Image
           src="/images/left-newslatter.svg"
           alt="left-lines"
@@ -56,32 +46,32 @@ const Footer = () => {
 
       {/* Footer Main Content */}
       <div className="container mx-auto px-4 pb-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-6 mt-8 sm:mt-0">
-          {/* Logo & Socials */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-8 mt-8 sm:mt-0">
+          {/* Logo & About Section */}
           <div className="md:col-span-4">
             <Image
               src="/images/mspl-logo.png"
-              alt="Achariya Group Logo"
+              alt="MSPL Logo"
               width={120}
               height={120}
               className="mb-4"
             />
-            <p className="text-sm opacity-75 mb-3">
+            <p className="text-sm text-gray-700 mb-3 leading-relaxed">
               (MSPL- Personnel Certification Body) was established to act as a
               Centre of Excellence in the field of Yoga. As the demand for Yoga
               is increasing rapidly at the global level, the Institute is
               dedicated to promoting holistic wellness.
             </p>
 
-            <p className="font-semibold mb-2">Social Links</p>
-            <ul className="flex gap-4 mt-2">
+            <p className="font-semibold mb-2 text-gray-800">Follow Us</p>
+            <ul className="flex gap-4 mt-3">
               {socialLinks.map(({ href, icon: Icon }, i) => (
                 <li key={i}>
                   <Link
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-8 w-8 rounded-full border border-transparent bg-white hover:border-white bg-gradient-to-r hover:from-primary hover:to-green flex items-center justify-center text-green hover:text-white transition-all duration-300"
+                    className="h-9 w-9 rounded-full bg-gradient-to-br from-primary to-green text-white flex items-center justify-center hover:scale-110 transition-transform duration-300"
                   >
                     <Icon size={18} />
                   </Link>
@@ -90,20 +80,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Dynamic Footer Sections */}
-          {footerSections.map((section, idx) => (
+          {/* Footer Sections (Dynamic Mapping) */}
+          {footerLinks.map((section, idx) => (
             <div key={idx} className="md:col-span-2">
-              <p className="text-lg font-semibold mb-3">{section.title}</p>
+              <p className="text-lg font-semibold mb-3 text-gray-800">
+                {section.title}
+              </p>
               <ul className="space-y-2 text-sm">
                 {section.links.map((item, i) => (
                   <li key={i} className="flex gap-1 items-center group">
-                    <FaArrowRight className="-rotate-45 group-hover:rotate-0 text-black transition-all duration-300 group-hover:text-primary" />
+                    <FaArrowRight className="-rotate-45 text-gray-700 group-hover:rotate-0 group-hover:text-primary transition-all duration-300" />
                     <Link
-                      href={item.url}
-                      target={"_blank"}
-                      className="text-black font_medium transition-all duration-300 opacity-75 group-hover:underline group-hover:text-primary hover:opacity-100"
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : "_self"}
+                      className="text-gray-700 opacity-80 transition-all duration-300 group-hover:text-primary group-hover:underline"
                     >
-                      {item.title}
+                      {item.name}
                     </Link>
                   </li>
                 ))}

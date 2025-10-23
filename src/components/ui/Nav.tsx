@@ -239,7 +239,7 @@ const Nav = () => {
                             {link.sublinks?.map((sublink, j) => (
                               <li key={j}>
                                 <Link
-                                  href={sublink.href}
+                                  href={sublink.href ?? "#"}
                                   className="block px-8 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#14AEE4]"
                                   onClick={() => setOpenSidebar(false)}
                                 >
