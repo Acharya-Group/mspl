@@ -6,7 +6,7 @@ import React from "react";
   className?: string; 
 }
 const SubHeading: React.FC<SubHeadingProps> = ({ content, className }) => {
-  return <h2 className={`text-2xl lg:text-3xl font-semibold gradientText ${className || ""}`}>{content}</h2>;
+  return <h2 className={`text-2xl uppercase lg:text-3xl font-semibold gradientText ${className || ""}`}>{content}</h2>;
 };
 
 export default SubHeading;

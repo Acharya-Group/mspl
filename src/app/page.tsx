@@ -1,4 +1,5 @@
 import AboutUs from "@/components/ui/AboutUs";
+import Blog from "@/components/ui/Blog";
 import Certification from "@/components/ui/Certification";
 import Faqs from "@/components/ui/Faqs";
 import Hero from "@/components/ui/Hero";
@@ -16,6 +17,7 @@ export default function Home() {
    <SuccessRate/>
    <Faqs/>
    <Testimonial/>
+   <Blog/>
    </>
   );
 }

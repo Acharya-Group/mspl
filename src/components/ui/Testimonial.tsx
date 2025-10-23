@@ -28,7 +28,7 @@ const Testimonial = () => {
         <section className="lg:py-12 py-10 relative">
             <div className="container mx-auto px-4">
                 <SubHeading
-                    content="What Our Students Say"
+                    content="What Our Candidates Say"
                     className="text-center mb-4"
                 />
 

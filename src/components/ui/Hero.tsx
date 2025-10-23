@@ -73,7 +73,7 @@ const sliders =[
       </button>
       <button
         aria-label="right arrow"
-        className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6 flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
+        className="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-green p-1 sm:p-3 rounded-full shadow text-white md:h-10 md:w-10 sm:h-8 sm:w-8 h-6 w-6   flex justify-center items-center cursor-pointer hover:bg-primary transition-all duration-300"
       >
         <FiArrowRight />
       </button>
