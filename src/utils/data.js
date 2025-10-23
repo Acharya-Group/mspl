@@ -166,10 +166,10 @@ export const faqs = [
 
 
 export const socialLinks = [
-  { href: "https://www.facebook.com/myAchariya", icon: FiFacebook },
-  { href: "https://x.com/Achariyagroup", icon: FiTwitter },
-  { href: "https://wa.me/918930300615", icon: FaWhatsapp },
-  { href: "https://www.instagram.com/Achariyagroup", icon: FiInstagram },
+  { href: "https://www.facebook.com/OnlineYogaExam", icon: FiFacebook },
+  { href: "https://twitter.com/MsplYoga", icon: FiTwitter },
+  { href: "http://api.whatsapp.com/send?phone=918930300615", icon: FaWhatsapp },
+  { href: "https://www.instagram.com/msplyoga?igsh=MXA3YXZzY3RrYmk3dg", icon: FiInstagram },
 ];
 
 export const pages = [

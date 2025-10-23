@@ -24,8 +24,8 @@ const Nav = () => {
     <>
       {/* Sticky Navbar */}
       <nav className="bg-[#14AEE4] text-white shadow">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
-          <div className="flex justify-between items-center py-2 lg:py-0">
+        <div className="container mx-auto !px-3 sm:!px-4">
+          <div className="flex justify-between items-center py-4 sm:py-2 lg:py-0">
             {/* Logo for mobile */}
             <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
               <Image

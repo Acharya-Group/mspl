@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
+import { socialLinks } from "@/utils/data";
 
 const ContactForm = () => {
   return (
@@ -19,38 +21,39 @@ const ContactForm = () => {
               <h3 className="text-2xl font-semibold text-teal-500 mb-4">Let's get in touch</h3>
               <p className="text-gray-600 mb-6">
                 Explore our contact options and reach out to us for yoga certification inquiries,
-                health tips, or general questions. Our team is here to guide you.
+                general questions. Our team is here to guide you.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center text-gray-600">
-                  <FaMapMarkerAlt className="text-primary mr-3" />
-                  <p>92 Cherry Drive Uniondale, NY 11553</p>
+                  <FaMapMarkerAlt className="text-primary mr-3 h-[40px] w-[42px]" />
+                  <p>#107, Shiv Vihar AB, Near Maharani Bagh Palace, Lalarpura, Gandhi Path (West), Vaishali Nagar, Jaipur - 302021, Rajasthan INDIA</p>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <FaEnvelope className="text-primary mr-3" />
-                  <p>lorem@ipsum.com</p>
+                  <Link href={"mailto:yogacertificationbody@gmail.com"}>yogacertificationbody@gmail.com</Link>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <FaPhone className="text-primary mr-3" />
-                  <p>123-456-789</p>
+                  <Link href={"tel:91 893-030-0615"}>+91 893-030-0615</Link>
                 </div>
               </div>
               {/* Social Media */}
               <div className="mt-8">
                 <p className="text-gray-600 mb-2">Connect with us:</p>
                 <div className="flex space-x-2">
-                  <a href="#" className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-primary to-green text-white hover:scale-105 transition-transform">
-                    <FaFacebookF />
-                  </a>
-                  <a href="#" className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-primary to-green text-white hover:scale-105 transition-transform">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-primary to-green text-white hover:scale-105 transition-transform">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-primary to-green text-white hover:scale-105 transition-transform">
-                    <FaLinkedinIn />
-                  </a>
+                {
+  socialLinks.map((link, i) => (
+    <a
+      key={i}
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-green-400 to-blue-400 text-white hover:scale-105 transition-transform"
+    >
+      <link.icon className="text-xl" />
+    </a>
+  ))
+}
                 </div>
               </div>
             </div>
