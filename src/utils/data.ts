@@ -16,26 +16,19 @@ export const navDropdowns: NavDropdown[] = [
   {
     title: "Academics",
     links: [
-      { name: "Syllabus for (YV) Yoga Volunteer", href: "files/YV-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YPI) Yoga Protocol Instructor", href: "files/YPI-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YWI) Yoga Wellness Instructor", href: "files/YWI-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YTE) Yoga Teacher and Evaluator", href: "files/YTE-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YM) Yoga Master", href: "files/YM-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (AYT) Assistant Yoga Therapist", href: "files/AYT-Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YT) Yoga Therapist", href: ROUTES.YT_SYLLABUS, type: "link" },
-      { name: "Syllabus for (TYC) Therapeutic Yoga Consultant", href: "files/TYC-Syllabus.pdf", type: "download" },
-      { name: "Primary School Yoga Teacher", href: "files/Primary-School-Yoga.pdf", type: "download" },
-      { name: "Higher Secondary School Yoga & Teacher", href: "files/Higher-School-Yoga.pdf", type: "download" },
-      { name: "Syllabus for Primary School Yoga Certification", href: "files/Primary-Certification.pdf", type: "download" },
-      { name: "Syllabus for Higher School Yoga Certification", href: "files/Higher-Certification.pdf", type: "download" },
-      { name: "Yoga Education Goals", href: "files/Yoga-Education-Goals.pdf", type: "download" },
+      { name: "Syllabus for (YPI) Yoga Protocol Instructor", href: "/pdf/Syllabus-YPI-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YWI) Yoga Wellness Instructor", href: "/pdf/Syllabus-YWI-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YTE) Yoga Teacher and Evaluator", href: "/pdf/Syllabus-YTE-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YM) Yoga Master", href: "/pdf/msplyoga_Yoga_Master_Syllabus.pdf", type: "download" },
+      { name: "Syllabus for (AYT) Assistant Yoga Therapist", href: "/pdf/MSPLYOGA_Assistant_Yoga_Therapist_Syllabus.pdf", type: "download" },
+      { name: "Syllabus for (YT) Yoga Therapist", href: "/pdf/msplyoga_Yoga_Therapist_Syllabus.pdf", type: "download" },
+      { name: "Syllabus for (TYC) Therapeutic Yoga Consultant", href: "/pdf/msplyoga_Therapeutic_Yoga_Consultant_Syllabus.pdf", type: "download" },
+      { name: "Yoga Education Goals", href: "/pdf/Yoga-Education-Goals.pdf", type: "download" },
     ],
   },
   {
     title: "Student Corner",
     links: [
-      { name: "Registration Form", href: ROUTES.REGISTRATION_FORM, type: "link" },
-      { name: "PRE-MEDICAL Form", href: ROUTES.PRE_MEDICAL_FORM, type: "link" },
       {
         name: "Sample Paper",
         type: "submenu",
@@ -50,30 +43,17 @@ export const navDropdowns: NavDropdown[] = [
         name: "Fee Structure",
         type: "submenu",
         sublinks: [
-          { name: "Indian Candidates", href: "/", type: "link" },
-          { name: "Foreign Candidates", href: "/", type: "link" },
+          { name: "Indian Candidates", href: ROUTES.CANDIDATES , type: "link" },
+          { name: "Foreign Candidates", href: ROUTES.CANDIDATES , type: "link" },
         ],
       },
       {
         name: "Yoga Certificate Sample",
         type: "submenu",
         sublinks: [
-          { name: "Yoga Volunteer", href: "files/yogavolunteercertificatesam.pdf", type: "download" },
           { name: "Yoga Protocol Instructor", href: "files/yogprotocolinstructor-certi.pdf", type: "download" },
           { name: "Yoga Wellness Instructor", href: "files/yogawellnesscertificatecopy.pdf", type: "download" },
           { name: "Yoga Teacher & Evaluator", href: "files/yogateachercertificatecopy.pdf", type: "download" },
-        ],
-      },
-      {
-        name: "Yoga Volunteer",
-        type: "submenu",
-        sublinks: [
-          { name: "Sample Certificate for Yoga Volunteer", href: "files/8930300615.pdf", type: "download" },
-          { name: "Yoga Volunteer Book in Hindi", href: "files/YogaBook.pdf", type: "download" },
-          { name: "Yoga Volunteer Book in English", href: "files/YogaBookEnglish.pdf", type: "download" },
-          { name: "Syllabus for Yoga Volunteer", href: "files/Syllabus-YV-1.pdf", type: "download" },
-          { name: "Live Classes (Ministry of AYUSH)", href: "https://www.youtube.com/c/MinistryofAYUSHofficial", type: "link" },
-          { name: "Live Classes (Yoga Certification Body)", href: "https://www.youtube.com/c/YogaCertificationBodyMSPL", type: "link" },
         ],
       },
       { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
@@ -86,8 +66,8 @@ export const navDropdowns: NavDropdown[] = [
   {
     title: "Candidates",
     links: [
-      { name: "Indian Candidates", href: "/", type: "link" },
-      { name: "Foreign Candidates", href: "/", type: "link" },
+      { name: "Indian Candidates", href: ROUTES.CANDIDATES , type: "link" },
+      { name: "Foreign Candidates", href: ROUTES.CANDIDATES , type: "link" },
     ],
   },
   {
@@ -176,14 +156,14 @@ export const footerLinks = [
   {
     title: "Academics",
     links: [
-      { name: "Yoga Volunteer (YV)", href: ROUTES.HOME },
-      { name: "Yoga Protocol Instructor (YPI)", href: ROUTES.HOME },
-      { name: "Yoga Wellness Instructor (YWI)", href: ROUTES.HOME },
-      { name: "Yoga Teacher & Evaluator (YTE)", href: ROUTES.HOME },
-      { name: "Yoga Master (YM)", href: ROUTES.HOME },
-      { name: "Assistant Yoga Therapist (AYT)", href: ROUTES.HOME },
-      { name: "Yoga Therapist (YT)", href: ROUTES.YT_SYLLABUS },
-      { name: "Therapeutic Yoga Consultant (TYC)", href: ROUTES.HOME },
+  { name: "(YPI) Yoga Protocol Instructor", href: "/pdf/Syllabus-YPI-Version0.2.pdf", type: "download" },
+      { name: "(YWI) Yoga Wellness Instructor", href: "/pdf/Syllabus-YWI-Version0.2.pdf", type: "download" },
+      { name: "(YTE) Yoga Teacher and Evaluator", href: "/pdf/Syllabus-YTE-Version0.2.pdf", type: "download" },
+      { name: "(YM) Yoga Master", href: "/pdf/msplyoga_Yoga_Master_Syllabus.pdf", type: "download" },
+      { name: "(AYT) Assistant Yoga Therapist", href: "/pdf/MSPLYOGA_Assistant_Yoga_Therapist_Syllabus.pdf", type: "download" },
+      { name: "(YT) Yoga Therapist", href: "/pdf/msplyoga_Yoga_Therapist_Syllabus.pdf", type: "download" },
+      { name: "(TYC) Therapeutic Yoga Consultant", href: "/pdf/msplyoga_Therapeutic_Yoga_Consultant_Syllabus.pdf", type: "download" },
+      { name: "Yoga Education Goals", href: "/pdf/Yoga-Education-Goals.pdf", type: "download" },
     ],
   },
   {

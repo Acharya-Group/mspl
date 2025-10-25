@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="sm:pt-32 sm:mt-32 pt-20 mt-20 relative bg-gray-100">
       {/* Newsletter Section */}
-      <div className="absolute left-1/2 sm:top-[7%] md:top-[10%] lg:top-[12%] -translate-x-1/2 -translate-y-full h-[160px] sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-gradient-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
+      <div className="absolute left-1/2 sm:top-[7%] md:top-[10%] lg:top-[12%] xl:top-[17%] -translate-x-1/2 -translate-y-full h-[160px] sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-gradient-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
         <Image
           src="/images/left-newslatter.svg"
           alt="left-lines"
