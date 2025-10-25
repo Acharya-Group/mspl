@@ -3,6 +3,7 @@ import React from "react";
 import HeaderTop from "../ui/HeaderTop";
 import Nav from "../ui/Nav";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const marqueeItems = 20;
@@ -22,28 +23,32 @@ const Header = () => {
 
       {/* Logo Section */}
       <div className="py-4 hidden lg:flex justify-between items-center container mx-auto bg-white">
-        <Image
-          className="max-w-[100px]"
-          height={170}
-          width={168}
-          src="/images/mspl-logo.png"
-          alt="mspl logo"
-        />
-        <div className="text-center">
+        <Link href="/">
+          <Image
+            className="max-w-[100px]"
+            height={170}
+            width={168}
+            src="/images/mspl-logo.png"
+            alt="mspl logo"
+          />
+        </Link>
+        <Link href={"/"} className="text-center">
           <h1 className="text-xl lg:text-4xl font-nunito font-semibold text-blue">
             MSPL - PERSONNEL CERTIFICATION BODY
           </h1>
           <h3 className="text-sm lg:text-base font-semibold text-green">
             Approved By: Yoga Certification Board, (Ministry Of Ayush, Govt Of India)
           </h3>
-        </div>
-        <Image
-          className="max-w-[100px]"
-          height={170}
-          width={132}
-          src="/images/ycb-logo.png"
-          alt="ycb logo"
-        />
+        </Link>
+        <Link target="blank" href={"https://yogacertificationboard.nic.in/"}>
+          <Image
+            className="max-w-[100px]"
+            height={170}
+            width={132}
+            src="/images/ycb-logo.png"
+            alt="ycb logo"
+          />
+        </Link>
       </div>
       <div className="sticky top-0 z-[50]">
       {/* Marquee */}
