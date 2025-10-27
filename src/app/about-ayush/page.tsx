@@ -1,10 +1,12 @@
 import CommonHero from '@/components/common/CommonHero'
+import AboutAyush from '@/components/ui/AboutAyush'
 import React from 'react'
 
 const page = () => {
   return (
     <>
-    <CommonHero currentPage="About ayush" />
+      <CommonHero currentPage="About ayush" />
+    <AboutAyush/>
     </>
   )
 }
