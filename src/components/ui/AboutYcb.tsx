@@ -42,6 +42,22 @@ const AboutYcb = () => {
 
         <Para content={`Through these efforts, the Yoga Certification Board strives to uphold the authenticity and credibility of Yoga education, ensuring that it continues to serve as a transformative science for physical, mental, and spiritual wellbeing worldwide.`} />
       </div>
+        {/* Official Website Section */}
+        <div className="mt-8 pt-4 border-t border-gray-200">
+          <SubHeading content="Official Website" />
+          <Para content="For more detailed and updated information about the Yoga Certification Board, visit their official government website below." />
+          <div className="flex items-center">
+              <Para content="Visit Official Website : " className="font-semibold" />
+              <a
+                href="https://yogacertificationboard.nic.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block  rounded-full font-medium text-primary hover:underline transition-all"
+              >
+               www.yogacertificationboard.nic.in
+              </a>
+          </div>
+        </div>
     </div>
   );
 };

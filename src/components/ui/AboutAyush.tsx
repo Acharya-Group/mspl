@@ -46,6 +46,23 @@ const AboutAyush = () => {
         </ul>
 
         <Para content={`Through these initiatives, the Ministry of Ayush continues to work toward positioning India as a global leader in traditional healthcare systems, integrating the timeless wisdom of Yoga and Ayurveda with modern scientific advancements for the well-being of humanity.`} />
+
+        {/* Official Website Section */}
+        <div className="mt-8 pt-4 border-t border-gray-200">
+          <SubHeading content="Official Website" />
+          <Para content="For more detailed and updated information about the Ministry of Ayush, visit their official government website below." />
+          <div className="flex items-center">
+              <Para content="Visit Official Website : " className="font-semibold" />
+              <a
+                href="https://ayush.gov.in/#!/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block  rounded-full font-medium text-primary hover:underline transition-all"
+              >
+               www.ayush.gov.in
+              </a>
+          </div>
+        </div>
       </div>
     </div>
   );

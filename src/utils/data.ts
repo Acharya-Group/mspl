@@ -151,6 +151,9 @@ export const footerLinks = [
       { name: "About AYUSH", href: ROUTES.ABOUT_AYUSH },
       { name: "Indian Candidates", href: ROUTES.CANDIDATES },
       { name: "Foreign Candidates", href: ROUTES.CANDIDATES },
+     { name: "Privacy Policy", href: ROUTES.PRIVACY_POLICY },
+{ name: "Terms and Conditions", href: ROUTES.TERMS_CONDITIONS },
+
     ],
   },
   {

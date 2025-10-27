@@ -15,5 +15,7 @@ export const ROUTES = {
   BENEFITS: "/benefits",
   FAQS: "/faqs",
   YT_SYLLABUS: "/demo",
-  CANDIDATES:"/candidate"
+  CANDIDATES:"/candidate",
+  PRIVACY_POLICY:"/privacy-policy",
+  TERMS_CONDITIONS:"/terms-conditions"
 };

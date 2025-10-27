@@ -15,9 +15,9 @@ const ContactForm = () => {
       <div className="container">
           <div className="bg-white max-w-4xl mx-auto rounded-xl shadow-lg overflow-hidden grid md:grid-cols-2 relative z-10">
             {/* Contact Info */}
-            <div className="p-10 relative">
-              <h3 className="text-2xl font-semibold text-teal-500 mb-4">Let's get in touch</h3>
-              <p className="text-gray-600 mb-6">
+            <div className="sm:p-10 p-4 relative">
+              <h3 className="text-2xl font-semibold text-teal-500 pb-4">Let's get in touch</h3>
+              <p className="text-gray-600 pb-6">
                 Explore our contact options and reach out to us for yoga certification inquiries,
                 general questions. Our team is here to guide you.
               </p>
@@ -56,50 +56,52 @@ const ContactForm = () => {
               </div>
             </div>
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-primary to-green relative p-10 overflow-hidden">
+            <div className="bg-gradient-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
               {/* Decorative circles */}
               <div className="absolute w-[130px] h-[130px] rounded-full bg-gradient-to-tr from-green animate-pulse to-transparent top-[130px] -right-10"></div>
               <div className="absolute w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-primary animate-pulse to-transparent top-2 right-8"></div>
               <div className="absolute w-6 h-6 bg-primary rotate-45 top-12 -left-3"></div>
-              <form className="relative z-10 space-y-4" autoComplete="off">
-                <h3 className="text-white text-xl font-semibold mb-4">Contact us</h3>
-                <div className="relative">
+              <form className="relative z-10 space-y-4 w-[240px] sm:w-full mx-auto flex flex-col items-center" autoComplete="off">
+                <h3 className="text-white text-xl font-semibold pb-4 mb-0 text-center sm:text-start">Contact us</h3>
+                <div className="relative text-center sm:w-full w-[240px]">
                   <input
                     type="text"
                     name="name"
                     placeholder="Username"
-                    className="w-full px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
+                    className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
                   />
                 </div>
-                <div className="relative">
+                <div className="relative text-center sm:w-full w-[240px]">
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="w-full px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
+                    className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
                   />
                 </div>
-                <div className="relative">
+                <div className="relative text-center sm:w-full w-[240px]">
                   <input
                     type="tel"
                     name="phone"
                     placeholder="Phone"
-                    className="w-full px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
+                    className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
                   />
                 </div>
-                <div className="relative">
+                <div className="relative text-center sm:w-full w-[240px]">
                   <textarea
                     name="message"
                     placeholder="Message"
-                    className="w-full px-4 py-2 rounded-md bg-transparent border border-white text-white resize-none focus:outline-none focus:ring-2 focus:ring-white transition min-h-[120px]"
+                    className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white resize-none focus:outline-none focus:ring-2 focus:ring-white transition min-h-[120px]"
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-white text-teal-500 font-semibold py-2 rounded-md hover:bg-transparent hover:text-white border border-white transition"
-                >
-                  Send
-                </button>
+                <div className="text-center sm:w-full w-[240px]">
+                  <button
+                    type="submit"
+                    className="sm:w-full w-[240px] bg-white text-teal-500 font-semibold py-2 rounded-md hover:bg-transparent hover:text-white border border-white transition"
+                  >
+                    Send
+                  </button>
+                </div>
               </form>
             </div>
           </div>
