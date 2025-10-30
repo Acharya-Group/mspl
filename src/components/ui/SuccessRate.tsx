@@ -9,10 +9,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-{ value: 10000, suffix: "+", label: "Professionals" },
-{ value: 95, suffix: "%", label: "Satisfaction" },
-{ value: 10, suffix: "+", label: "Countries" },
-{ value: 7, suffix: "Years", label: "Experience" },
+  { value: 10000, suffix: "+", label: "Professionals" },
+  { value: 95, suffix: "%", label: "Satisfaction" },
+  { value: 10, suffix: "+", label: "Countries" },
+  { value: 7, suffix: "Years", label: "Experience" },
 ];
 
 const SuccessRate = () => {
@@ -21,6 +21,10 @@ const SuccessRate = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const target = sectionRef.current; // ✅ Copy ref value here
+
+    if (!target) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -32,9 +36,10 @@ const SuccessRate = () => {
       { threshold: 0.4 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    observer.observe(target);
+
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      observer.unobserve(target); // ✅ Clean up using same reference
     };
   }, [hasAnimated]);
 
@@ -55,25 +60,31 @@ const SuccessRate = () => {
   return (
     <section ref={sectionRef} className="lg:py-12 py-10 bg-white text-center">
       <div className="container">
-          {/* Heading */}
-          <h2 className="text-sm uppercase tracking-wider text-slate-500">
-            Join Thousands of Learners and Become a{" "}
-            <span className="text-primary font-semibold">Certified Yoga Professionals</span>
-          </h2>
-          {/* Stats Grid */}
-          <div className="grid mt-6 grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
-            {stats.map((item, index) => (
-              <div key={index} className="px-4 bg-green-200 rounded-xl p-6 hover:bg-blue-200 transition-all duration-300">
-           <h3 className="sm:text-3xl text-xl lg:text-2xl font-extrabold text-gray-900">
-            {(counts[index] ?? 0).toLocaleString()}
-            <span className="text-primary">{item.suffix}</span>
-          </h3>
-                <p className="text-gray-500 text-sm sm:mt-2 mt-1 max-w-[200px] mx-auto">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* Heading */}
+        <h2 className="text-sm uppercase tracking-wider text-slate-500">
+          Join Thousands of Learners and Become a{" "}
+          <span className="text-primary font-semibold">
+            Certified Yoga Professionals
+          </span>
+        </h2>
+
+        {/* Stats Grid */}
+        <div className="grid mt-6 grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="px-4 bg-green-200 rounded-xl p-6 hover:bg-blue-200 transition-all duration-300"
+            >
+              <h3 className="sm:text-3xl text-xl lg:text-2xl font-extrabold text-gray-900">
+                {(counts[index] ?? 0).toLocaleString()}
+                <span className="text-primary">{item.suffix}</span>
+              </h3>
+              <p className="text-gray-500 text-sm sm:mt-2 mt-1 max-w-[200px] mx-auto">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

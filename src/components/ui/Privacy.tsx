@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import SubHeading from "../common/SubHeading";
 import Para from "../common/Para";
 
 const Privacy = () => {

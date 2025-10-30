@@ -1,25 +1,35 @@
 "use client";
+
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { FaPlus, FaMinus } from "react-icons/fa"; 
+import { FaPlus, FaMinus } from "react-icons/fa";
 import { faqs } from "../../utils/data";
 import SubHeading from "../common/SubHeading";
 
 export default function Faqs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const pathname = usePathname(); // ✅ Get current route
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // ✅ Show background + heading only on home page
+  const isHome = pathname === "/";
+
+  // ✅ Limit to 6 FAQs on home page
+  const displayFaqs = isHome ? faqs.slice(0, 8) : faqs;
+
   return (
-    <section className="bg-blue-50">
+    <section className={isHome ? "bg-blue-50" : "bg-transparent"}>
       <div className="container py-10 lg:py-12 relative">
-        <SubHeading content="Faqs" className="text-center mb-4" />
+        {isHome && <SubHeading content="Faqs" className="text-center mb-4" />}
 
         {/* FAQ List */}
         <div className="max-w-4xl mx-auto flex flex-col gap-3">
-          {faqs.map((faq, index) => {
+          {displayFaqs.map((faq, index) => {
             const isActive = openIndex === index;
 
             return (
@@ -45,13 +55,11 @@ export default function Faqs() {
                     {faq.question}
                   </p>
 
-                  {/* + / - Icon */}
                   <span className="text-white text-lg transition-transform duration-300">
                     {isActive ? <FaMinus /> : <FaPlus />}
                   </span>
                 </button>
 
-                {/* Animated Answer */}
                 <AnimatePresence initial={false}>
                   {isActive && (
                     <motion.div
@@ -72,6 +80,18 @@ export default function Faqs() {
             );
           })}
         </div>
+
+        {/* ✅ "View More" Button (only on Home) */}
+        {isHome && faqs.length > 6 && (
+          <div className="text-center mt-8">
+            <Link
+              href="/faqs"
+              className="inline-block bg-gradient-to-r from-green to-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+            >
+              View More
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
