@@ -23,7 +23,7 @@ export const navDropdowns: NavDropdown[] = [
       { name: "Syllabus for (AYT) Assistant Yoga Therapist", href: "/pdf/MSPLYOGA_Assistant_Yoga_Therapist_Syllabus.pdf", type: "download" },
       { name: "Syllabus for (YT) Yoga Therapist", href: "/pdf/msplyoga_Yoga_Therapist_Syllabus.pdf", type: "download" },
       { name: "Syllabus for (TYC) Therapeutic Yoga Consultant", href: "/pdf/msplyoga_Therapeutic_Yoga_Consultant_Syllabus.pdf", type: "download" },
-      { name: "Yoga Education Goals", href: "/pdf/Yoga-Education-Goals.pdf", type: "download" },
+      { name: "Yoga Education Goals", href:ROUTES.YOGA_GOALS, type: "download" },
     ],
   },
   {

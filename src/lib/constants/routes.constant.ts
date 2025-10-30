@@ -16,6 +16,7 @@ export const ROUTES = {
   FAQS: "/faqs",
   YT_SYLLABUS: "/demo",
   CANDIDATES:"/candidate",
+  YOGA_GOALS:"/yoga-goals",
   PRIVACY_POLICY:"/privacy-policy",
   TERMS_CONDITIONS:"/terms-conditions"
 };

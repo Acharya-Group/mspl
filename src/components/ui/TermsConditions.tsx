@@ -9,7 +9,7 @@ const TermsConditions = () => {
 
       {/* Effective Date & Info */}
       <div className="text-center mb-8">
-         <Para content="<strong>Effective Date:</strong> [Insert Date]"/>
+         <Para content="<strong>Effective Date:</strong>25/11/2015"/>
           <Para content="<strong>Organization:</strong> MSPL Personnel Registration and
           Certification Body (PRCB)"/>
         <p>
@@ -180,7 +180,7 @@ const TermsConditions = () => {
         title="Governing Law and Jurisdiction"
         content={[
           "These Terms and Conditions are governed by the laws of India.",
-          "Any disputes shall be subject to the exclusive jurisdiction of the courts located in [Insert City/State Name], India.",
+          "Any disputes shall be subject to the exclusive jurisdiction of the courts located in Jaipur, India.",
         ]}
       />
 
