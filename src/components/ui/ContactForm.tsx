@@ -4,10 +4,13 @@ import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import Link from "next/link";
 import { socialLinks } from "@/utils/data";
+import { usePathname } from "next/navigation";
 
 const ContactForm = () => {
+    const pathname = usePathname();
+     const isHome = pathname === "/";
   return (
-    <section className="relative w-full flex items-center justify-center bg-gray-50 overflow-hidden py-10 lg:py-16">
+    <section className={`relative w-full flex items-center justify-center ${isHome ? "bg-blue-50" : "bg-transparent"} overflow-hidden py-10 lg:py-16`}>
       {/* Decorative big circle */}
       <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-b to-primary from-green bottom-1/2 right-1/2 transform translate-x-[-40%] translate-y-[38%]"></div>
       <div className="absolute w-[360px] h-[360px] bg-gray-50 rounded-full bottom-[50%] right-[50%] transform translate-x-[-40%] translate-y-[38%]"></div>

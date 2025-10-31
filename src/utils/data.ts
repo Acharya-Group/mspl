@@ -13,17 +13,14 @@ export const navDropdowns: NavDropdown[] = [
       { name: "About Ayush", href: ROUTES.ABOUT_AYUSH, type: "link" },
     ],
   },
-  {
+
+     {
     title: "Academics",
     links: [
-      { name: "Syllabus for (YPI) Yoga Protocol Instructor", href: "/pdf/Syllabus-YPI-Version0.2.pdf", type: "download" },
-      { name: "Syllabus for (YWI) Yoga Wellness Instructor", href: "/pdf/Syllabus-YWI-Version0.2.pdf", type: "download" },
-      { name: "Syllabus for (YTE) Yoga Teacher and Evaluator", href: "/pdf/Syllabus-YTE-Version0.2.pdf", type: "download" },
-      { name: "Syllabus for (YM) Yoga Master", href: "/pdf/msplyoga_Yoga_Master_Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (AYT) Assistant Yoga Therapist", href: "/pdf/MSPLYOGA_Assistant_Yoga_Therapist_Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (YT) Yoga Therapist", href: "/pdf/msplyoga_Yoga_Therapist_Syllabus.pdf", type: "download" },
-      { name: "Syllabus for (TYC) Therapeutic Yoga Consultant", href: "/pdf/msplyoga_Therapeutic_Yoga_Consultant_Syllabus.pdf", type: "download" },
+      { name: "Registration Process", href: "files/Impartiality_Statement.pdf", type: "link" },
       { name: "Yoga Education Goals", href:ROUTES.YOGA_GOALS, type: "download" },
+      { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
+      { name: "Exam duration", href: "files/Impartiality_Statement.pdf", type: "link" },
     ],
   },
   {
@@ -33,11 +30,14 @@ export const navDropdowns: NavDropdown[] = [
         name: "Sample Paper",
         type: "submenu",
         sublinks: [
-          { name: "Ref Book : Yogic Sukshma Vyayam", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
-          { name: "Yoga Sample Paper-I", href: "files/sample_paper_yoga.pdf", type: "download" },
-          { name: "Yoga Sample Paper-II", href: "files/sample_paper_yoga1.pdf", type: "download" },
-          { name: "Yoga Sample Paper-III", href: "files/sample_paper_yoga2.pdf", type: "download" },
-        ],
+          { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
+          { name: "Yoga Sample Paper-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
+          { name: "Yoga Sample Paper-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
+          { name: "Yoga Sample Paper-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
+          { name: "Yoga Sample Paper-IV", href: "/pdf/ycbSamplecertificateLeval4.jpg", type: "download" },
+          { name: "Yoga Sample Paper-X", href: "/pdf/SampleCertificateLevel5.jpg", type: "download" },
+          { name: "Yoga Sample Paper-XI", href: "/pdf/SampleCertificateLevel6.jpg", type: "download" },
+        ],  
       },
       {
         name: "Fee Structure",
@@ -47,6 +47,7 @@ export const navDropdowns: NavDropdown[] = [
           { name: "Foreign Candidates", href: ROUTES.CANDIDATES , type: "link" },
         ],
       },
+
       {
         name: "Yoga Certificate Sample",
         type: "submenu",
@@ -56,18 +57,20 @@ export const navDropdowns: NavDropdown[] = [
           { name: "Yoga Teacher & Evaluator", href: "files/yogateachercertificatecopy.pdf", type: "download" },
         ],
       },
-      { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
-      { name: "Result", href: ROUTES.RESULT, type: "link" },
-      { name: "Complaints & Appeals", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
-      { name: "Complaint & Appeal Process", href: "files/COMPLAINT-AND-APPEAL-FORMAT.pdf", type: "download" },
-      { name: "Impartiality Statement", href: "files/Impartiality_Statement.pdf", type: "download" },
+      { name: "Exam Guideline", href: "pdf/MSPL_Exam_Guideline.docx", type: "download" },
+      { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
+      { name: "Impartiality Statement", href: "pdf/Impartiality_Statement.pdf", type: "download" },
     ],
   },
-  {
-    title: "Candidates",
+    {
+    title: "Syllabus",
     links: [
-      { name: "Indian Candidates", href: ROUTES.CANDIDATES , type: "link" },
-      { name: "Foreign Candidates", href: ROUTES.CANDIDATES , type: "link" },
+      { name: "Syllabus for (YPI) Yoga Protocol Instructor", href: "/pdf/Syllabus-YPI-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YWI) Yoga Wellness Instructor", href: "/pdf/Syllabus-YWI-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YTE) Yoga Teacher and Evaluator", href: "/pdf/Syllabus-YTE-Version0.2.pdf", type: "download" },
+      { name: "Syllabus for (YM) Yoga Master", href: "/pdf/msplyoga_Yoga_Master_Syllabus.pdf", type: "download" },
+      { name: "Syllabus for (AYT) Assistant Yoga Therapist", href: "/pdf/MSPLYOGA_Assistant_Yoga_Therapist_Syllabus.pdf", type: "download" },
+      { name: "Syllabus for (YT) Yoga Therapist", href: "/pdf/msplyoga_Yoga_Therapist_Syllabus.pdf", type: "download" },
     ],
   },
   {
@@ -80,6 +83,7 @@ export const navDropdowns: NavDropdown[] = [
       { name: "Faqs", href: ROUTES.FAQS, type: "link" },
     ],
   },
+
 ];
 
 
