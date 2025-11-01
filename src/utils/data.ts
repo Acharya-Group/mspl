@@ -29,15 +29,12 @@ export const navDropdowns: NavDropdown[] = [
       {
         name: "Sample Paper",
         type: "submenu",
-        sublinks: [
-          { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
-          { name: "Yoga Sample Paper-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
-          { name: "Yoga Sample Paper-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
-          { name: "Yoga Sample Paper-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
-          { name: "Yoga Sample Paper-IV", href: "/pdf/ycbSamplecertificateLeval4.jpg", type: "download" },
-          { name: "Yoga Sample Paper-X", href: "/pdf/SampleCertificateLevel5.jpg", type: "download" },
-          { name: "Yoga Sample Paper-XI", href: "/pdf/SampleCertificateLevel6.jpg", type: "download" },
-        ],  
+      
+          sublinks: [
+          { name: "Yoga Protocol Instructor", href: "files/yogprotocolinstructor-certi.pdf", type: "download" },
+          { name: "Yoga Wellness Instructor", href: "files/yogawellnesscertificatecopy.pdf", type: "download" },
+          { name: "Yoga Teacher & Evaluator", href: "files/yogateachercertificatecopy.pdf", type: "download" },
+        ],
       },
       {
         name: "Fee Structure",
@@ -52,10 +49,14 @@ export const navDropdowns: NavDropdown[] = [
         name: "Yoga Certificate Sample",
         type: "submenu",
         sublinks: [
-          { name: "Yoga Protocol Instructor", href: "files/yogprotocolinstructor-certi.pdf", type: "download" },
-          { name: "Yoga Wellness Instructor", href: "files/yogawellnesscertificatecopy.pdf", type: "download" },
-          { name: "Yoga Teacher & Evaluator", href: "files/yogateachercertificatecopy.pdf", type: "download" },
-        ],
+          { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
+          { name: "Yoga Sample Paper-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
+          { name: "Yoga Sample Paper-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
+          { name: "Yoga Sample Paper-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
+          { name: "Yoga Sample Paper-IV", href: "/pdf/ycbSamplecertificateLeval4.jpg", type: "download" },
+          { name: "Yoga Sample Paper-X", href: "/pdf/SampleCertificateLevel5.jpg", type: "download" },
+          { name: "Yoga Sample Paper-XI", href: "/pdf/SampleCertificateLevel6.jpg", type: "download" },
+        ],  
       },
       { name: "Exam Guideline", href: "pdf/MSPL_Exam_Guideline.docx", type: "download" },
       { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
