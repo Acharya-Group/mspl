@@ -142,11 +142,12 @@ export default function Candidate() {
                 </table>
               </div>
             </div>
+<p className="text-center font-semibold bg-amber-100 py-2">Re-Appear Fee for Theory Exam: ₹299 for all levels</p>
 
             {/* Reappear Fees */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                Re-Appear Fees (₹)
+                Re-Appear Fees For Practical (₹)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 text-sm">
@@ -216,11 +217,11 @@ export default function Candidate() {
                 </table>
               </div>
             </div>
-
+<p className="text-center font-semibold bg-amber-100 py-2">Re-Appear Fee for Theory Exam: $5 for all levels</p>
             {/* Reappear Fees */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                Re-Appear Fees (USD)
+                  Re-Appear Fees For Practical (USD)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 text-sm">
