@@ -17,7 +17,7 @@ export const navDropdowns: NavDropdown[] = [
      {
     title: "Academics",
     links: [
-      { name: "Registration Process", href: "files/Impartiality_Statement.pdf", type: "link" },
+      { name: "Registration Process", href: "pdf/Registration-Procees.pdf", type: "link" },
       { name: "Yoga Education Goals", href:ROUTES.YOGA_GOALS, type: "download" },
       { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
       { name: "Exam duration", href: "files/Impartiality_Statement.pdf", type: "link" },
