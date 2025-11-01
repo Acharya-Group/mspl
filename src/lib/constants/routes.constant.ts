@@ -12,6 +12,7 @@ export const ROUTES = {
   VIDEOS: "/media",
   NEWS: "/media",
   ENVIRONMENT: "/media",
+  PAY_FEE: "/pay-fee",
   FAQS: "/faqs",
   YT_SYLLABUS: "/demo",
   CANDIDATES:"/candidate",

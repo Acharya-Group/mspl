@@ -10,6 +10,7 @@ import {
   HiChevronUp,
 } from "react-icons/hi";
 import Image from "next/image";
+import { ROUTES } from "@/lib/constants/routes.constant";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -145,8 +146,8 @@ const Nav = () => {
             </button>
 
             {/* Pay Fees Button */}
-            <Link className="hidden lg:inline" href="/">
-              <button className="text-white uppercase bg-green py-3 px-2 focus:outline-none">
+            <Link className="hidden lg:inline" href={ROUTES.PAY_FEE}>
+              <button className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none">
                 Pay Fees
               </button>
             </Link>
@@ -163,7 +164,7 @@ const Nav = () => {
       ></div>
 
       <div
-        className={`fixed top-0 left-0 h-full w-[300px] bg-white shadow-lg z-[1300] transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-[300px] bg-white overflow-y-auto shadow-lg z-[1300] transform transition-transform duration-300 ${
           openSidebar ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -266,6 +267,34 @@ const Nav = () => {
               </div>
             </li>
           ))}
+          
+          {/* Contact Us and Pay Fee links for mobile */}
+          <li>
+            <Link
+              href="/contact"
+              className={`block px-5 py-3 text-sm font-medium ${
+                isLinkActive("/contact")
+                  ? "text-[#14AEE4] bg-gray-100"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
+              }`}
+              onClick={() => setOpenSidebar(false)}
+            >
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={ROUTES.PAY_FEE}
+              className={`block px-5 py-3 text-sm font-medium ${
+                isLinkActive("/pay-fee")
+                  ? "text-[#14AEE4] bg-gray-100"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
+              }`}
+              onClick={() => setOpenSidebar(false)}
+            >
+              Pay Fee
+            </Link>
+          </li>
         </ul>
       </div>
     </>
