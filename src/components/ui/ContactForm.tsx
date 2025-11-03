@@ -12,7 +12,7 @@ const ContactForm = () => {
   return (
     <section className={`relative w-full flex items-center justify-center ${isHome ? "bg-blue-50" : "bg-transparent"} overflow-hidden py-10 lg:py-16`}>
       {/* Decorative big circle */}
-      <div className="absolute w-[420px] h-[420px] rounded-full bg-gradient-to-b to-primary from-green bottom-1/2 right-1/2 transform translate-x-[-40%] translate-y-[38%]"></div>
+      <div className="absolute w-[420px] animate-spin h-[420px] rounded-full bg-gradient-to-b to-primary from-green bottom-1/2 right-1/2 transform translate-x-[-40%] translate-y-[38%]"></div>
       <div className="absolute w-[360px] h-[360px] bg-gray-50 rounded-full bottom-[50%] right-[50%] transform translate-x-[-40%] translate-y-[38%]"></div>
 
       <div className="container">
@@ -35,7 +35,7 @@ const ContactForm = () => {
                 </div>
                 <div className="flex items-center text-gray-600">
                   <FaPhone className="text-primary mr-3" />
-                  <Link href={"tel:91 893-030-0615"}>+91 893-030-0615</Link>
+                  <Link href={"tel:918930300615"}>+91 893-030-0615</Link>
                 </div>
               </div>
               {/* Social Media */}
@@ -100,9 +100,9 @@ const ContactForm = () => {
                 <div className="text-center sm:w-full w-[240px]">
                   <button
                     type="submit"
-                    className="sm:w-full w-[240px] bg-white text-teal-500 font-semibold py-2 rounded-md hover:bg-transparent hover:text-white border border-white transition"
+                    className="sm:w-full cursor-pointer w-[240px] bg-white text-teal-500 font-semibold py-2 rounded-md hover:bg-transparent hover:text-white border border-white transition"
                   >
-                    Send
+                    Submit
                   </button>
                 </div>
               </form>
