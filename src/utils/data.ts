@@ -17,7 +17,7 @@ export const navDropdowns: NavDropdown[] = [
      {
     title: "Academics",
     links: [
-      { name: "Registration Process", href: "pdf/Registration-Procees.pdf", type: "link" },
+      { name: "Registration Process", href: "pdf/Registration-Procees.pdf", type: "download" },
       { name: "Yoga Education Goals", href:ROUTES.YOGA_GOALS, type: "download" },
       { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
       { name: "Exam duration", href: "files/Impartiality_Statement.pdf", type: "link" },
@@ -31,9 +31,12 @@ export const navDropdowns: NavDropdown[] = [
         type: "submenu",
       
           sublinks: [
-          { name: "Yoga Protocol Instructor", href: "files/yogprotocolinstructor-certi.pdf", type: "download" },
-          { name: "Yoga Wellness Instructor", href: "files/yogawellnesscertificatecopy.pdf", type: "download" },
-          { name: "Yoga Teacher & Evaluator", href: "files/yogateachercertificatecopy.pdf", type: "download" },
+          { name: "Sample Paper I", href: "/pdf/level-1.pdf", type: "download" },
+          { name: "Sample Paper II", href: "/pdf/level-2.pdf", type: "download" },
+          { name: "Sample Paper III", href: "/pdf/level-3.pdf", type: "download" },
+          { name: "Sample Paper IV", href: "/pdf/level-4.pdf", type: "download" },
+          { name: "Sample Paper X", href: "/pdf/level-5.pdf", type: "download" },
+          { name: "Sample Paper XI", href: "/pdf/level-6.pdf", type: "download" },
         ],
       },
       {
@@ -50,17 +53,29 @@ export const navDropdowns: NavDropdown[] = [
         type: "submenu",
         sublinks: [
           { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
-          { name: "Yoga Sample Paper-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
-          { name: "Yoga Sample Paper-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
-          { name: "Yoga Sample Paper-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
-          { name: "Yoga Sample Paper-IV", href: "/pdf/ycbSamplecertificateLeval4.jpg", type: "download" },
-          { name: "Yoga Sample Paper-X", href: "/pdf/SampleCertificateLevel5.jpg", type: "download" },
-          { name: "Yoga Sample Paper-XI", href: "/pdf/SampleCertificateLevel6.jpg", type: "download" },
+          { name: "Yoga Sample Certificate-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
+          { name: "Yoga Sample Certificate-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
+          { name: "Yoga Sample Certificate-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
+          { name: "Yoga Sample Certificate-IV", href: "/pdf/ycbSamplecertificateLeval4.jpg", type: "download" },
+          { name: "Yoga Sample Certificate-X", href: "/pdf/SampleCertificateLevel5.jpg", type: "download" },
+          { name: "Yoga Sample Certificate-XI", href: "/pdf/SampleCertificateLevel6.jpg", type: "download" },
         ],  
       },
-      { name: "Exam Guideline", href: "pdf/MSPL_Exam_Guideline.docx", type: "download" },
+      { name: "Exam Guideline", href: "/pdf/MSPL_Exam_Guideline.docx", type: "download" },
       { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
-      { name: "Impartiality Statement", href: "pdf/Impartiality_Statement.pdf", type: "download" },
+      { name: "Impartiality Statement", href: "/pdf/Impartiality_Statement.pdf", type: "download" },
+    ],
+  },
+    {
+    title: "Study Material",
+    links: [
+      { name: "Hatha Yoga Pradipika English", href: "/pdf/Hatha-Yoga-Pradipika-English.pdf", type: "download" },
+      { name: "Kriya Yoga", href: "/pdf/Kriya-Yoga-The-Science-of-Life-Force.pdf", type: "download" },
+      { name: "Patanjali Yoga Sutras", href: "/pdf/Patanjali-Yoga-Sutras-english.pdf", type: "download" },
+      { name: "Yoga Therapy", href: "/pdf/Yoga-Therapy.pdf", type: "download" },
+      { name: "Yoga Depression", href: "/pdf/yogik-deperiction.pdf", type: "download" },
+      { name: "Yoga Posture", href: "/pdf/Yoga-Posture.pdf", type: "download" },
+     
     ],
   },
     {

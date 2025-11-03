@@ -91,18 +91,20 @@ const ComplainFeedback = () => {
                     className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
                   />
                 </div>
-             <div className="relative text-center sm:w-full w-[240px]">
+            <div className="relative text-center sm:w-full w-[240px]">
   <select
     name="Type"
+    defaultValue=""
     className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
   >
-    <option value="" disabled selected hidden>
+    <option value="" disabled hidden>
       Feedback/Complaint
     </option>
-    <option className="text-black" value="feedback">Feedback</option>
-    <option className="text-black" value="complaint">Complaint</option>
+    <option className="text-primary" value="feedback">Feedback</option>
+    <option className="text-primary" value="complaint">Complaint</option>
   </select>
 </div>
+
 
                 <div className="relative text-center sm:w-full w-[240px]">
                   <textarea
