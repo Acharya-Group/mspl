@@ -6,6 +6,8 @@ import {
   footerLinks,
   socialLinks,
 } from "@/utils/data";
+import { FaPhoneVolume } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 
 const Footer = () => {
 
@@ -62,9 +64,17 @@ const Footer = () => {
               is increasing rapidly at the global level, the Institute is
               dedicated to promoting holistic wellness.
             </p>
+            <div className="flex gap-3 items-center">
+            
+        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 8930300615</Link>
+        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 9991777717</Link>
 
-            <p className="font-semibold mb-2 text-gray-800">Follow Us</p>
-            <ul className="flex gap-4 mt-3">
+             
+            </div>
+        <Link className='flex mt-1 font-semibold items-center hover:underline transition-all duration-300' href="mailto:yogacertificationbody@gmail.com"><IoMdMail className="text-primary me-1" size={'18px'} />yogacertificationbody@gmail.com</Link>
+
+            <p className="font-semibold mt-3 text-gray-800">Follow Us</p>
+            <ul className="flex gap-4 mt-2">
               {socialLinks.map(({ href, icon: Icon }, i) => (
                 <li key={i}>
                   <Link
@@ -106,27 +116,14 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="p-3 bg-gradient-to-b to-primary from-green border-t text-white border-white mt-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3">
-        <p className="text-sm opacity-75 text-center">
+      <div className="p-3 bg-gradient-to-b to-primary from-green border-t text-white border-white mt-8">
+        <p className="text-sm opacity-75 text-center pb-8 lg:pb-0">
           © {new Date().getFullYear()} All Rights Reserved{" "}
           <span className="font-semibold">
             (MSPL PERSONNEL CERTIFICATION BODY)
           </span>
         </p>
-        <div className="flex gap-3">
-          <Link
-            href="/privacy-policy"
-            className="text-sm opacity-75 hover:opacity-100 transition-all duration-300 hover:underline"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms-conditions"
-            className="text-sm opacity-75 hover:opacity-100 transition-all duration-300 hover:underline"
-          >
-            Terms & Conditions
-          </Link>
-        </div>
+      
       </div>
     </footer>
   );

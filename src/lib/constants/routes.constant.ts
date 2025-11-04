@@ -14,7 +14,6 @@ export const ROUTES = {
   ENVIRONMENT: "/media",
   PAY_FEE: "/pay-fee",
   FAQS: "/faqs",
-  YT_SYLLABUS: "/demo",
   CANDIDATES:"/candidate",
   YOGA_GOALS:"/yoga-goals",
   PRIVACY_POLICY:"/privacy-policy",

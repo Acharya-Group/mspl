@@ -162,16 +162,19 @@ export const socialLinks = [
 
 export const footerLinks = [
   {
-    title: "About Us",
+    title: "Pages",
     links: [
       { name: "About Us", href: ROUTES.ABOUT_US },
       { name: "Mission & Vision", href: ROUTES.MISSION_VISION },
       { name: "About YCB", href: ROUTES.ABOUT_YCB },
       { name: "About AYUSH", href: ROUTES.ABOUT_AYUSH },
-      { name: "Indian Candidates", href: ROUTES.CANDIDATES },
-      { name: "Foreign Candidates", href: ROUTES.CANDIDATES },
+     { name: "Fee Stature", href: ROUTES.CANDIDATES, type: "link" },
+      { name: "Exam Guideline", href: "/pdf/MSPL_Exam_Guideline.docx", type: "download" },
+      { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
+      { name: "Impartiality Statement", href: "/pdf/Impartiality_Statement.pdf", type: "download" },
      { name: "Privacy Policy", href: ROUTES.PRIVACY_POLICY },
 { name: "Terms and Conditions", href: ROUTES.TERMS_CONDITIONS },
+
 
     ],
   },
@@ -199,16 +202,14 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Student Corner",
+    title: "Study Material",
     links: [
-      { name: "Registration Form", href: ROUTES.REGISTRATION_FORM },
-      { name: "PRE-MEDICAL Form", href: ROUTES.PRE_MEDICAL_FORM },
-      { name: "Sample Paper", href: "images/sample_paper_yoga.pdf" }, 
-      { name: "Fee Structure", href: ROUTES.HOME },
-      { name: "Yoga Certificate Samples", href: "images/yogateachercertificatecopy-converted.pdf" }, 
-      { name: "Yoga Professionals Guideline", href: "images/Guideline-for-Yoga-Professionals.pdf" }, 
-      { name: "Result", href: ROUTES.RESULT },
-      { name: "Complaints & Appeals", href: ROUTES.COMPLAINTS_APPEALS },
+     { name: "Hatha Yoga Pradipika English", href: "/pdf/Hatha-Yoga-Pradipika-English.pdf", type: "download" },
+      { name: "Kriya Yoga", href: "/pdf/Kriya-Yoga-The-Science-of-Life-Force.pdf", type: "download" },
+      { name: "Patanjali Yoga Sutras", href: "/pdf/Patanjali-Yoga-Sutras-english.pdf", type: "download" },
+      { name: "Yoga Therapy", href: "/pdf/Yoga-Therapy.pdf", type: "download" },
+      { name: "Yoga Depression", href: "/pdf/yogik-deperiction.pdf", type: "download" },
+      { name: "Yoga Posture", href: "/pdf/Yoga-Posture.pdf", type: "download" },
     ],
   },
 ];
