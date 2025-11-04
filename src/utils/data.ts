@@ -17,10 +17,10 @@ export const navDropdowns: NavDropdown[] = [
      {
     title: "Academics",
     links: [
-      { name: "Registration Process", href: "pdf/Registration-Procees.pdf", type: "download" },
+      { name: "Registration Process", href: "/pdf/Registration-Procees.pdf", type: "download" },
       { name: "Yoga Education Goals", href:ROUTES.YOGA_GOALS, type: "download" },
-      { name: "Yoga Professionals Guideline", href: "files/Guideline-for-Yoga-Professionals.pdf", type: "download" },
-      { name: "Exam duration", href: "files/Impartiality_Statement.pdf", type: "link" },
+      { name: "Yoga Professionals Guideline", href: "/pdf/MSPL-Exam-Guideline.pdf", type: "download" },
+      { name: "Exam duration", href: "/pdf/theury-exam-process.pdf", type: "download" },
     ],
   },
   {
@@ -52,7 +52,7 @@ export const navDropdowns: NavDropdown[] = [
         name: "Yoga Certificate Sample",
         type: "submenu",
         sublinks: [
-          { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
+          // { name: "Ref Book : none", href: "files/yogic-sukshma-vyayam.pdf", type: "download" },
           { name: "Yoga Sample Certificate-I", href: "/pdf/SampleCertificateLevel1.pdf", type: "download" },
           { name: "Yoga Sample Certificate-II", href: "/pdf/SampleCertificateLevel2.pdf", type: "download" },
           { name: "Yoga Sample Certificate-III", href: "/pdf/SampleCertificateLevel3.jpg", type: "download" },
