@@ -8,6 +8,7 @@ import {
 } from "@/utils/data";
 import { FaPhoneVolume } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import Para from "../common/Para";
 
 const Footer = () => {
 
@@ -47,8 +48,18 @@ const Footer = () => {
       </div>
 
       {/* Footer Main Content */}
-      <div className="container mx-auto px-4 pb-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-8 mt-8 sm:mt-0">
+      <div className="container mx-auto px-4 sm:pb-16 pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-8 mt-8 sm:mt-0 relative">
+          <div className="absolute flex flex-col items-end lg:bottom-[-5%] sm:bottom-0 bottom-[-4%] md:bottom-[-10%] right-4">
+              <Image
+                src="/images/ycb-logo.png"
+                alt="newsletter icon"
+                width={90}
+                height={150}
+              />
+              <h3 className="text-base font-semibold">Yoga Certification Board</h3>
+              <Para className="text-[12px]" content="Ministry of AYUSH, Government of India"/>
+          </div>
           {/* Logo & About Section */}
           <div className="md:col-span-4">
             <Image
@@ -74,7 +85,7 @@ const Footer = () => {
         <Link className='flex mt-1 font-semibold items-center hover:underline transition-all duration-300' href="mailto:yogacertificationbody@gmail.com"><IoMdMail className="text-primary me-1" size={'18px'} />yogacertificationbody@gmail.com</Link>
 
             <p className="font-semibold mt-3 text-gray-800">Follow Us</p>
-            <ul className="flex gap-4 mt-2">
+            <ul className="flex gap-2 mt-2">
               {socialLinks.map(({ href, icon: Icon }, i) => (
                 <li key={i}>
                   <Link

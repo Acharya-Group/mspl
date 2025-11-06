@@ -1,6 +1,6 @@
 import { ROUTES } from "@/lib/constants/routes.constant";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
+import { FiFacebook, FiInstagram, FiTwitter, FiYoutube } from "react-icons/fi";
 import type { NavDropdown } from "../types/types";
 
 export const navDropdowns: NavDropdown[] = [
@@ -158,6 +158,7 @@ export const socialLinks = [
   { href: "https://twitter.com/MsplYoga", icon: FiTwitter },
   { href: "http://api.whatsapp.com/send?phone=918930300615", icon: FaWhatsapp },
   { href: "https://www.instagram.com/msplyoga?igsh=MXA3YXZzY3RrYmk3dg", icon: FiInstagram },
+  { href: "https://www.youtube.com/@yogaexam", icon: FiYoutube },
 ];
 
 export const footerLinks = [
@@ -169,6 +170,7 @@ export const footerLinks = [
       { name: "About YCB", href: ROUTES.ABOUT_YCB },
       { name: "About AYUSH", href: ROUTES.ABOUT_AYUSH },
      { name: "Fee Stature", href: ROUTES.CANDIDATES, type: "link" },
+     { name: "Exam  Calender", href: ROUTES.EXAM_CALENDER, type: "link" },
       { name: "Exam Guideline", href: "/pdf/MSPL_Exam_Guideline.docx", type: "download" },
       { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
       { name: "Impartiality Statement", href: "/pdf/Impartiality_Statement.pdf", type: "download" },

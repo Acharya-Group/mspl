@@ -7,6 +7,7 @@ import { IoMdMail } from "react-icons/io";
 import { FaPhoneVolume } from "react-icons/fa6";
 import Link from 'next/link';
 import { ROUTES } from '@/lib/constants/routes.constant';
+import { FiYoutube } from 'react-icons/fi';
 const HeaderTop = () => {
   return (
   <div className="bg-linear-to-r from-primary to-green text-white">
@@ -28,8 +29,9 @@ const HeaderTop = () => {
     <div className='flex col1 sm:border-b-2 lg:border-b-0 lg:order-3 border-white order-2 pt-2 sm:pt-0 sm:pb-0 pb-1 px-3 sm:px-0'>
         <Link target='blank' className='p-2 sm:border-r-2 sm:border-l-2 border-white hover:bg-blue-700 transition-all duration-300' href="https://www.facebook.com/OnlineYogaExam"><FaFacebookF  size={'20px'} /></Link>
         <Link target='blank' className='p-2 sm:border-r-2 border-white hover:bg-pink-500 transition-all duration-300' href="https://www.instagram.com/msplyoga?igsh=MXA3YXZzY3RrYmk3dg=="><FaInstagram size={'20px'} /></Link>
-        <Link target='blank' className='p-2 sm:border-r-2 border-white hover:bg-green transition-all duration-300' href="http://api.whatsapp.com/send?phone=918930300615"><FaWhatsapp size={'20px'} /></Link>
+        <Link target='blank' className='p-2 sm:border-r-2 border-white hover:bg-green-700 transition-all duration-300' href="http://api.whatsapp.com/send?phone=918930300615"><FaWhatsapp size={'20px'} /></Link>
         <Link target='blank' className='p-2 sm:border-r-2 border-white hover:bg-blue-700 transition-all duration-300' href="https://x.com/MsplYoga"><RiTwitterXFill size={'20px'} /></Link>
+        <Link target='blank' className='p-2 sm:border-r-2 border-white hover:bg-red-700 transition-all duration-300' href="https://www.youtube.com/@yogaexam"><FiYoutube size={'20px'} /></Link>
     </div>
   </div>
 </div>
