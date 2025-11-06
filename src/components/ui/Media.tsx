@@ -28,36 +28,24 @@ const galleryData = [
 
 const newsData = [
   {
-    title: "International Yoga Day 2025 celebrated across India",
-    desc: "Millions participated in nationwide yoga events promoting holistic health and well-being.",
     img: "/images/gallery.jpg",
   },
   {
-    title: "AYUSH Ministry launches new wellness initiative",
-    desc: "A new initiative to spread awareness about mental wellness through daily yoga practices.",
     img: "/images/gallery.jpg",
   },
   {
-    title: "Top 10 health benefits of regular yoga practice",
-    desc: "From flexibility to stress relief — explore how yoga transforms your physical and mental health.",
     img: "/images/gallery.jpg",
   },
 ];
 
 const environmentData = [
   {
-    title: "Yoga and Sustainability: A mindful connection to the Earth",
-    desc: "Learn how yoga aligns our mind and actions towards sustainable living.",
     img: "/images/gallery.jpg",
   },
   {
-    title: "Eco-friendly yoga mats gaining popularity",
-    desc: "More practitioners are switching to biodegradable yoga mats to protect the environment.",
     img: "/images/gallery.jpg",
   },
   {
-    title: "Tree planting drive by yoga practitioners in Delhi",
-    desc: "Yoga groups initiated a green campaign, planting over 10,000 trees across Delhi NCR.",
     img: "/images/gallery.jpg",
   },
 ];
@@ -145,17 +133,12 @@ const Media: React.FC = () => {
               >
                 <Image
                   src={item.img}
-                  alt={item.title}
+                  alt="News Image"
                   width={400}
                   height={250}
                   className="object-cover w-full h-48"
                 />
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-gray-800 mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
+               
               </div>
             ))}
           </div>
@@ -171,17 +154,11 @@ const Media: React.FC = () => {
               >
                 <Image
                   src={item.img}
-                  alt={item.title}
+                  alt="Environment Image"
                   width={400}
                   height={250}
                   className="object-cover w-full h-48"
                 />
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg text-gray-800 mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
               </div>
             ))}
           </div>
