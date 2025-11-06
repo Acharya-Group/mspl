@@ -11,14 +11,14 @@ const PayFee = () => {
         {/* Left side - Donation Info */}
           <div className="w-full md:w-1/2">
             <div className="text-gray-700 space-y-3 text-lg">
+                <p>
+                <strong>ACCOUNT NAME :</strong> Modish Services Private Limited
+              </p>
               <p>
                 <strong>ACCOUNT NUMBER :</strong> 246105000559
               </p>
               <p>
                 <strong>IFSC CODE :</strong> ICIC0002461
-              </p>
-              <p>
-                <strong>ACCOUNT NAME :</strong> Modish Services Private Limited
               </p>
               <p>
                 <strong>BANK :</strong> ICICI Bank

@@ -45,7 +45,7 @@ const YcbSliderOrWeb = () => {
   return (
     <div className='pt-10 lg:pt-12'>
       <div className='px-4'>
-        <div className="bg-gradient-to-r max-w-3xl mx-auto from-blue-300 to-blue-500 px-3 sm:px-2 py-3 sm:py-8 md:p-2 my-2 shadow-md rounded-xl flex flex-wrap justify-center md:justify-between items-center">
+        <div className="bg-linear-to-r max-w-3xl mx-auto from-blue-300 to-blue-500 px-3 sm:px-2 py-3 sm:py-8 md:p-2 my-2 shadow-md rounded-xl flex flex-wrap justify-center md:justify-between items-center">
           <div className="flex items-center gap-2 bg-white px-2 py-1 rounded-md md:w-6/12">
             <Image height={60} width={55} src="/images/ycb-logo.png" alt="logo"/>
             <div>

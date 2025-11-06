@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="sm:pt-32 sm:mt-32 pt-20 mt-20 relative bg-gray-100">
       {/* Newsletter Section */}
-      <div className="absolute left-1/2 sm:top-[7%] md:top-[10%] lg:top-[12%] xl:top-[17%] -translate-x-1/2 -translate-y-full h-[160px] sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-gradient-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
+      <div className="absolute left-1/2 sm:top-[7%] md:top-[10%] lg:top-[12%] xl:top-[17%] -translate-x-1/2 -translate-y-full h-40 sm:h-[225px] w-[320px] sm:w-[600px] md:w-[750px] lg:w-[973px] mx-auto bg-linear-to-r from-primary to-green rounded-2xl sm:px-12 px-4 flex flex-col items-center justify-center overflow-hidden">
         <Image
           src="/images/left-newslatter.svg"
           alt="left-lines"
@@ -34,13 +34,13 @@ const Footer = () => {
           Join Free Demo
         </h2>
 
-        <form className="relative z-10 flex items-center justify-between mt-3 sm:mt-2 w-full max-w-[464px] h-[40px] sm:h-[52px] rounded-full shadow-xl ps-[22px] bg-white">
+        <form className="relative z-10 flex items-center justify-between mt-3 sm:mt-2 w-full max-w-[464px] h-10 sm:h-[52px] rounded-full shadow-xl ps-[22px] bg-white">
           <input
             className="w-full outline-none text-sm text-gray-600 placeholder-gray-600"
             type="email"
             placeholder="Enter your email"
           />
-          <button className="flex justify-center items-center text-white min-w-[70px] h-[32px] sm:h-[36px] rounded-full bg-gradient-to-r from-green-400 to-blue-400 mx-1 sm:mx-2 group">
+          <button className="flex justify-center items-center text-white min-w-[70px] h-8 sm:h-9 rounded-full bg-linear-to-r from-green-400 to-blue-400 mx-1 sm:mx-2 group">
             <FaArrowRight className="transition-transform duration-300 ease-linear group-hover:translate-x-[7px]" />
           </button>
         </form>
@@ -66,8 +66,8 @@ const Footer = () => {
             </p>
             <div className="flex gap-3 items-center">
             
-        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 8930300615</Link>
-        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 9991777717</Link>
+        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 89303-00615</Link>
+        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 99917-77717</Link>
 
              
             </div>
@@ -81,7 +81,7 @@ const Footer = () => {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-9 w-9 rounded-full bg-gradient-to-br from-primary to-green text-white flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                    className="h-9 w-9 rounded-full bg-linear-to-br from-primary to-green text-white flex items-center justify-center hover:scale-110 transition-transform duration-300"
                   >
                     <Icon size={18} />
                   </Link>
@@ -116,7 +116,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="p-3 bg-gradient-to-b to-primary from-green border-t text-white border-white mt-8">
+      <div className="p-3 bg-linear-to-b to-primary from-green border-t text-white border-white mt-8">
         <p className="text-sm opacity-75 text-center pb-8 lg:pb-0">
           © {new Date().getFullYear()} All Rights Reserved{" "}
           <span className="font-semibold">

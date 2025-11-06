@@ -99,7 +99,7 @@ const Blog = () => {
                         >
                             {blogs.map((blog) => (
                                 <SwiperSlide key={blog._id}>
-                                    <div className="p-[2px] rounded-xl bg-gradient-to-r from-green-500 via-blue-500 to-green-600 animate-borderSpin">
+                                    <div className="p-[2px] rounded-xl bg-linear-to-r from-green-500 via-blue-500 to-green-600 animate-borderSpin">
                                         <div className="bg-white rounded-xl shadow-md flex flex-col overflow-hidden">
                                             {/* Full-width image */}
                                             <Image

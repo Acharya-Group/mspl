@@ -43,8 +43,8 @@ export default function Faqs() {
                 className={`px-4 py-2 rounded-lg cursor-pointer shadow-lg transition-all duration-300 
                   ${
                     isActive
-                      ? "bg-gradient-to-r from-primary to-green"
-                      : "bg-gradient-to-r from-green to-primary"
+                      ? "bg-linear-to-r from-primary to-green"
+                      : "bg-linear-to-r from-green to-primary"
                   }`}
               >
                 <button
@@ -86,7 +86,7 @@ export default function Faqs() {
           <div className="text-center mt-8">
             <Link
               href="/faqs"
-              className="inline-block bg-gradient-to-r from-green to-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+              className="inline-block bg-linear-to-r from-green to-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
             >
               View More
             </Link>

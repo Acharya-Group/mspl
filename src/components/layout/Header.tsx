@@ -33,10 +33,10 @@ const Header = () => {
           />
         </Link>
         <Link href={"/"} className="text-center">
-          <h1 className="text-xl lg:text-4xl font-nunito font-semibold text-blue">
+          <h1 className="text-xl lg:text-4xl xl:text-[44px] font-semibold text-blue">
             MSPL - PERSONNEL CERTIFICATION BODY
           </h1>
-          <h3 className="text-sm lg:text-base font-semibold text-green">
+          <h3 className="text-sm lg:text-base xl:text-xl font-semibold text-green">
             Approved By: Yoga Certification Board, (Ministry Of Ayush, Govt Of India)
           </h3>
         </Link>

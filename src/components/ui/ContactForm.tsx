@@ -49,7 +49,7 @@ const ContactForm = () => {
       href={link.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-green-400 to-blue-400 text-white hover:scale-105 transition-transform"
+      className="w-9 h-9 flex items-center justify-center rounded-md bg-linear-to-br from-green-400 to-blue-400 text-white hover:scale-105 transition-transform"
     >
       <link.icon className="text-xl" />
     </a>
@@ -59,7 +59,7 @@ const ContactForm = () => {
               </div>
             </div>
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
+            <div className="bg-linear-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
               {/* Decorative circles */}
               <div className="absolute w-[130px] h-[130px] rounded-full bg-gradient-to-tr from-green animate-pulse to-transparent top-[130px] -right-10"></div>
               <div className="absolute w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-primary animate-pulse to-transparent top-2 right-8"></div>
