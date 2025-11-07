@@ -11,3 +11,9 @@ export type NavDropdown = {
   title: string;
   links: NavLink[];
 };
+
+export interface SeoData {
+  title: string;
+  keywords: string;
+  description: string;
+}
