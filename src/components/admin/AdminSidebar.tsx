@@ -7,7 +7,6 @@ import { FaExpandArrowsAlt } from "react-icons/fa";
 import {
   Home,
   MessageSquare,
-  Users,
   ShoppingCart,
   Image as LucideImage,
   Mail,

@@ -1,4 +1,4 @@
-import AdminLayout from '@/componets/admin/AdminLayout'
+import AdminLayout from '@/components/admin/AdminLayout'
 import React from 'react'
 
 const SlidersPage = () => {

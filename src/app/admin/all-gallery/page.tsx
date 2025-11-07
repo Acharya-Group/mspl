@@ -1,11 +1,11 @@
 'use client';
 
-import AdminLayout from '@/componets/admin/AdminLayout';
 import React, { useEffect, useState } from 'react';
 import { useGallery, Gallery } from '@/hooks/gallery';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
+import AdminLayout from '@/components/admin/AdminLayout';
 
 const Page: React.FC = () => {
   const { allGalleries, deleteGallery } = useGallery();

@@ -1,11 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { getSeo, SeoData } from "@/lib/getSeo";
 import ClientLayout from "../components/layout/ClientLayout";
 
 export const metadata: Metadata = {
-  title: "Achariya Technologies Private Limited",
+  title: "mspl",
   description: "My awesome Next.js site with MUI",
 };
 
@@ -14,8 +13,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // ✅ Fetch SEO data (server-side)
-  const seo: SeoData | null = await getSeo();
 
   return (
     <html lang="en">
