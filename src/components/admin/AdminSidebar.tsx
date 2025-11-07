@@ -7,7 +7,6 @@ import { FaExpandArrowsAlt } from "react-icons/fa";
 import {
   Home,
   MessageSquare,
-  ShoppingCart,
   Image as LucideImage,
   Mail,
   PlusSquare,
@@ -39,6 +38,15 @@ const menuItems: MenuItem[] = [
     name: 'Profile',
     icon: User,
     children: [{ name: 'Change Password', href: '/admin/change-password', icon: FileText }],
+  },
+  { name: 'Event', href: '/admin/event', icon: FileText },
+  {
+    name: 'Exam Calender',
+    icon: LucideImage,
+    children: [
+        { name: 'Add Calender', href: '/admin/add-calender', icon: PlusSquare },
+      { name: 'All Sliders', href: '/admin/all-calender', icon: List },
+    ],
   },
   {
     name: 'Slider',
@@ -96,17 +104,7 @@ const menuItems: MenuItem[] = [
         { name: 'Add Gallery', href: '/admin/add-gallery', icon: PlusSquare },
       { name: 'All Gallery', href: '/admin/all-gallery', icon: List },
     ],
-  },
- 
- {
-    name: 'Stationery',
-    icon: ShoppingCart,
-    children: [
-      { name: 'Stationery Orders', href: '/admin/stationery-order', icon: List },
-      { name: 'Stationery Rates', href: '/admin/stationery-rate', icon: List },
-    ],
-  },
- 
+  }, 
   { name: 'SEO', href: '/admin/seo', icon: FileText },
   { name: 'Contact Enquiries', href: '/admin/contact-enquiries', icon: Mail },
   { name: 'Feedback & Compl.', href: '/admin/complaints-feedback', icon: MessageSquare },
