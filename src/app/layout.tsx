@@ -1,23 +1,35 @@
-// app/layout.tsx
-import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from "../components/layout/ClientLayout";
+import type { Metadata } from "next";
+import { getSeo } from "@/lib/getSeo";
+import ClientLayout from "@/components/layout/ClientLayout";
 
-export const metadata: Metadata = {
-  title: "mspl",
-  description: "My awesome Next.js site with MUI",
-};
+// ✅ Fetch SEO data safely
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const seo = await getSeo();
+    return {
+      title: seo?.title || "Mspl",
+      description: seo?.description || "mspl description",
+      keywords: seo?.keywords || "mspl",
+    };
+  } catch (error) {
+    console.error("SEO fetch failed:", error);
+    return {
+      title: "Mspl",
+      description: "mspl description",
+      keywords: "mspl",
+    };
+  }
+}
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body>
-        {/* ✅ Pass children into client layout */}
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

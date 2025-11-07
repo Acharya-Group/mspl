@@ -48,7 +48,7 @@ const SeoPage: React.FC = () => {
 
   return (
     <AdminLayout>
-      <div className="mx-auto bg-white p-6 rounded-2xl shadow-md max-w-2xl">
+      <div className="mx-auto container bg-white p-6 rounded-2xl shadow-md">
         <h1 className="text-2xl font-bold mb-6">SEO Add & Update</h1>
 
         <form onSubmit={handleSubmit} className="space-y-5">
