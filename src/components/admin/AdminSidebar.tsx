@@ -57,6 +57,22 @@ const menuItems: MenuItem[] = [
     ],
   },
   {
+    name: 'Faq',
+    icon: LucideImage,
+    children: [
+        { name: 'Add Faq', href: '/admin/add-faq', icon: PlusSquare },
+      { name: 'All Faq', href: '/admin/all-faq', icon: List },
+    ],
+  },
+  {
+    name: 'Notice',
+    icon: LucideImage,
+    children: [
+        { name: 'Add Notice', href: '/admin/add-notice', icon: PlusSquare },
+      { name: 'All Notice', href: '/admin/all-notice', icon: List },
+    ],
+  },
+  {
     name: 'Blog',
     icon: LucideImage,
     children: [

@@ -61,17 +61,14 @@ useEffect(() => {
         <h1 className="text-2xl font-bold mb-6">Feedback & Complaints</h1>
 
         <div className="overflow-x-auto">
-          <table className="min-w-[1300px] w-full divide-y divide-gray-200">
+          <table className="min-w-[1000px] w-full divide-y divide-gray-200">
             <thead className="bg-green text-white">
               <tr>
                 <th className="px-4 py-2">#</th>
                 <th className="px-4 py-2">Date</th>
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">Phone</th>
-                <th className="px-4 py-2">District</th>
-                <th className="px-4 py-2">State</th>
                 <th className="px-4 py-2">Form Type</th>
-                <th className="px-4 py-2">Subject</th>
                 <th className="px-4 py-2">Message</th>
                 <th className="px-4 py-2">Status</th>
                 <th className="px-4 py-2">Actions</th>
@@ -84,10 +81,7 @@ useEffect(() => {
                         <td className="px-4 py-2">{entry.createdAt?.split("T")[0]}</td>
                   <td className="px-4 py-2">{entry.name}</td>
                   <td className="px-4 py-2">{entry.number}</td>
-                  <td className="px-4 py-2">{entry.district}</td>
-                  <td className="px-4 py-2">{entry.state}</td>
                   <td className="px-4 py-2">{entry.formType}</td>
-                  <td className="px-4 py-2">{entry.subject}</td>
                   <td className="px-4 py-2">
                     <div className="w-40 h-20 p-2 border rounded overflow-y-auto">{entry.message}</div>
                   </td>
@@ -97,7 +91,7 @@ useEffect(() => {
                       onChange={(e) =>
                         handleStatusChange(entry, e.target.value as FeedbackComplaint["status"])
                       }
-                      className="px-2 py-1 rounded border-green border-[2px]"
+                      className="px-2 py-1 rounded border-green border-0.5"
                     >
                       <option value="pending">Pending</option>
                       <option value="resolved">Resolved</option>

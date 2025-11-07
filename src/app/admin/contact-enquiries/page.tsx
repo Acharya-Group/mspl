@@ -80,8 +80,6 @@ const ContactsPage: React.FC = () => {
                 <th className="px-4 py-2 text-left">Date</th>
                 <th className="px-4 py-2 text-left">Name</th>
                 <th className="px-4 py-2 text-left">Phone</th>
-                <th className="px-4 py-2 text-left">District</th>
-                <th className="px-4 py-2 text-left">State</th>
                 <th className="px-4 py-2 text-left">Message</th>
                 <th className="px-4 py-2 text-left">Status</th>
                 <th className="px-4 py-2 text-left">Actions</th>
@@ -95,8 +93,6 @@ const ContactsPage: React.FC = () => {
                         <td className="px-4 py-2">{contact.createdAt?.split("T")[0]}</td>
                   <td className="px-4 py-2">{contact.name}</td>
                   <td className="px-4 py-2">{contact.number}</td>
-                  <td className="px-4 py-2">{contact.district}</td>
-                  <td className="px-4 py-2">{contact.state}</td>
                   <td className="px-4 py-2">
                     <div className="w-40 h-20 p-2 border rounded overflow-y-auto">
                       {contact.message}
