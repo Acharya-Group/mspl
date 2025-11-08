@@ -5,10 +5,7 @@ export interface FeedbackComplaint {
   _id: string;
   name: string;
   number: string;
-  district: string;
-  state: string;
   formType: string;
-  subject: string;
   message: string;
   status?: "pending" | "resolved" | "loading";
   createdAt?: string;

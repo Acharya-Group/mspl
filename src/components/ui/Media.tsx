@@ -1,167 +1,121 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useGallery } from "@/hooks/gallery";
+import { useVideo } from "@/hooks/video";
 
-// Define tab types
-type TabType = "videos" | "gallery" | "news" | "environment";
-
-// -----------------------------
-// DATA SECTION
-// -----------------------------
-const videoData = [
-  "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  "https://www.youtube.com/embed/ysz5S6PUM-U",
-  "https://www.youtube.com/embed/tgbNymZ7vqY",
-];
-
-const galleryData = [
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-  "/images/gallery.jpg",
-];
-
-const newsData = [
-  {
-    img: "/images/gallery.jpg",
-  },
-  {
-    img: "/images/gallery.jpg",
-  },
-  {
-    img: "/images/gallery.jpg",
-  },
-];
-
-const environmentData = [
-  {
-    img: "/images/gallery.jpg",
-  },
-  {
-    img: "/images/gallery.jpg",
-  },
-  {
-    img: "/images/gallery.jpg",
-  },
-];
-
-// -----------------------------
-// COMPONENT SECTION
-// -----------------------------
 const Media: React.FC = () => {
-  const [tab, setTab] = useState<TabType>("videos");
+  const { allGalleries } = useGallery();
+  const { allVideos } = useVideo();
 
-  const tabs: { key: TabType; label: string }[] = [
-    { key: "videos", label: "Videos" },
-    { key: "gallery", label: "Gallery" },
-    { key: "news", label: "News" },
-    { key: "environment", label: "Environment" },
-  ];
+  const [tabs, setTabs] = useState<{ id: string; title: string }[]>([]);
+  const [activeTab, setActiveTab] = useState<string>("videos");
+
+  // ✅ Fetch tabs dynamically (Videos + Gallery categories)
+  useEffect(() => {
+    if (allGalleries.isSuccess && allGalleries.data) {
+      const galleryTabs = allGalleries.data.map((g) => ({
+        id: g._id,
+        title: g.category,
+      }));
+      setTabs([{ id: "videos", title: "Videos" }, ...galleryTabs]);
+    }
+  }, [allGalleries.isSuccess, allGalleries.data]);
+
+  // ✅ Convert YouTube URLs to embed format
+  const toEmbedUrl = (url: string) => {
+    if (!url) return "";
+    try {
+      if (url.includes("youtu.be/")) {
+        const id = url.split("youtu.be/")[1].split("?")[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+      const v = new URL(url).searchParams.get("v");
+      if (v) return `https://www.youtube.com/embed/${v}`;
+      return url;
+    } catch {
+      return url;
+    }
+  };
+
+  // ✅ Render content based on active tab
+  const renderContent = () => {
+    if (activeTab === "videos") {
+      if (allVideos.isLoading) return <p>Loading videos...</p>;
+      if (allVideos.isError) return <p>Error loading videos!</p>;
+      if (!allVideos.data?.length) return <p>No videos found.</p>;
+
+      return (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {allVideos.data.map((video) => (
+            <div
+              key={video._id}
+              className="rounded-lg overflow-hidden shadow hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+            >
+              <iframe
+                src={toEmbedUrl(video.VideoUrl)}
+                title={video._id}
+                className="w-full h-56 rounded-lg"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // ✅ Find selected gallery and show its images
+    const activeGallery = allGalleries.data?.find((g) => g._id === activeTab);
+    if (!activeGallery) return <p>No images found for this category.</p>;
+
+    return (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {activeGallery.images.map((img) => (
+          <div
+            key={img._id}
+            className="rounded-lg overflow-hidden shadow hover:shadow-md transition-transform duration-300 hover:scale-[1.03]"
+          >
+            <Image
+              src={img.url}
+              alt={activeGallery.category}
+              width={400}
+              height={300}
+              className="object-cover w-full h-56"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
-      {/* Tabs */}
-      <div className="flex justify-center flex-wrap gap-3 mb-8">
-        {tabs.map((item) => (
+    <div className="container mx-auto px-4 py-12">
+      {/* ✅ Tabs Section */}
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
+        {tabs.map((tab) => (
           <button
-            key={item.key}
-            onClick={() => setTab(item.key)} // ✅ Properly typed
-            className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 focus:outline-none ${
-              tab === item.key
-                ? "gradient-animate text-white shadow-md"
-                : "bg-white text-gray-700 border hover:bg-indigo-50"
-            }`}
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-5 py-2.5 rounded-lg font-medium uppercase transition-all duration-300 focus:outline-none
+              ${
+                activeTab === tab.id
+                  ? "gradient-animate text-white shadow-md"
+                  : "bg-gray-100 text-gray-700 border hover:bg-indigo-50"
+              }`}
           >
-            {item.label}
+            {tab.title}
           </button>
         ))}
       </div>
 
-      {/* Tab Content */}
-      <div className="bg-white p-6 rounded-xl shadow-md transition-all duration-300">
-        {/* Videos */}
-        {tab === "videos" && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videoData.map((src, i) => (
-              <div
-                key={i}
-                className="rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:scale-[1.02]"
-              >
-                <iframe
-                  src={src}
-                  title={`Video ${i + 1}`}
-                  className="w-full h-56 rounded-lg"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Gallery */}
-        {tab === "gallery" && (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryData.map((src, i) => (
-              <div
-                key={i}
-                className="rounded-lg overflow-hidden shadow hover:shadow-md transition-transform duration-300 hover:scale-[1.03]"
-              >
-                <Image
-                  src={src}
-                  alt={`Gallery ${i + 1}`}
-                  width={400}
-                  height={300}
-                  className="rounded-lg object-cover w-full h-56"
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* News */}
-        {tab === "news" && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {newsData.map((item, i) => (
-              <div
-                key={i}
-                className="border rounded-lg shadow hover:shadow-lg transition-all duration-300 overflow-hidden"
-              >
-                <Image
-                  src={item.img}
-                  alt="News Image"
-                  width={400}
-                  height={250}
-                  className="object-cover w-full h-48"
-                />
-               
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Environment */}
-        {tab === "environment" && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {environmentData.map((item, i) => (
-              <div
-                key={i}
-                className="border rounded-lg shadow hover:shadow-lg transition-all duration-300 overflow-hidden"
-              >
-                <Image
-                  src={item.img}
-                  alt="Environment Image"
-                  width={400}
-                  height={250}
-                  className="object-cover w-full h-48"
-                />
-              </div>
-            ))}
-          </div>
+      {/* ✅ Content Section */}
+      <div className="bg-white p-6 rounded-xl shadow-md min-h-[300px]">
+        {allGalleries.isLoading ? (
+          <p>Loading...</p>
+        ) : allGalleries.isError ? (
+          <p className="text-red-500">Error loading galleries!</p>
+        ) : (
+          renderContent()
         )}
       </div>
     </div>

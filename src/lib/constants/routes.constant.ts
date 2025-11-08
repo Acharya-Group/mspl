@@ -11,6 +11,7 @@ export const ROUTES = {
   GALLERY: "/media",
   VIDEOS: "/media",
   NEWS: "/media",
+  BLOG: "/blog",
   ENVIRONMENT: "/media",
   PAY_FEE: "/pay-fee",
   FAQS: "/faqs",

@@ -168,6 +168,7 @@ export const footerLinks = [
       { name: "About Us", href: ROUTES.ABOUT_US },
       { name: "Mission & Vision", href: ROUTES.MISSION_VISION },
       { name: "About YCB", href: ROUTES.ABOUT_YCB },
+      { name: "Blogs", href: ROUTES.BLOG },
       { name: "About AYUSH", href: ROUTES.ABOUT_AYUSH },
      { name: "Fee Stature", href: ROUTES.CANDIDATES, type: "link" },
      { name: "Exam  Calender", href: ROUTES.EXAM_CALENDER, type: "link" },
