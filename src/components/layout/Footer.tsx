@@ -57,7 +57,7 @@ const Footer = () => {
                 width={90}
                 height={150}
               />
-              <h3 className="text-base font-semibold">Yoga Certification Board</h3>
+              <h3 className="sm:text-base text-sm font-semibold">Approved By:- Yoga Certification Board</h3>
               <Para className="text-[12px]" content="Ministry of AYUSH, Government of India"/>
           </div>
           {/* Logo & About Section */}

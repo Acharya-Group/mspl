@@ -6,8 +6,6 @@ export interface Contact {
   _id: string;
   name: string;
   number: string;
-  district: string;
-  state: string;
   message: string;
   status?: "pending" | "resolve";
   createdAt?: string;
