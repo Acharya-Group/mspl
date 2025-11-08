@@ -20,7 +20,7 @@ const AdminNavbar: React.FC<AdminNavbarProps> = ({ onSidebarToggle }) => {
   }
 
   return (
-    <div className="bg-white px-4 py-3 flex items-center justify-between">
+    <div className="bg-white relative z-10 px-4 py-3 flex items-center justify-between">
       {/* Sidebar Toggle */}
       <button
         onClick={onSidebarToggle}

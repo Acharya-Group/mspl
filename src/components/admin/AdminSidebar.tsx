@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaArrowRight } from "react-icons/fa";
-import { FaExpandArrowsAlt } from "react-icons/fa";
+import { DiApple } from "react-icons/di";
 import {
   Home,
   MessageSquare,
@@ -127,7 +127,11 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
     >
       {/* Header */}
       <Link href="/admin" className="px-4 py-2 border-b border-gray-300 flex justify-between items-center">
-        <Image unoptimized src="/images/mspl-logo.png" alt="Company Logo" width={65} height={65} className="object-cover" />
+        <div className='flex items-center gap-2'>
+        <Image unoptimized src="/images/mspl-logo.png" alt="Company Logo" width={49} height={49} className="object-cover" />
+          <h4 className='text-xs font-bold'>MSPL - PERSONNEL CERTIFICATION BODY</h4>
+
+        </div>
         <button onClick={onClose} className="md:hidden text-gray-800 hover:text-gray-600">
           <X className="w-6 h-6" />
         </button>
@@ -152,7 +156,7 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
                       }`}
                     >
                       <span className="flex items-center group-hover:text-white">
-                        <FaExpandArrowsAlt className="w-5 h-5 mr-2 group-hover:text-white" />
+                        <DiApple className="w-5 h-5 mr-2 group-hover:text-white" />
                         {item.name}
                       </span>
                        
@@ -185,7 +189,7 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
                 ) : (
                   <Link
                     href={item.href || '#'}
-                    className={`flex items-center p-2 rounded-lg hover:bg-gray-200 ${
+                    className={`flex items-center p-2 rounded-lg hover:text-white transition-all duration-300 hover:bg-green ${
                       isActive ? 'font-semibold' : ''
                     }`}
                   >

@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import AdminLayout from "@/components/admin/AdminLayout";
 import Link from "next/link";
 import { useFaq } from "@/hooks/faq";
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const { addFaq } = useFaq();
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
@@ -39,7 +39,6 @@ const page: React.FC = () => {
 
   return (
     <AdminLayout>
-      <Toaster />
       <div className="container mx-auto bg-white p-6 rounded-2xl shadow-md">
         <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">Add FAQ</h1>
@@ -99,4 +98,4 @@ const page: React.FC = () => {
   );
 };
 
-export default page;
+export default Page;
