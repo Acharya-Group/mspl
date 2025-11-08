@@ -5,7 +5,7 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import { FaEdit, FaTrash, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import { useExamCalendar, Exam } from "@/hooks/examCalender";
-import toast, { Toaster } from "react-hot-toast"; 
+import toast from "react-hot-toast"; 
 
 const Page: React.FC = () => {
   const { allExams, deleteExam, updateExam } = useExamCalendar();
@@ -94,8 +94,6 @@ const Page: React.FC = () => {
 
   return (
     <AdminLayout>
-      <Toaster /> {/* ✅ Add this line */}
-
       <div className="bg-white p-6 rounded-2xl shadow-md">
         <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">All Exams</h1>
