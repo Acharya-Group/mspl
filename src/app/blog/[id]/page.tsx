@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useBlogs, Blog as BlogType } from "@/hooks/blogs";
 import toast from "react-hot-toast";
 import CommonHero from "@/components/common/CommonHero";
+import Button from "@/components/common/Button";
 
 const BlogDetailsPage: React.FC = () => {
   const params = useParams();
@@ -90,6 +91,10 @@ const BlogDetailsPage: React.FC = () => {
               </div>
             </div>
           )}
+
+          <Link href="/blog" className="flex justify-center mt-10">
+            <Button content="View All Blogs"/>
+          </Link>
         </div>
       </section>
     </>
