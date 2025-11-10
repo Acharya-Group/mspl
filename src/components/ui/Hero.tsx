@@ -72,7 +72,7 @@ const sliders: Slider[] = allSliders.data || [];
           aria-label={`${dir} slide`}
           className={`hero-${dir} hidden sm:flex absolute ${
             dir === "prev" ? "left-4" : "right-4"
-          } top-1/2 -translate-y-1/2 z-10 bg-primary p-2 sm:p-3 rounded-full shadow text-white sm:h-10 sm:w-10 h-8 w-8 justify-center items-center cursor-pointer hover:bg-secondary transition-all duration-300`}
+          } top-1/2 -translate-y-1/2 z-10 bg-primary p-2 sm:p-3 rounded-full shadow text-white sm:h-10 sm:w-10 h-8 w-8 justify-center items-center cursor-pointer hover:bg-green transition-all duration-300`}
         >
           {dir === "prev" ? <FiArrowLeft /> : <FiArrowRight />}
         </button>
