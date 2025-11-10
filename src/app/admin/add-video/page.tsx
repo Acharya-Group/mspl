@@ -4,6 +4,7 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import React, { useState, FormEvent } from "react";
 import toast from "react-hot-toast";
 import { useVideo } from "@/hooks/video";
+import Link from "next/link";
 
 const Page: React.FC = () => {
   const { addVideo } = useVideo();
@@ -34,7 +35,10 @@ const Page: React.FC = () => {
   return (
     <AdminLayout>
       <div className="mx-auto bg-white p-6 rounded-2xl shadow-md max-w-2xl">
-        <h1 className="text-2xl font-bold mb-6">Add Video</h1>
+         <div className="flex justify-between mb-6 items-center">
+          <h1 className="text-2xl font-bold">Add Video</h1>
+          <Link href={"/admin/all-video"} className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white">All Video</Link>
+        </div>
 
         <form className="space-y-5" onSubmit={handleSubmit}>
           {/* Video URL Input */}

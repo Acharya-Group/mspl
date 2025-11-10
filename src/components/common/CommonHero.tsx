@@ -8,7 +8,7 @@ interface CommonHeroProps {
 
 const CommonHero: React.FC<CommonHeroProps> = ({ currentPage }) => {
   return (
-    <div className='bg-gray-100 text-gray-800 h-[120px] lg:h-[200px] flex flex-col justify-center items-center'>
+    <div className='bg-[url(/images/detail-page-bg.png)] h-[120px] lg:h-[200px] flex flex-col justify-center items-center'>
       <SubHeading content={currentPage} />
       <nav className='lg:mt-2 mt-1 text-sm'>
         <Link href="/" className='hover:underline'>Home</Link>
