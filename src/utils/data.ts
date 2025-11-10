@@ -175,6 +175,7 @@ export const footerLinks = [
       { name: "Exam Guideline", href: "/pdf/MSPL_Exam_Guideline.docx", type: "download" },
       { name: "Complaints & Feedback", href: ROUTES.COMPLAINTS_APPEALS, type: "link" },
       { name: "Impartiality Statement", href: "/pdf/Impartiality_Statement.pdf", type: "download" },
+     { name: "Contact Us", href: ROUTES.CONTACT },
      { name: "Privacy Policy", href: ROUTES.PRIVACY_POLICY },
 { name: "Terms and Conditions", href: ROUTES.TERMS_CONDITIONS },
 

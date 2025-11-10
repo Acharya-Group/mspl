@@ -9,35 +9,23 @@ import Link from "next/link";
 import { useNotice } from "@/hooks/notice";
 import { useEvent } from "@/hooks/event";
 
+interface Notice {
+  _id?: string;
+  title: string;
+  link?: string;
+}
+
+interface Event {
+  _id?: string;
+  title: string;
+}
+
 const AboutUs: React.FC = () => {
   const { allNotices } = useNotice();
   const { allEvents } = useEvent();
 
-  // ✅ Handle loading & error states
-  const isLoading = allNotices.isLoading || allEvents.isLoading;
-  const isError = allNotices.isError || allEvents.isError;
-
-  if (isLoading)
-    return (
-      <section className="py-10 text-center">
-        <p className="text-gray-500 animate-pulse text-lg font-medium">
-          Loading content...
-        </p>
-      </section>
-    );
-
-  if (isError)
-    return (
-      <section className="py-10 text-center">
-        <p className="text-red-500 font-semibold">
-          Failed to load Notices or Events. Please try again later.
-        </p>
-      </section>
-    );
-
-  // ✅ Data from backend (fallback to empty array if undefined)
-  const notices = allNotices.data || [];
-  const events = allEvents.data || [];
+  const notices: Notice[] = allNotices.data || [];
+  const events: Event[] = allEvents.data || [];
 
   return (
     <section>
@@ -64,10 +52,18 @@ const AboutUs: React.FC = () => {
                   <FaStar /> Notice Board <FaStar />
                 </h3>
               </div>
-              <div className="bg-white text-gray-700 p-4 text-sm leading-relaxed overflow-y-scroll">
-                <ul className="list-disc pl-5 space-y-2 max-h-[200px]">
-                  {notices.length > 0 ? (
-                    notices.map((n, i) => (
+              <div className="bg-white text-gray-700 p-4 text-sm leading-relaxed overflow-y-auto max-h-[250px]">
+                {allNotices.isLoading ? (
+                  <p className="text-gray-500 animate-pulse text-center py-4">
+                    Loading notices...
+                  </p>
+                ) : allNotices.isError ? (
+                  <p className="text-red-500 text-center py-4">
+                    Failed to load notices.
+                  </p>
+                ) : notices.length > 0 ? (
+                  <ul className="list-disc pl-5 space-y-2">
+                    {notices.map((n: Notice, i: number) => (
                       <li key={n._id || i}>
                         <a
                           href={n.link}
@@ -78,11 +74,13 @@ const AboutUs: React.FC = () => {
                           {n.title}
                         </a>
                       </li>
-                    ))
-                  ) : (
-                    <li>No notices found.</li>
-                  )}
-                </ul>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-center text-gray-500 py-4">
+                    No notices found.
+                  </p>
+                )}
               </div>
             </div>
 
@@ -93,16 +91,26 @@ const AboutUs: React.FC = () => {
                   <FaStar /> News & Events <FaStar />
                 </h3>
               </div>
-              <div className="bg-white text-gray-700 p-4 text-sm leading-relaxed overflow-y-scroll">
-                <ul className="list-disc pl-5 space-y-2 max-h-[200px]">
-                  {events.length > 0 ? (
-                    events.map((e, i) => (
+              <div className="bg-white text-gray-700 p-4 text-sm leading-relaxed overflow-y-auto max-h-[250px]">
+                {allEvents.isLoading ? (
+                  <p className="text-gray-500 animate-pulse text-center py-4">
+                    Loading events...
+                  </p>
+                ) : allEvents.isError ? (
+                  <p className="text-red-500 text-center py-4">
+                    Failed to load events.
+                  </p>
+                ) : events.length > 0 ? (
+                  <ul className="list-disc pl-5 space-y-2">
+                    {events.map((e: Event, i: number) => (
                       <li key={e._id || i}>{e.title}</li>
-                    ))
-                  ) : (
-                    <li>No events found.</li>
-                  )}
-                </ul>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-center text-gray-500 py-4">
+                    No events found.
+                  </p>
+                )}
               </div>
             </div>
           </div>

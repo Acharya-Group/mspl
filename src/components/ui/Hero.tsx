@@ -9,11 +9,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { useSlider } from "@/hooks/slider";
+import { useSlider,Slider } from "@/hooks/slider";
 
 const Hero: React.FC = () => {
   const { allSliders } = useSlider();
-  const sliders = allSliders.data || [];
+const sliders: Slider[] = allSliders.data || [];
 
   // ✅ Unified state handler
   if (allSliders.isLoading || allSliders.isError || !sliders.length) {
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
         navigation={{ nextEl: ".hero-next", prevEl: ".hero-prev" }}
         className="hero_slider w-full h-[160px] sm:h-[300px] lg:min-h-[400px]"
       >
-        {sliders.map((s: any, i: number) => (
+        {sliders.map((s, i) => (
           <SwiperSlide key={s._id || i}>
             <Link href={s.link || "/"} className="block w-full h-full">
               <Image

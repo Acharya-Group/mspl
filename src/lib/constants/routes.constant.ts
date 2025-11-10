@@ -15,6 +15,7 @@ export const ROUTES = {
   ENVIRONMENT: "/media",
   PAY_FEE: "/pay-fee",
   FAQS: "/faqs",
+  CONTACT: "/contact",
   CANDIDATES:"/candidate",
   YOGA_GOALS:"/yoga-goals",
   EXAM_CALENDER:"/exam-calender",

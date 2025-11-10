@@ -7,20 +7,28 @@ import { socialLinks } from "@/utils/data";
 import { usePathname } from "next/navigation";
 import useContact from "@/hooks/contactData";
 
-const ContactForm = () => {
+// ✅ Define a proper type for your form data
+type ContactFormData = {
+  name: string;
+  number: string;
+  email: string;
+  message: string;
+};
+
+const ContactForm: React.FC = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const { createContact } = useContact();
 
-  // ✅ Local state
-  const [formData, setFormData] = useState({
+  // ✅ Strongly typed local state
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     number: "",
     email: "",
     message: "",
   });
 
-  // ✅ Handle change
+  // ✅ Typed handle change
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -28,8 +36,8 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // ✅ Handle submit
-  const handleSubmit = async (e: React.FormEvent) => {
+  // ✅ Typed handle submit
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { name, number, email, message } = formData;
 
@@ -53,6 +61,9 @@ const ContactForm = () => {
     }
   };
 
+  // ✅ Explicitly typed fields for safety
+  const fields: (keyof ContactFormData)[] = ["name", "email", "number"];
+
   return (
     <section
       className={`relative w-full flex items-center justify-center ${
@@ -60,8 +71,8 @@ const ContactForm = () => {
       } overflow-hidden py-10 lg:py-16`}
     >
       {/* Decorative circles */}
-      <div className="absolute w-[420px] animate-spin h-[420px] rounded-full bg-gradient-to-b to-primary from-green bottom-1/2 right-1/2 transform translate-x-[-40%] translate-y-[38%]"></div>
-      <div className="absolute w-[360px] h-[360px] bg-gray-50 rounded-full bottom-[50%] right-[50%] transform translate-x-[-40%] translate-y-[38%]"></div>
+      <div className="absolute w-[420px] animate-spin h-[420px] rounded-full bg-gradient-to-b to-primary from-green bottom-1/2 right-1/2 transform translate-x-[-40%] translate-y-[38%]" />
+      <div className="absolute w-[360px] h-[360px] bg-gray-50 rounded-full bottom-[50%] right-[50%] transform translate-x-[-40%] translate-y-[38%]" />
 
       <div className="container">
         <div className="bg-white max-w-4xl mx-auto rounded-xl shadow-lg overflow-hidden grid md:grid-cols-2 relative z-10">
@@ -107,7 +118,7 @@ const ContactForm = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 flex items-center justify-center rounded-md bg-linear-to-br from-green-400 to-blue-400 text-white hover:scale-105 transition-transform"
+                    className="w-9 h-9 flex items-center justify-center rounded-md bg-gradient-to-br from-green-400 to-blue-400 text-white hover:scale-105 transition-transform"
                   >
                     <link.icon className="text-xl" />
                   </a>
@@ -117,10 +128,10 @@ const ContactForm = () => {
           </div>
 
           {/* Right form section */}
-          <div className="bg-linear-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
-            <div className="absolute w-[130px] h-[130px] rounded-full bg-gradient-to-tr from-green animate-pulse to-transparent top-[130px] -right-10"></div>
-            <div className="absolute w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-primary animate-pulse to-transparent top-2 right-8"></div>
-            <div className="absolute w-6 h-6 bg-primary rotate-45 top-12 -left-3"></div>
+          <div className="bg-gradient-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
+            <div className="absolute w-[130px] h-[130px] rounded-full bg-gradient-to-tr from-green animate-pulse to-transparent top-[130px] -right-10" />
+            <div className="absolute w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-primary animate-pulse to-transparent top-2 right-8" />
+            <div className="absolute w-6 h-6 bg-primary rotate-45 top-12 -left-3" />
 
             <form
               onSubmit={handleSubmit}
@@ -131,7 +142,7 @@ const ContactForm = () => {
                 Contact us
               </h3>
 
-              {["name", "email", "number"].map((field) => (
+              {fields.map((field) => (
                 <div
                   key={field}
                   className="relative text-center sm:w-full w-[240px]"
@@ -140,7 +151,7 @@ const ContactForm = () => {
                     type={field === "email" ? "email" : field === "number" ? "tel" : "text"}
                     name={field}
                     placeholder={field[0].toUpperCase() + field.slice(1)}
-                    value={(formData as any)[field]}
+                    value={formData[field]}
                     onChange={handleChange}
                     className="sm:w-full w-[240px] px-4 py-2 rounded-md bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-white transition"
                   />

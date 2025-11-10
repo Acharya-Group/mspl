@@ -125,7 +125,7 @@ const Nav = () => {
 
               <li>
                 <Link
-                  href="/contact"
+                  href={ROUTES.CONTACT}
                   className={`pb-1 ${
                     isLinkActive("/contact")
                       ? "border-b-2 border-white text-white"
