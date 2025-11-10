@@ -20,7 +20,7 @@ const BlogDetailsPage: React.FC = () => {
     <>
       <CommonHero currentPage="All Blogs" />
 
-      <section className="py-12 bg-gray-50">
+      <section className="py-12">
         <div className="container">
           {/* ✅ Unified message handling */}
           {allBlogs.isLoading && (

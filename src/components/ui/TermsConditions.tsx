@@ -9,9 +9,8 @@ const TermsConditions = () => {
 
       {/* Effective Date & Info */}
       <div className="text-center mb-8">
-         <Para content="<strong>Effective Date:</strong>25/11/2015"/>
-          <Para content="<strong>Organization:</strong> MSPL Personnel Registration and
-          Certification Body (PRCB)"/>
+         <Para content="<strong>Effective Date:</strong>11/11/2026"/>
+          <Para content="<strong>Organization:</strong> MSPL Personnel Certification Body (PRCB)"/>
         <p>
           <strong>Website:</strong>{" "}
           <a
@@ -186,7 +185,7 @@ const TermsConditions = () => {
 
       <Section number="13" title="Contact Us">
         <address className="not-italic leading-relaxed">
-          <Para content="<strong>MSPL Personnel Registration and Certification Body (PRCB)</strong>" />
+          <Para content="<strong>MSPL Personnel Certification Body (PRCB)</strong>" />
           <Para content="#107, Shiv Vihar AB, Near Maharani Bagh Palace," />
           <Para content="Lalarpura, Gandhi Path (West), Vaishali Nagar, Jaipur (Rajasthan) - 302021" />
           <Para content='📧 <a href="mailto:yogacertificationbody@gmail.com" class="text-blue-600 underline">yogacertificationbody@gmail.com</a>' />

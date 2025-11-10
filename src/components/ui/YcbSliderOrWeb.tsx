@@ -7,7 +7,6 @@ import React from "react";
 
 export default function YcbSliderOrWeb() {
   const { allExams } = useExamCalendar();
-
   const today = new Date();
 
   const upcomingExamDates =
@@ -32,13 +31,11 @@ export default function YcbSliderOrWeb() {
   const marqueeItems = 10;
   const marqueeContent: React.ReactElement[] = [];
 
-  // ✅ Build scrolling text only if data loaded
   if (allExams.isLoading) {
-    // show loading message where dates would be
     marqueeContent.push(
       <span
         key="loading"
-        className="sm:text-xl text-lg ps-1 font-semibold whitespace-nowrap text-yellow-300 animate-pulse"
+        className="sm:text-xl text-lg ps-1 font-semibold whitespace-nowrap text-yellow-300"
       >
         Loading exam dates...
       </span>
@@ -62,7 +59,6 @@ export default function YcbSliderOrWeb() {
       </span>
     );
   } else {
-    // ✅ Normal marquee when data available
     for (let i = 0; i < marqueeItems; i++) {
       marqueeContent.push(
         <span
@@ -98,7 +94,6 @@ export default function YcbSliderOrWeb() {
   return (
     <div className="pt-10 lg:pt-12">
       <div className="px-4">
-        {/* ✅ Header Box */}
         <div className="bg-linear-to-r max-w-3xl mx-auto from-blue-300 to-blue-500 px-3 sm:px-2 py-3 sm:py-8 md:p-2 my-2 shadow-md rounded-xl flex flex-wrap justify-center md:justify-between items-center">
           <div className="flex items-center gap-2 bg-white px-2 py-1 rounded-md md:w-6/12">
             <Image height={60} width={55} src="/images/ycb-logo.png" alt="logo" />
@@ -124,13 +119,43 @@ export default function YcbSliderOrWeb() {
         </div>
       </div>
 
-      {/* ✅ Marquee Area (with loading state inside) */}
+      {/* ✅ Extra Slow Smooth Marquee */}
       <div className="w-full bg-gray-600 text-white py-1 overflow-hidden relative">
-        <div className="flex gap-3 whitespace-nowrap animate-[marquee_6s_linear_infinite]">
-          {marqueeContent}
-          {marqueeContent}
+        <div className="marquee-track">
+          <div className="marquee-content flex gap-3 whitespace-nowrap">
+            {marqueeContent}
+            {marqueeContent}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .marquee-track {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+        }
+
+        .marquee-content {
+          display: inline-flex;
+          white-space: nowrap;
+          animation: scrollMarquee 250s linear infinite; /* 👈 Super Slow */
+          will-change: transform;
+        }
+
+        @keyframes scrollMarquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .marquee-track:hover .marquee-content {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 }

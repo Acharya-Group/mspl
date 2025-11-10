@@ -28,7 +28,7 @@ const Nav = () => {
         <div className="container mx-auto px-3 sm:px-4">
           <div className="flex justify-between items-center py-4 sm:py-2 lg:py-0">
             {/* Logo for mobile */}
-            <div className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
+            <Link href={"/"} className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
               <Image
                 height={10}
                 width={50}
@@ -44,7 +44,7 @@ const Nav = () => {
                   Approved By: (YCB), (Ministry Of Ayush, Govt Of India)
                 </h3>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-6">

@@ -19,7 +19,7 @@ const AboutSection = () => {
                     {/* Main About Section */}
                     <SubHeading content="About MSPL-PERSONNEL CERTIFICATION BODY" />
                     <Para
-                        content="MSPL Personnel Registration and Certification Body (PRCB) is a professionally managed organization dedicated to promoting excellence, integrity, and authenticity in the field of Yoga certification. Functioning under the guidelines of the Yoga Certification Board (YCB), Ministry of AYUSH, Government of India, MSPL PRCB serves as a recognized body responsible for conducting examinations, assessments, and certifications for Yoga professionals across various levels.
+                        content="MSPL Personnel Certification Body (PRCB) is a professionally managed organization dedicated to promoting excellence, integrity, and authenticity in the field of Yoga certification. Functioning under the guidelines of the Yoga Certification Board (YCB), Ministry of AYUSH, Government of India, MSPL PRCB serves as a recognized body responsible for conducting examinations, assessments, and certifications for Yoga professionals across various levels.
 
 Our primary objective is to ensure that every certified Yoga teacher, therapist, and evaluator meets the highest standards of competence, ethics, and knowledge as prescribed by YCB. We are committed to maintaining transparency and fairness in all processes— from registration and examination to certification and evaluation. Through the use of modern technology, standardized procedures, and strict adherence to regulatory frameworks, MSPL PRCB ensures a seamless, reliable, and credible certification experience.
 

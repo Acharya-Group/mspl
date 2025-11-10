@@ -163,7 +163,7 @@ const Privacy = () => {
 
       <Section number="13" title="Contact Us">
         <address className="not-italic leading-relaxed">
-          <Para content="<strong>MSPL Personnel Registration and Certification Body (PRCB)</strong>" />
+          <Para content="<strong>MSPL Personnel Certification Body (PRCB)</strong>" />
           <Para content="#107, Shiv Vihar AB, Near Maharani Bagh Palace," />
           <Para content="Lalarpura, Gandhi Path (West), Vaishali Nagar, Jaipur (Rajasthan) - 302021" />
           <Para content='📧 <a href="mailto:yogacertificationbody@gmail.com" class="text-blue-600 underline">yogacertificationbody@gmail.com</a>' />
