@@ -8,8 +8,8 @@ interface CommonHeroProps {
 
 const CommonHero: React.FC<CommonHeroProps> = ({ currentPage }) => {
   return (
-    <div className='bg-[url(/images/detail-page-bg.png)] h-[120px] bg-sky-100 lg:h-[200px] flex flex-col justify-center items-center'>
-      <div className='backdrop-blur-[4px] flex flex-col items-center p-4 rounded-xl'>
+    <div className='bg-[url(/images/detail-page-bg.png)] bg-center h-[120px] bg-sky-100 lg:h-[200px] flex flex-col justify-center items-center'>
+      <div className='flex flex-col items-center p-4 rounded-xl'>
         <SubHeading content={currentPage} />
         <nav className='lg:mt-2 mt-1 text-sm'>
           <Link href="/" className='hover:underline text-primary font-semibold'>Home</Link>

@@ -97,6 +97,7 @@ export const navDropdowns: NavDropdown[] = [
       { name: "News", href: ROUTES.NEWS, type: "link" },
       { name: "Environment", href: ROUTES.ENVIRONMENT, type: "link" },
       { name: "Faqs", href: ROUTES.FAQS, type: "link" },
+      { name: "Blogs", href: ROUTES.BLOG, type: "link" },
     ],
   },
 
