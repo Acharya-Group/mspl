@@ -23,7 +23,7 @@ const Header = () => {
 
       {/* Logo Section */}
       <div className="py-4 hidden lg:flex justify-between items-center container mx-auto bg-white">
-        <Link href="/">
+        <Link aria-label="home route" href="/">
           <Image
             className="max-w-[100px]"
             height={170}

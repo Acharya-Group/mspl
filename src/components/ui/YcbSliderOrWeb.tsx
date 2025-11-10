@@ -108,7 +108,7 @@ export default function YcbSliderOrWeb() {
           </div>
           <div className="font-[600] text-white md:w-6/12 ps-4 pt-4 md:pt-0">
             <span>Website :- </span>
-            <Link
+            <Link aria-label="ycb site"
               className="underline"
               href="https://yogacertificationboard.nic.in"
               target="_blank"

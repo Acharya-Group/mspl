@@ -77,18 +77,18 @@ const Footer = () => {
             </p>
             <div className="flex gap-3 items-center">
             
-        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 89303-00615</Link>
-        <Link className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 99917-77717</Link>
+        <Link aria-label="contact number" className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 89303-00615</Link>
+        <Link aria-label="contact number" className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 99917-77717</Link>
 
              
             </div>
-        <Link className='flex mt-1 font-semibold items-center hover:underline transition-all duration-300' href="mailto:yogacertificationbody@gmail.com"><IoMdMail className="text-primary me-1" size={'18px'} />yogacertificationbody@gmail.com</Link>
+        <Link aria-label="mail for help" className='flex mt-1 font-semibold items-center hover:underline transition-all duration-300' href="mailto:yogacertificationbody@gmail.com"><IoMdMail className="text-primary me-1" size={'18px'} />yogacertificationbody@gmail.com</Link>
 
             <p className="font-semibold mt-3 text-gray-800">Follow Us</p>
             <ul className="flex gap-2 mt-2">
               {socialLinks.map(({ href, icon: Icon }, i) => (
                 <li key={i}>
-                  <Link
+                  <Link aria-label="social media link"
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -111,7 +111,7 @@ const Footer = () => {
                 {section.links.map((item, i) => (
                   <li key={i} className="flex gap-1 items-center group">
                     <FaArrowRight className="-rotate-45 text-gray-700 group-hover:rotate-0 group-hover:text-primary transition-all duration-300" />
-                    <Link
+                    <Link aria-label="footer link"
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : "_self"}
                       className="text-gray-700 opacity-80 transition-all duration-300 group-hover:text-primary group-hover:underline"

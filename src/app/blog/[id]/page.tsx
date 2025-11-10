@@ -67,7 +67,7 @@ const BlogDetailsPage: React.FC = () => {
               <div className="space-y-4">
                 <h2 className="text-xl font-semibold mb-4">Related Blogs</h2>
                 {relatedBlogs.map((b) => (
-                  <Link key={b._id} href={`/blog/${b._id}`}>
+                  <Link aria-label="related blogs" key={b._id} href={`/blog/${b._id}`}>
                     <div className="bg-white gap-3 flex rounded shadow p-3 hover:shadow-lg transition cursor-pointer">
                       <Image
                         src={b.image}
@@ -92,7 +92,7 @@ const BlogDetailsPage: React.FC = () => {
             </div>
           )}
 
-          <Link href="/blog" className="flex justify-center mt-10">
+          <Link aria-label="all blog page for user" href="/blog" className="flex justify-center mt-10">
             <Button content="View All Blogs"/>
           </Link>
         </div>

@@ -12,7 +12,7 @@ const CommonHero: React.FC<CommonHeroProps> = ({ currentPage }) => {
       <div className='flex flex-col items-center p-4 rounded-xl'>
         <SubHeading content={currentPage} />
         <nav className='lg:mt-2 mt-1 text-sm'>
-          <Link href="/" className='hover:underline text-primary font-semibold'>Home</Link>
+          <Link aria-label="home route" href="/" className='hover:underline text-primary font-semibold'>Home</Link>
           <span className='mx-2 text-primary'>/</span>
           <span className='text-primary font-semibold'>{currentPage}</span>
         </nav>

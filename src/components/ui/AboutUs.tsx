@@ -38,7 +38,7 @@ const AboutUs: React.FC = () => {
               className="py-3"
               content="(MSPL - Personnel Certification Body) was established to act as a Centre of Excellence in the field of Yoga. As the demand for the system of Yoga is increasing rapidly at the global level, the Institute is striving hard to fulfill the current need and demand. MSPL is backed by devoted, highly qualified, and experienced assessment personnel offering customer-oriented certification in an efficient and cost-effective manner."
             />
-            <Link href="/about">
+            <Link aria-label="about company" href="/about">
               <Button content="Read More" />
             </Link>
           </div>

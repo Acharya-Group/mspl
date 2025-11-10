@@ -65,7 +65,7 @@ const BlogDetailsPage: React.FC = () => {
                       <p className="text-gray-600 text-sm text-center mb-2 line-clamp-2">
                         {blog.shortDescription}
                       </p>
-                      <Link
+                      <Link aria-label="blog details page"
                         href={`/blog/${blog._id}`}
                         className="font-semibold text-primary hover:underline hover:!text-green"
                       >

@@ -50,7 +50,7 @@ const sliders: Slider[] = allSliders.data || [];
       >
         {sliders.map((s, i) => (
           <SwiperSlide key={s._id || i}>
-            <Link href={s.link || "/"} className="block w-full h-full">
+            <Link aria-label="home route" href={s.link || "/"} className="block w-full h-full">
               <Image
                 src={s.image}
                 alt={`Slide ${i + 1}`}

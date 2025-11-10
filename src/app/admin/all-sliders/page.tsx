@@ -92,7 +92,7 @@ const Page: React.FC = () => {
       <div className="bg-white p-6 rounded-2xl shadow-md">
          <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">All Slides</h1>
-          <Link href={"/admin/add-slider"} className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white">Add Slider</Link>
+          <Link aria-label="add slider" href={"/admin/add-slider"} className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white">Add Slider</Link>
         </div>
         {/* Table */}
         <div className="overflow-x-auto">

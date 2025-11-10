@@ -44,7 +44,7 @@ const PayFee = () => {
         </div>
             <p className="mt-4 sm:text-base text-sm text-center font-semibold">
   Note :- After completing the payment, please send a screenshot on WhatsApp:
-  <Link href="https://wa.me/918930300615" className="text-blue-600 hover:underline">
+  <Link aria-label="whatsapp contact " href="https://wa.me/918930300615" className="text-blue-600 hover:underline">
     +91 8930300615
   </Link>
 </p>

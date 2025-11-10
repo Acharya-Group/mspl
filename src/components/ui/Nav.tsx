@@ -28,7 +28,7 @@ const Nav = () => {
         <div className="container mx-auto px-3 sm:px-4">
           <div className="flex justify-between items-center py-4 sm:py-2 lg:py-0">
             {/* Logo for mobile */}
-            <Link href={"/"} className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
+            <Link aria-label="home page" href={"/"} className="bg-white sm:p-2 py-1 px-2 flex items-center gap-2 lg:hidden rounded-md">
               <Image
                 height={10}
                 width={50}
@@ -49,7 +49,7 @@ const Nav = () => {
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-6">
               <li>
-                <Link
+                <Link aria-label="home page"
                   href="/"
                   className={`pb-1 ${
                     isLinkActive("/")
@@ -95,7 +95,7 @@ const Nav = () => {
                                 {link.name}
                               </div>
                               {link.sublinks?.map((sublink, j) => (
-                                <Link
+                                <Link aria-label="submenu link"
                                   key={j}
                                   href={sublink.href ?? "#"}
                                   className="block px-4 py-2 text-xs text-gray-700 hover:bg-primary hover:text-white"
@@ -105,7 +105,7 @@ const Nav = () => {
                               ))}
                             </div>
                           ) : (
-                            <Link
+                            <Link aria-label="dropdown link"
                               key={i}
                               href={link.href ?? "#"}
                               className="relative group block px-4 py-2 z-0 text-sm text-gray-700 overflow-hidden 
@@ -124,7 +124,7 @@ const Nav = () => {
               ))}
 
               <li>
-                <Link
+                <Link aria-label="contact us page"
                   href={ROUTES.CONTACT}
                   className={`pb-1 ${
                     isLinkActive("/contact")
@@ -146,7 +146,7 @@ const Nav = () => {
             </button>
 
             {/* Pay Fees Button */}
-            <Link className="hidden lg:inline" href={ROUTES.PAY_FEE}>
+            <Link aria-label="pay fees" className="hidden lg:inline" href={ROUTES.PAY_FEE}>
               <button className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none">
                 Pay Fees
               </button>
@@ -177,7 +177,7 @@ const Nav = () => {
 
         <ul className="flex flex-col">
           <li>
-            <Link
+            <Link aria-label="home page"
               href="/"
               className={`block px-5 py-3 text-sm font-medium ${
                 isLinkActive("/")
@@ -239,7 +239,7 @@ const Nav = () => {
                           <ul className="bg-white">
                             {link.sublinks?.map((sublink, j) => (
                               <li key={j}>
-                                <Link
+                                <Link aria-label="submenu link"
                                   href={sublink.href ?? "#"}
                                   className="block px-8 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#14AEE4]"
                                   onClick={() => setOpenSidebar(false)}
@@ -253,7 +253,7 @@ const Nav = () => {
                       </li>
                     ) : (
                       <li key={i}>
-                        <Link
+                        <Link aria-label="dropdown link"
                           href={link.href ?? "#"}
                           className="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#14AEE4]"
                           onClick={() => setOpenSidebar(false)}
@@ -270,7 +270,7 @@ const Nav = () => {
           
           {/* Contact Us and Pay Fee links for mobile */}
           <li>
-            <Link
+            <Link aria-label="contact us page"
               href="/contact"
               className={`block px-5 py-3 text-sm font-medium ${
                 isLinkActive("/contact")
@@ -283,7 +283,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link
+            <Link aria-label="pay fees"
               href={ROUTES.PAY_FEE}
               className={`block px-5 py-3 text-sm font-medium ${
                 isLinkActive("/pay-fee")

@@ -75,7 +75,7 @@ const Page: React.FC = () => {
       <div className="bg-white p-6 rounded-2xl shadow-md">
          <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">All Blog</h1>
-          <Link href={"/admin/add-blog"} className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white">Add Blog</Link>
+          <Link aria-label="check all blogs" href={"/admin/add-blog"} className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white">Add Blog</Link>
         </div>
 
         {/* Action Buttons */}
@@ -110,7 +110,7 @@ const Page: React.FC = () => {
                     <Image height={64} width={64} src={b.image} alt={b.title} className="w-16 h-16 object-cover rounded" />
                   </td>
                   <td className="px-4 py-2 flex gap-2">
-                    <Link href={`/admin/update-blog/${b._id}`}>
+                    <Link aria-label="update blog" href={`/admin/update-blog/${b._id}`}>
                       <button className="p-2 bg-blue-500 cursor-pointer text-white rounded hover:bg-blue-600"><FaEdit /></button>
                     </Link>
                     <button

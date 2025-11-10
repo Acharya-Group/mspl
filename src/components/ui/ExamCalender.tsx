@@ -95,7 +95,7 @@ export default function ExamCalendar() {
         </div>
 
         {/* ✅ Register button */}
-        <Link
+        <Link aria-label="ycb exam registration"
           className="mt-8 flex justify-center"
           target="_blank"
           href="https://yogacertificationboard.nic.in/mis/Registration"

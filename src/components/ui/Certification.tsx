@@ -59,7 +59,7 @@ const Certification = () => {
       <p className="text-gray-600 mb-6 text-sm leading-relaxed">{card.desc}</p>
 
       {/* Gradient button */}
-      <Link href="/">
+      <Link aria-label="apply for certification" href="/">
         <Button content="Apply for Certification" />
       </Link>
     </div>

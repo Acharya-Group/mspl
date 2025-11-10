@@ -42,7 +42,7 @@ const Page: React.FC = () => {
       <div className="container mx-auto bg-white p-6 rounded-2xl shadow-md">
         <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">Add FAQ</h1>
-          <Link
+          <Link aria-label="check all faq"
             href="/admin/all-faq"
             className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white"
           >

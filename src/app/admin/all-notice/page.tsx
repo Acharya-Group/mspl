@@ -80,7 +80,7 @@ const AllNoticePage: React.FC = () => {
       <div className="bg-white p-6 rounded-2xl shadow-md">
         <div className="flex justify-between mb-6 items-center">
           <h1 className="text-2xl font-bold">All Notices</h1>
-          <Link
+          <Link aria-label="add notice"
             href={"/admin/add-notice"}
             className="hover:bg-primary bg-green transition-all duration-200 px-2 py-1 rounded-lg text-sm font-semibold text-white"
           >

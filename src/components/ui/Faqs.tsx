@@ -101,7 +101,7 @@ export default function Faqs() {
         {/* ✅ "View More" Button (only on Home) */}
         {isHome && !allFaqs.isLoading && faqs.length > 8 && (
           <div className="text-center mt-8">
-            <Link
+            <Link aria-label="all faqs"
               href="/faqs"
               className="inline-block bg-gradient-to-r from-green to-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
             >

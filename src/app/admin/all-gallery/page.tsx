@@ -37,7 +37,7 @@ const Page: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {localGalleries.map((category) => (
-            <Link
+            <Link aria-label="all gallery"
               href={`/admin/all-gallery/${category._id}`} // dynamic page
               key={category._id}
               className="bg-gray-50 p-4 rounded-xl shadow hover:shadow-lg transition relative group"

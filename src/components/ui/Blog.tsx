@@ -95,7 +95,7 @@ const Blog = () => {
                           <p className="text-gray-600 text-sm text-center mb-2 line-clamp-2">
                             {blog.shortDescription}
                           </p>
-                          <Link
+                          <Link aria-label="blog detais page"
                             className="font-semibold text-primary hover:underline hover:text-green-600"
                             href={`/blog/${blog._id}`}
                           >
@@ -124,7 +124,7 @@ const Blog = () => {
           </div>
 
           {/* Read More (Mobile) */}
-          <Link
+          <Link aria-label="all blogs"
             className="flex justify-center pt-4 w-full md:hidden"
             href={"/blogs"}
           >

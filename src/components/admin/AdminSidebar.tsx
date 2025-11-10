@@ -126,7 +126,7 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
     >
       {/* Header */}
-      <Link href="/admin" className="px-4 py-2 border-b border-gray-300 flex justify-between items-center">
+      <Link aria-label="admin home" href="/admin" className="px-4 py-2 border-b border-gray-300 flex justify-between items-center">
         <div className='flex items-center gap-2'>
         <Image unoptimized src="/images/mspl-logo.png" alt="Company Logo" width={49} height={49} className="object-cover" />
           <h4 className='text-xs font-bold'>MSPL - PERSONNEL CERTIFICATION BODY</h4>
@@ -171,7 +171,7 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
                           const ChildIcon = child.icon
                           return (
                             <li key={child.name}>
-                              <Link
+                              <Link aria-label="student study link"
                                 href={child.href || '#'}
                                 className={`flex items-center p-2 rounded-lg hover:bg-green hover:text-white ${
                                   child.href === pathname ? 'font-semibold' : ''
@@ -187,7 +187,7 @@ export default function AdminSidebar({ isSidebarOpen, onClose }: AdminSidebarPro
                     )}
                   </div>
                 ) : (
-                  <Link
+                  <Link aria-label="admin sidebar link"
                     href={item.href || '#'}
                     className={`flex items-center p-2 rounded-lg hover:text-white transition-all duration-300 hover:bg-green ${
                       isActive ? 'font-semibold' : ''
