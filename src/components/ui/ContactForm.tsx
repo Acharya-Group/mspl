@@ -77,7 +77,7 @@ const ContactForm: React.FC = () => {
       <div className="container">
         <div className="bg-white max-w-4xl mx-auto rounded-xl shadow-lg overflow-hidden grid md:grid-cols-2 relative z-10">
           {/* Left info section */}
-          <div className="sm:p-10 p-4 relative">
+          <div data-aos="fade-right" className="sm:p-10 p-4 relative">
             <h3 className="text-2xl font-semibold text-teal-500 pb-4">
               Let's get in touch
             </h3>
@@ -128,7 +128,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           {/* Right form section */}
-          <div className="bg-gradient-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
+          <div data-aos="fade-left" className="bg-gradient-to-br from-primary to-green relative p-6 sm:p-10 overflow-hidden">
             <div className="absolute w-[130px] h-[130px] rounded-full bg-gradient-to-tr from-green animate-pulse to-transparent top-[130px] -right-10" />
             <div className="absolute w-[80px] h-[80px] rounded-full bg-gradient-to-tr from-primary animate-pulse to-transparent top-2 right-8" />
             <div className="absolute w-6 h-6 bg-primary rotate-45 top-12 -left-3" />

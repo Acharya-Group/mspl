@@ -22,7 +22,7 @@ const Blog = () => {
       <div className="container">
         <div className="flex flex-wrap md:justify-between items-center">
           {/* Left Text Section */}
-          <div className="md:w-4/12 md:pe-4">
+          <div data-aos="fade-right" className="md:w-4/12 md:pe-4">
             <SubHeading content="Latest Yoga & Health Blogs" className="mb-4" />
             <p className="text-gray-500 mb-0 md:mb-4 lg:mb-6">
               Explore our latest blogs to enhance your yoga practice and improve

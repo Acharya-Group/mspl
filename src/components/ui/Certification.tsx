@@ -49,7 +49,7 @@ const Certification = () => {
               key={index}
               className="commonShadow max-w-[450px] sm:max-w-[unset] mx-auto bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="flex justify-center mb-4">
+              <div data-aos="fade-up" data-aos-duration="1000" className="flex justify-center mb-4">
                 <Image
                   src={card.gif}
                   alt={card.title}
@@ -59,10 +59,10 @@ const Certification = () => {
                 />
               </div>
 
-              <h3 className="text-xl font-semibold text-dark mb-3">{card.title}</h3>
-              <p className="text-gray-600 mb-6 text-sm leading-relaxed">{card.desc}</p>
+              <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" className="text-xl font-semibold text-dark mb-3">{card.title}</h3>
+              <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" className="text-gray-600 mb-6 text-sm leading-relaxed">{card.desc}</p>
 
-              <Link aria-label="apply for certification" href="/">
+              <Link data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" aria-label="apply for certification" href="/">
                 <Button content="Apply for Certification" />
               </Link>
             </div>

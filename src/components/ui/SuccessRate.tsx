@@ -21,7 +21,7 @@ const SuccessRate = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const target = sectionRef.current; // ✅ Copy ref value here
+    const target = sectionRef.current; 
 
     if (!target) return;
 
@@ -39,7 +39,7 @@ const SuccessRate = () => {
     observer.observe(target);
 
     return () => {
-      observer.unobserve(target); // ✅ Clean up using same reference
+      observer.unobserve(target); 
     };
   }, [hasAnimated]);
 
@@ -71,7 +71,7 @@ const SuccessRate = () => {
         {/* Stats Grid */}
         <div className="grid mt-6 grid-cols-2 lg:grid-cols-4 gap-4 items-center justify-center">
           {stats.map((item, index) => (
-            <div
+            <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay={index * 300}
               key={index}
               className="px-4 bg-green-200 rounded-xl p-6 hover:bg-blue-200 transition-all duration-300"
             >

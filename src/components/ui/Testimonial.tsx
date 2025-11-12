@@ -83,8 +83,8 @@ const Testimonial = () => {
                     className={`p-6 my-4 rounded-2xl bg-primary h-60 flex flex-col justify-between items-center transform transition-transform duration-500
                   ${
                     activeIndex === i
-                      ? "scale-105 mx-4"
-                      : "scale-90 opacity-80"
+                      ? "scale-105 mx-4 bg-gradient-to-b to-primary from-green"
+                      : "scale-90 opacity-80 bg-gradient-to-b to-green from-primary"
                   }`}
                   >
                     <div className="relative w-[80px] h-[80px] mb-3 overflow-hidden rounded-full">

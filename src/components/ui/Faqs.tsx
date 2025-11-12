@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import SubHeading from "../common/SubHeading";
 import { useFaq } from "@/hooks/faq";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Faqs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -18,7 +20,11 @@ export default function Faqs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // ✅ Handle data safely
+  // ✅ Initialize AOS once
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, easing: "ease-in-out" });
+  }, []);
+
   const faqs = allFaqs.data || [];
   const displayFaqs = isHome ? faqs.slice(0, 8) : faqs;
 
@@ -29,7 +35,7 @@ export default function Faqs() {
 
         {/* ✅ FAQ List */}
         <div className="max-w-4xl mx-auto flex flex-col gap-3">
-          {/* Show loading placeholders if still loading */}
+          {/* Loading placeholders */}
           {allFaqs.isLoading &&
             Array.from({ length: 5 }).map((_, i) => (
               <div
@@ -40,18 +46,18 @@ export default function Faqs() {
               </div>
             ))}
 
-          {/* Show actual FAQ data when loaded */}
+          {/* Actual FAQ data */}
           {!allFaqs.isLoading &&
             !allFaqs.isError &&
             displayFaqs.map((faq, index) => {
               const isActive = openIndex === index;
+              const aosType = index % 2 === 0 ? "fade-right" : "fade-left"; // alternate direction
 
               return (
                 <motion.div
                   key={faq._id || index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
+                  data-aos={aosType}
+                  data-aos-duration="800"
                   className={`px-4 py-2 rounded-lg cursor-pointer shadow-lg transition-all duration-300 ${
                     isActive
                       ? "bg-gradient-to-r from-primary to-green"
@@ -90,7 +96,7 @@ export default function Faqs() {
               );
             })}
 
-          {/* Show error message if fetch fails */}
+          {/* Error message */}
           {allFaqs.isError && (
             <p className="text-center text-red-500 font-medium">
               Failed to load FAQs. Please try again later.
@@ -101,7 +107,8 @@ export default function Faqs() {
         {/* ✅ "View More" Button (only on Home) */}
         {isHome && !allFaqs.isLoading && faqs.length > 8 && (
           <div className="text-center mt-8">
-            <Link aria-label="all faqs"
+            <Link
+              aria-label="all faqs"
               href="/faqs"
               className="inline-block bg-gradient-to-r from-green to-primary text-white font-semibold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
             >
