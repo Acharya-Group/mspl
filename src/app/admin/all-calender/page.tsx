@@ -68,7 +68,7 @@ const Page: React.FC = () => {
     if (!editLevel.trim()) return toast.error("Level cannot be empty!");
     if (!editExamDate.trim()) return toast.error("Exam Date cannot be empty!");
     if (!editDeadline.trim())
-      return toast.error("Registration Deadline cannot be empty!");
+      return toast.error("Registration Last Date cannot be empty!");
 
     updateExam.mutate(
       {

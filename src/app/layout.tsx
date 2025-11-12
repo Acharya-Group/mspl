@@ -2,6 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { getSeo } from "@/lib/getSeo";
 import ClientLayout from "@/components/layout/ClientLayout";
+import "aos/dist/aos.css";
+import AosInit from "../components/common/AosInit";
+
 
 // ✅ Fetch SEO data safely
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <AosInit />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

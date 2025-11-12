@@ -90,10 +90,10 @@ const Page: React.FC = () => {
             />
           </div>
 
-          {/* Registration Deadline */}
+          {/* Registration Last Date */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Registration Deadline
+              Registration Last Date
             </label>
             <input
               type="date"

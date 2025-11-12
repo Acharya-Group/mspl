@@ -74,7 +74,7 @@ export default function ExamCalendar() {
               <tr>
                 <th className="px-4 py-3 text-left">Level of Exam</th>
                 <th className="px-4 py-3 text-left">Exam Date (DD-MM-YY)</th>
-                <th className="px-4 py-3 text-left">Registration Deadline (DD-MM-YY)</th>
+                <th className="px-4 py-3 text-left">Registration Last Date (DD-MM-YY)</th>
                 <th className="px-4 py-3 text-left">Mode</th>
               </tr>
             </thead>

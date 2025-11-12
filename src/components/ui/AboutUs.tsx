@@ -32,9 +32,9 @@ const AboutUs: React.FC = () => {
       <div className="container py-10 lg:py-12">
         <div className="flex flex-wrap">
           {/* About Text */}
-          <div className="lg:w-7/12 pe-4">
-            <SubHeading content="About MSPL-PERSONNEL CERTIFICATION BODY" />
-            <Para
+          <div data-aos="fade-right" data-aos-duration="1500" className="lg:w-7/12 pe-4">
+            <SubHeading  content="About MSPL-PERSONNEL CERTIFICATION BODY" />
+            <Para 
               className="py-3"
               content="(MSPL - Personnel Certification Body) was established to act as a Centre of Excellence in the field of Yoga. As the demand for the system of Yoga is increasing rapidly at the global level, the Institute is striving hard to fulfill the current need and demand. MSPL is backed by devoted, highly qualified, and experienced assessment personnel offering customer-oriented certification in an efficient and cost-effective manner."
             />
@@ -46,7 +46,7 @@ const AboutUs: React.FC = () => {
           {/* Notice Board + Events */}
           <div className="lg:w-5/12 flex w-full flex-col sm:flex-row gap-4 pt-5 lg:pt-0">
             {/* Notice Board */}
-            <div className="w-full sm:w-1/2 commonShadow min-h-[220px] rounded-xl overflow-hidden">
+            <div data-aos="fade-up" data-aos-duration="1500" className="w-full sm:w-1/2 commonShadow min-h-[220px] rounded-xl overflow-hidden">
               <div className="bg-green w-full rounded-t-lg">
                 <h3 className="text-xl font-bold text-white flex justify-between items-center px-3 py-2">
                   <FaStar /> Notice Board <FaStar />
@@ -62,14 +62,14 @@ const AboutUs: React.FC = () => {
                     Failed to load notices.
                   </p>
                 ) : notices.length > 0 ? (
-                  <ul className="list-disc pl-5 space-y-2">
+                  <ul className="list-decimal pl-4 space-y-2">
                     {notices.map((n: Notice, i: number) => (
                       <li key={n._id || i}>
                         <a
                           href={n.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:underline"
+                          className="text-blue-600 font-semibold font-sans uppercase hover:underline"
                         >
                           {n.title}
                         </a>
@@ -85,7 +85,7 @@ const AboutUs: React.FC = () => {
             </div>
 
             {/* News & Events */}
-            <div className="w-full sm:w-1/2 commonShadow min-h-[220px] rounded-xl overflow-hidden">
+            <div data-aos="fade-down" data-aos-duration="1500" className="w-full sm:w-1/2 commonShadow min-h-[220px] rounded-xl overflow-hidden">
               <div className="bg-green w-full rounded-t-lg">
                 <h3 className="text-xl font-bold text-white flex justify-between items-center px-3 py-2">
                   <FaStar /> News & Events <FaStar />
@@ -103,7 +103,7 @@ const AboutUs: React.FC = () => {
                 ) : events.length > 0 ? (
                   <ul className="list-disc pl-5 space-y-2">
                     {events.map((e: Event, i: number) => (
-                      <li key={e._id || i}>{e.title}</li>
+                      <li className="font-semibold" key={e._id || i}>{e.title}</li>
                     ))}
                   </ul>
                 ) : (

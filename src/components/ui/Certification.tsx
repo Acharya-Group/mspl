@@ -8,7 +8,7 @@ import { GiLotusFlower } from "react-icons/gi";
 
 const cards = [
 
-,
+  ,
   {
     title: "Yoga Protocol Instructor (YPI)",
     desc: "Teach basic Yoga protocols for prevention of diseases and promotion of health. Conduct community sessions and events.",
@@ -35,39 +35,39 @@ const cards = [
     icon: <FaSpa className="text-pink-500 text-5xl mb-4" />,
   },
   {
-  title: "Yoga Therapist (YTh)",
-  desc: "Guide individuals to improve physical and mental well-being through personalized yoga sessions, community programs, and wellness initiatives.",
-  icon: <GiLotusFlower className="text-green-500 text-5xl mb-4" />,
-}
+    title: "Yoga Therapist (YTh)",
+    desc: "Guide individuals to improve physical and mental well-being through personalized yoga sessions, community programs, and wellness initiatives.",
+    icon: <GiLotusFlower className="text-green-500 text-5xl mb-4" />,
+  }
 ];
 
 const Certification = () => {
   return (
     <section className="bg-blue-50">
-        <div className="container py-10 lg:py-12">
-           <SubHeading content="Yoga Professional Certification" className="text-center mb-4" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cards?.map((card, index) => {
-  if (!card) return null; 
-  return (
-    <div
-      key={index}
-      className="commonShadow max-w-[450px] sm:max-w-[unset] mx-auto bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-    >
-      <div className="flex justify-center">{card.icon}</div>
-      <h3 className="text-xl font-semibold text-dark mb-3">{card.title}</h3>
-      <p className="text-gray-600 mb-6 text-sm leading-relaxed">{card.desc}</p>
+      <div className="container py-10 lg:py-12">
+        <SubHeading content="Yoga Professional Certification" className="text-center mb-4" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards?.map((card, index) => {
+            if (!card) return null;
+            return (
+              <div
+                key={index}
+                className="commonShadow max-w-[450px] sm:max-w-[unset] mx-auto bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              >
+                <div className="flex justify-center">{card.icon}</div>
+                <h3 className="text-xl font-semibold text-dark mb-3 fade up small duration-10">{card.title}</h3>
+                <p className="text-gray-600 mb-6 text-sm leading-relaxed">{card.desc}</p>
 
-      {/* Gradient button */}
-      <Link aria-label="apply for certification" href="/">
-        <Button content="Apply for Certification" />
-      </Link>
-    </div>
-  );
-})}
+                {/* Gradient button */}
+                <Link aria-label="apply for certification" href="/">
+                  <Button content="Apply for Certification" />
+                </Link>
+              </div>
+            );
+          })}
 
-          </div>
         </div>
+      </div>
     </section>
   );
 };
