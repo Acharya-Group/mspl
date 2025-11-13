@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useGallery } from "@/hooks/gallery";
 import { useVideo } from "@/hooks/video";
+import { X } from "lucide-react"; // for close icon
 
 const Media: React.FC = () => {
   const { allGalleries } = useGallery();
@@ -10,8 +11,9 @@ const Media: React.FC = () => {
 
   const [tabs, setTabs] = useState<{ id: string; title: string }[]>([]);
   const [activeTab, setActiveTab] = useState<string>("videos");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // 👈 popup image
 
-  // ✅ Fetch tabs dynamically (Videos + Gallery categories)
+  // ✅ Prepare tabs dynamically
   useEffect(() => {
     if (allGalleries.isSuccess && allGalleries.data) {
       const galleryTabs = allGalleries.data.map((g) => ({
@@ -22,7 +24,7 @@ const Media: React.FC = () => {
     }
   }, [allGalleries.isSuccess, allGalleries.data]);
 
-  // ✅ Convert YouTube URLs to embed format
+  // ✅ Convert YouTube URL → embed URL
   const toEmbedUrl = (url: string) => {
     if (!url) return "";
     try {
@@ -64,16 +66,16 @@ const Media: React.FC = () => {
       );
     }
 
-    // ✅ Find selected gallery and show its images
     const activeGallery = allGalleries.data?.find((g) => g._id === activeTab);
     if (!activeGallery) return <p>No images found for this category.</p>;
 
     return (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {activeGallery.images.map((img) => (
+        {activeGallery.images?.map((img) => (
           <div
             key={img._id}
-            className="rounded-lg overflow-hidden shadow hover:shadow-md transition-transform duration-300 hover:scale-[1.03]"
+            onClick={() => setSelectedImage(img.url)} // 👈 open popup
+            className="cursor-pointer rounded-lg overflow-hidden shadow hover:shadow-md transition-transform duration-300 hover:scale-[1.03]"
           >
             <Image
               src={img.url}
@@ -89,7 +91,7 @@ const Media: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="relative container mx-auto px-4 py-12">
       {/* ✅ Tabs Section */}
       <div className="flex flex-wrap justify-center gap-3 mb-8">
         {tabs.map((tab) => (
@@ -118,6 +120,30 @@ const Media: React.FC = () => {
           renderContent()
         )}
       </div>
+
+      {/* ✅ Popup Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 transition-all duration-300">
+          <div className="relative max-w-4xl w-[90%]">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-4 -right-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition"
+            >
+              <X className="w-5 h-5 text-gray-700" />
+            </button>
+
+            {/* Full Image */}
+            <Image
+              src={selectedImage}
+              alt="Preview"
+              width={900}
+              height={700}
+              className="rounded-xl shadow-2xl object-contain max-h-[90vh] w-auto mx-auto transition-all duration-300"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
