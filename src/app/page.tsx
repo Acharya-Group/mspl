@@ -10,7 +10,7 @@ import YcbSliderOrWeb from "@/components/ui/YcbSliderOrWeb";
 
 export default function Home() {
   return (
-   <>
+   <div className="overflow-hidden">
    <Hero/>
    <YcbSliderOrWeb/>
    <AboutUs/>
@@ -20,6 +20,6 @@ export default function Home() {
    <Testimonial/>
    <ContactForm/>
    <Blog/>
-   </>
+   </div>
   );
 }

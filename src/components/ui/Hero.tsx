@@ -9,13 +9,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { useSlider,Slider } from "@/hooks/slider";
+import { useSlider, Slider } from "@/hooks/slider";
 
 const Hero: React.FC = () => {
   const { allSliders } = useSlider();
-const sliders: Slider[] = allSliders.data || [];
+  const sliders: Slider[] = allSliders?.data || [];
 
-  // ✅ Unified state handler
+  // ✅ If still loading or error or no sliders
   if (allSliders.isLoading || allSliders.isError || !sliders.length) {
     const msg = allSliders.isLoading
       ? "Loading sliders..."
@@ -23,15 +23,21 @@ const sliders: Slider[] = allSliders.data || [];
       ? "Failed to load sliders. Please try again."
       : "No sliders found";
 
-    const color = allSliders.isError
-      ? "text-red-500"
-      : allSliders.isLoading
-      ? "text-gray-500 animate-pulse"
-      : "text-gray-400";
-
     return (
-      <div className="w-full h-[200px] lg:min-h-[400px] flex items-center justify-center">
-        <p className={`${color} text-lg font-medium`}>{msg}</p>
+      <div className="relative w-full h-[200px] sm:h-[300px] lg:min-h-[400px] flex items-center justify-center overflow-hidden">
+        {/* Background fallback image */}
+        <Image
+          src="/images/poster.webp"
+          alt="Fallback background"
+          fill
+          className="object-cover"
+          unoptimized
+          priority
+        />
+        {/* Overlay text */}
+        <div className="absolute hidden inset-0 bg-black/40  items-center justify-center">
+          <p className="text-white text-lg font-medium animate-pulse">{msg}</p>
+        </div>
       </div>
     );
   }
@@ -46,13 +52,17 @@ const sliders: Slider[] = allSliders.data || [];
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={1}
         navigation={{ nextEl: ".hero-next", prevEl: ".hero-prev" }}
-        className="hero_slider w-full h-[160px] sm:h-[300px] lg:min-h-[400px]"
+        className="hero_slider w-full h-[200px] sm:h-[300px] lg:min-h-[400px]"
       >
         {sliders.map((s, i) => (
           <SwiperSlide key={s._id || i}>
-            <Link aria-label="home route" href={s.link || "/"} className="block w-full h-full">
+            <Link
+              aria-label="home route"
+              href={s.link || "/"}
+              className="block w-full h-full"
+            >
               <Image
-                src={s.image}
+                src={s.image || "/images/poster.webp"}
                 alt={`Slide ${i + 1}`}
                 width={1600}
                 height={500}
