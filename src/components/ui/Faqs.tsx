@@ -51,12 +51,12 @@ export default function Faqs() {
             !allFaqs.isError &&
             displayFaqs.map((faq, index) => {
               const isActive = openIndex === index;
-              const aosType = index % 2 === 0 ? "fade-right" : "fade-left"; // alternate direction
+              // const aosType = index % 2 === 0 ? "fade-right" : "fade-left"; 
 
               return (
                 <motion.div
                   key={faq._id || index}
-                  data-aos={aosType}
+                  // data-aos={aosType}
                   data-aos-duration="800"
                   className={`px-4 py-2 rounded-lg cursor-pointer shadow-lg transition-all duration-300 ${
                     isActive
