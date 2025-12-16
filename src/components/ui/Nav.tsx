@@ -145,10 +145,10 @@ const Nav = () => {
               <HiOutlineMenu size={30} />
             </button>
 
-            {/* Pay Fees Button */}
-            <Link aria-label="pay fees" className="hidden lg:inline" href={ROUTES.PAY_FEE}>
+            {/* Pay fee Button */}
+            <Link aria-label="pay fee" className="hidden lg:inline" href={ROUTES.PAY_FEE}>
               <button className="text-white cursor-pointer uppercase bg-green py-3 px-2 focus:outline-none">
-                Pay Fees
+                Pay fee
               </button>
             </Link>
           </div>
@@ -283,7 +283,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link aria-label="pay fees"
+            <Link aria-label="pay fee"
               href={ROUTES.PAY_FEE}
               className={`block px-5 py-3 text-sm font-medium ${
                 isLinkActive("/pay-fee")

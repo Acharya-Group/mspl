@@ -93,8 +93,8 @@ const TermsConditions = () => {
         number="6"
         title="Payment Terms"
         content={[
-          "All examination and registration fees must be paid online through secure payment gateways or authorized transfers.",
-          "Fees once paid are non-refundable and non-transferable, except in cases of technical errors or cancellations by MSPL PRCB.",
+          "All examination and registration fee must be paid online through secure payment gateways or authorized transfers.",
+          "fee once paid are non-refundable and non-transferable, except in cases of technical errors or cancellations by MSPL PRCB.",
           "Candidates are responsible for ensuring successful payment transactions.",
           "MSPL PRCB is not responsible for issues caused by third-party payment systems or banking delays.",
         ]}

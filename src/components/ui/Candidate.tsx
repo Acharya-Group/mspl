@@ -113,7 +113,7 @@ export default function Candidate() {
             {/* Fresh Enrollment */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                Fresh Enrollment Fees (₹)
+                Fresh Enrollment fee (₹)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 text-sm">
@@ -121,9 +121,9 @@ export default function Candidate() {
                     <tr>
                       <th className="px-3 py-2 text-left">S.No.</th>
                       <th className="px-3 py-2 text-left">Yoga Course</th>
-                      <th className="px-3 py-2 text-right">Assessment Fees</th>
+                      <th className="px-3 py-2 text-right">Assessment fee</th>
                       <th className="px-3 py-2 text-right">GST (18%)</th>
-                      <th className="px-3 py-2 text-right">Registration Fees</th>
+                      <th className="px-3 py-2 text-right">Registration fee</th>
                       <th className="px-3 py-2 text-right">Total</th>
                     </tr>
                   </thead>
@@ -144,10 +144,10 @@ export default function Candidate() {
             </div>
 <p className="text-center font-semibold bg-amber-100 py-2">Re-Appear Fee for Theory Exam: ₹299 for all levels</p>
 
-            {/* Reappear Fees */}
+            {/* Reappear fee */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                Re-Appear Fees For Practical (₹)
+                Re-Appear fee For Practical (₹)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 text-sm">
@@ -155,7 +155,7 @@ export default function Candidate() {
                     <tr>
                       <th className="px-3 py-2 text-left">S.No.</th>
                       <th className="px-3 py-2 text-left">Yoga Course</th>
-                      <th className="px-3 py-2 text-right">Assessment Fees</th>
+                      <th className="px-3 py-2 text-right">Assessment fee</th>
                       <th className="px-3 py-2 text-right">GST (18%)</th>
                       <th className="px-3 py-2 text-right">Total</th>
                     </tr>
@@ -180,7 +180,7 @@ export default function Candidate() {
             {/* Fresh Enrollment */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                Fresh Enrollment Fees (USD)
+                Fresh Enrollment fee (USD)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-[900px] divide-y divide-gray-200 text-sm">
@@ -188,7 +188,7 @@ export default function Candidate() {
                     <tr>
                       <th className="px-3 py-2 text-left">S.No.</th>
                       <th className="px-3 py-2 text-left">Level of Exam</th>
-                      <th className="px-3 py-2 text-right">Assessment Fees</th>
+                      <th className="px-3 py-2 text-right">Assessment fee</th>
                       <th className="px-3 py-2 text-right">GST (18%)</th>
                       <th className="px-3 py-2 text-right">Reg. (SAARAC)</th>
                       <th className="px-3 py-2 text-right">Total (SAARAC)</th>
@@ -218,10 +218,10 @@ export default function Candidate() {
               </div>
             </div>
 <p className="text-center font-semibold bg-amber-100 py-2">Re-Appear Fee for Theory Exam: $5 for all levels</p>
-            {/* Reappear Fees */}
+            {/* Reappear fee */}
             <div>
               <h3 className="text-lg font-semibold mb-3 text-indigo-600">
-                  Re-Appear Fees For Practical (USD)
+                  Re-Appear fee For Practical (USD)
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200 text-sm">
@@ -229,7 +229,7 @@ export default function Candidate() {
                     <tr>
                       <th className="px-3 py-2 text-left">S.No.</th>
                       <th className="px-3 py-2 text-left">Level of Exam</th>
-                      <th className="px-3 py-2 text-right">Assessment Fees</th>
+                      <th className="px-3 py-2 text-right">Assessment fee</th>
                       <th className="px-3 py-2 text-right">GST (18%)</th>
                       <th className="px-3 py-2 text-right">Total</th>
                     </tr>

@@ -5,7 +5,7 @@ import React from 'react'
 const page = () => {
   return (
     <>
-    <CommonHero currentPage="Candidate Fees" />
+    <CommonHero currentPage="Candidate fee" />
     <Candidate/>
     </>
   )
