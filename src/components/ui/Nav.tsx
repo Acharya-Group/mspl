@@ -51,11 +51,10 @@ const Nav = () => {
               <li>
                 <Link aria-label="home page"
                   href="/"
-                  className={`pb-1 ${
-                    isLinkActive("/")
+                  className={`pb-1 ${isLinkActive("/")
                       ? "border-b-2 border-white text-white"
                       : "text-white/90"
-                  } hover:text-white transition`}
+                    } hover:text-white transition`}
                 >
                   Home
                 </Link>
@@ -78,9 +77,8 @@ const Nav = () => {
                   >
                     {dropdown.title}
                     <HiChevronDown
-                      className={`w-4 h-4 transition-transform ${
-                        activeDropdown === index ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform ${activeDropdown === index ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 
@@ -126,14 +124,24 @@ const Nav = () => {
               <li>
                 <Link aria-label="contact us page"
                   href={ROUTES.CONTACT}
-                  className={`pb-1 ${
-                    isLinkActive("/contact")
+                  className={`pb-1 ${isLinkActive("/contact")
                       ? "border-b-2 border-white text-white"
                       : "text-white"
-                  } hover:text-white transition`}
+                    } hover:text-white transition`}
                 >
                   Contact Us
                 </Link>
+              </li>
+              <li>
+                <Link
+                  aria-label="contact us page"
+                  href="https://demoycbexam.msplyoga.com"
+                  className="pb-1 animate-pulse font-bold text-yellow-300"
+                >
+                  Ycb Mock Test
+                </Link>
+
+
               </li>
             </ul>
 
@@ -157,16 +165,14 @@ const Nav = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-0 bg-black/40 z-[1200] transition-opacity duration-300 ${
-          openSidebar ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/40 z-[1200] transition-opacity duration-300 ${openSidebar ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setOpenSidebar(false)}
       ></div>
 
       <div
-        className={`fixed top-0 left-0 h-full w-[300px] bg-white overflow-y-auto shadow-lg z-[1300] transform transition-transform duration-300 ${
-          openSidebar ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-[300px] bg-white overflow-y-auto shadow-lg z-[1300] transform transition-transform duration-300 ${openSidebar ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex justify-between items-center px-4 py-3 border-b">
           <span className="text-gray-800 text-lg font-semibold">Menu</span>
@@ -179,11 +185,10 @@ const Nav = () => {
           <li>
             <Link aria-label="home page"
               href="/"
-              className={`block px-5 py-3 text-sm font-medium ${
-                isLinkActive("/")
+              className={`block px-5 py-3 text-sm font-medium ${isLinkActive("/")
                   ? "text-[#14AEE4] bg-gray-100"
                   : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
-              }`}
+                }`}
               onClick={() => setOpenSidebar(false)}
             >
               Home
@@ -207,9 +212,8 @@ const Nav = () => {
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openDropdown === index ? "max-h-[500px]" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${openDropdown === index ? "max-h-[500px]" : "max-h-0"
+                  }`}
               >
                 <ul className="bg-gray-50">
                   {dropdown.links.map((link, i) =>
@@ -232,9 +236,8 @@ const Nav = () => {
                         </button>
 
                         <div
-                          className={`overflow-hidden transition-all duration-300 ${
-                            openSubDropdown === i ? "max-h-[400px]" : "max-h-0"
-                          }`}
+                          className={`overflow-hidden transition-all duration-300 ${openSubDropdown === i ? "max-h-[400px]" : "max-h-0"
+                            }`}
                         >
                           <ul className="bg-white">
                             {link.sublinks?.map((sublink, j) => (
@@ -267,29 +270,38 @@ const Nav = () => {
               </div>
             </li>
           ))}
-          
+   
           {/* Contact Us and Pay Fee links for mobile */}
           <li>
             <Link aria-label="contact us page"
               href="/contact"
-              className={`block px-5 py-3 text-sm font-medium ${
-                isLinkActive("/contact")
+              className={`block px-5 py-3 text-sm font-medium ${isLinkActive("/contact")
                   ? "text-[#14AEE4] bg-gray-100"
                   : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
-              }`}
+                }`}
               onClick={() => setOpenSidebar(false)}
             >
               Contact Us
             </Link>
           </li>
+           <li>
+                <Link
+                  aria-label="contact us page"
+                  href="https://demoycbexam.msplyoga.com"
+                  className="px-5 py-3 animate-pulse font-bold text-yellow-300"
+                >
+                  Ycb Mock Test
+                </Link>
+
+
+              </li>
           <li>
             <Link aria-label="pay fee"
               href={ROUTES.PAY_FEE}
-              className={`block px-5 py-3 text-sm font-medium ${
-                isLinkActive("/pay-fee")
+              className={`block px-5 py-3 text-sm font-medium ${isLinkActive("/pay-fee")
                   ? "text-[#14AEE4] bg-gray-100"
                   : "text-gray-700 hover:bg-gray-50 hover:text-[#14AEE4]"
-              }`}
+                }`}
               onClick={() => setOpenSidebar(false)}
             >
               Pay Fee

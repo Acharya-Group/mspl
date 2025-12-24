@@ -19,16 +19,17 @@ const ContactsPage: React.FC = () => {
   }, []);
 
   // ✅ Show toast on fetch success / error
-  useEffect(() => {
-    if (allContacts.isSuccess) {
-      toast.success("Contacts fetched successfully!");
-    }
-    if (allContacts.isError) {
-      toast.error(allContacts.error?.message || "Failed to fetch contacts");
-    }
-  }, [allContacts.isSuccess, allContacts.isError]);
+// ✅ Show toast on fetch success / error
+useEffect(() => {
+  if (allContacts.isSuccess) {
+    toast.success("Contacts fetched successfully!");
+  }
+  if (allContacts.isError) {
+    toast.error(allContacts.error?.message || "Failed to fetch contacts");
+  }
+}, [allContacts.isSuccess, allContacts.isError, allContacts.error?.message]);
 
-  if (!mounted) return null;
+if (!mounted) return null;
 
   if (allContacts.isLoading) {
     return (
