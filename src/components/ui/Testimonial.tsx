@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation,Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import SubHeading from "../common/SubHeading";
@@ -38,6 +38,11 @@ const Testimonial = () => {
             spaceBetween={0}
             slidesPerView={3}
             centeredSlides
+            autoplay={{
+  delay: 3000,
+  disableOnInteraction: false,
+}}
+
             loop
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             navigation={{
@@ -49,7 +54,7 @@ const Testimonial = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 4.5 },
             }}
-            modules={[Navigation]}
+            modules={[Navigation,Autoplay]}
             className="testimonial-swiper pb-10"
           >
             {/* ✅ Loading skeletons */}
