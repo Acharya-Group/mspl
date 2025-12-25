@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import {Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative w-full max-w-[1920px] mx-auto">
       <Swiper
-        modules={[Navigation, Autoplay, EffectFade]}
+        modules={[Navigation,EffectFade]}
         loop
         speed={800}
         effect="fade"
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
         <button
           key={dir}
           aria-label={`${dir} slide`}
-          className={`hero-${dir} hidden sm:flex absolute ${
+          className={`hero-${dir} flex absolute ${
             dir === "prev" ? "left-4" : "right-4"
           } top-1/2 -translate-y-1/2 z-10 bg-primary p-2 sm:p-3 rounded-full shadow text-white sm:h-10 sm:w-10 h-8 w-8 justify-center items-center cursor-pointer hover:bg-green transition-all duration-300`}
         >
