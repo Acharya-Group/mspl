@@ -4,6 +4,7 @@ import { getSeo } from "@/lib/getSeo";
 import ClientLayout from "@/components/layout/ClientLayout";
 import "aos/dist/aos.css";
 import AosInit from "../components/common/AosInit";
+import { Analytics } from "@vercel/analytics/next"
 
 
 // ✅ Fetch SEO data safely
@@ -34,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AosInit />
-        <ClientLayout>{children}</ClientLayout>
+        <ClientLayout>{children}   <Analytics /></ClientLayout>
       </body>
     </html>
   );
