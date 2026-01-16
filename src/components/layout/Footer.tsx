@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="flex gap-3 items-center">
             
         <Link aria-label="contact number" className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 8930300615"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 89303-00615</Link>
-        <Link aria-label="contact number" className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 99917-77717</Link>
+        <Link aria-label="contact number" className='flex font-semibold hover:text-primary items-center hover:underline transition-all duration-300' href="tel:+91 9991777717"><FaPhoneVolume className="text-primary me-1" size={'15px'} />+91 72300-03310</Link>
 
              
             </div>
